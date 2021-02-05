@@ -1,0 +1,58 @@
+{
+  "name": "nuxt",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "start": "nuxt-ts start",
+    "generate": "nuxt-ts generate",
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "yarn lint:js",
+    "test": "jest"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": 3000
+    }
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^2.0.0",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
+    "@nuxtjs/axios": "^5.12.2",
+    "apollo-boost": "^0.4.9",
+    "core-js": "2.6.12",
+    "cross-fetch": "^3.0.6",
+    "element-ui": "^2.13.2",
+    "fetch-cookie": "^0.11.0",
+    "graphql": "^15.4.0",
+    "graphql-request": "^3.4.0",
+    "graphql-tag": "^2.11.0",
+    "nuxt": "^2.14.6",
+    "vue-apollo": "^3.0.5"
+  },
+  "devDependencies": {
+    "@babel/runtime-corejs2": "^7.12.5",
+    "@nuxt/types": "^2.14.6",
+    "@nuxt/typescript-build": "^2.0.3",
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-config-typescript": "^3.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/proxy": "^2.1.0",
+    "@vue/test-utils": "^1.1.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.5.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.5.0",
+    "prettier": "^2.1.2",
+    "terser-webpack-plugin": "^5.1.1",
+    "ts-jest": "^26.4.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-jest": "^3.0.4"
+  }
+}

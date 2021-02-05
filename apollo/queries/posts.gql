@@ -1,0 +1,10 @@
+query Posts($limit:Int!){
+  posts(limit:$limit){
+    posts{
+      id
+      text
+      title
+    }
+    hasMore
+  }
+}
