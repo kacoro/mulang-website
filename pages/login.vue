@@ -56,7 +56,7 @@ export default {
     async submitFrom(e) {
         console.log("test2")
 
-        const graphQLClient = new GraphQLClient('http://192.168.179.97:4000/graphql', {
+        const graphQLClient = new GraphQLClient('http://192.168.56.1:4000/graphql', {
     credentials: 'include',
     mode: 'cors',
 })

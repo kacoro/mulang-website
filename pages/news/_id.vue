@@ -1,17 +1,26 @@
 <template>
-  <div v-if="post">
+<div class="news-detail">
+  <div v-if="post" class="container">
     <h3>{{ post.title }}</h3>
-    <p>{{post.text }}</p>
-
+    <h4>{{formateDay(post.createdAt)}}</h4>
     <div v-html="post.text"></div>
-    <p>
-      <NuxtLink to="/">
-        Home page
-      </NuxtLink>
-    </p>
+    
   </div>
+</div>
 </template>
-
+<style scoped>
+  .news-detail{
+    padding: 1rem 20px;
+    min-height: 50vh;
+  }
+  h3{
+    padding-bottom:20px ;
+  }
+  h4 {
+    font-weight: normal;
+    padding-bottom:20px ;
+  }
+</style>
 <script>
 // import post from '~/apollo/queries/post'
 import { request, gql,GraphQLClient,rawRequest } from 'graphql-request'
@@ -63,14 +72,15 @@ export default {
 //     }
 //   },
   head () {
-      
      return {
       title: (this.post ? `${this.post.title}` : 'Loading')
      }
   },
 
   methods: {
-    
+    formateDay(day){
+      return  this.$dayjs(day).format('YYYY/MM/DD');
+    },  
   }
 }
 </script>

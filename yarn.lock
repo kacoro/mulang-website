@@ -1924,6 +1924,14 @@
     consola "^2.15.0"
     defu "^3.2.2"
 
+"@nuxtjs/dayjs@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.nlark.com/@nuxtjs/dayjs/download/@nuxtjs/dayjs-1.4.0.tgz#e11347bfa4f267deb9b9a6fb33bf918b32abfd00"
+  integrity sha1-4RNHv6TyZ965uab7M7+RizKr/QA=
+  dependencies:
+    consola "^2.3.2"
+    dayjs "^1.10.4"
+
 "@nuxtjs/eslint-config-typescript@^3.0.0":
   version "3.0.0"
   resolved "https://registry.npm.taobao.org/@nuxtjs/eslint-config-typescript/download/@nuxtjs/eslint-config-typescript-3.0.0.tgz#4c307ba1d7038d3d4a6aa40ebd4e0bd80a9af512"
@@ -5188,6 +5196,11 @@ consola@^2.10.0, consola@^2.11.3, consola@^2.15.0, consola@^2.6.0, consola@^2.9.
   resolved "https://registry.npm.taobao.org/consola/download/consola-2.15.0.tgz#40fc4eefa4d2f8ef2e2806147f056ea207fcc0e9"
   integrity sha1-QPxO76TS+O8uKAYUfwVuogf8wOk=
 
+consola@^2.3.2:
+  version "2.15.3"
+  resolved "https://registry.npm.taobao.org/consola/download/consola-2.15.3.tgz#2e11f98d6a4be71ff72e0bdf07bd23e12cb61550"
+  integrity sha1-LhH5jWpL5x/3LgvfB70j4Sy2FVA=
+
 console-browserify@^1.1.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/console-browserify/download/console-browserify-1.2.0.tgz#67063cef57ceb6cf4993a2ab3a55840ae8c49336"
@@ -5673,6 +5686,11 @@ date-fns@^1.27.2:
   version "1.30.1"
   resolved "https://registry.npm.taobao.org/date-fns/download/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha1-LnG/CxGRU9u0zE6I2epaz7UNwFw=
+
+dayjs@^1.10.4:
+  version "1.10.4"
+  resolved "https://registry.npm.taobao.org/dayjs/download/dayjs-1.10.4.tgz?cache=0&sync_timestamp=1611310021152&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdayjs%2Fdownload%2Fdayjs-1.10.4.tgz#8e544a9b8683f61783f570980a8a80eaf54ab1e2"
+  integrity sha1-jlRKm4aD9heD9XCYCoqA6vVKseI=
 
 de-indent@^1.0.2:
   version "1.0.2"

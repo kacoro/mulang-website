@@ -21,6 +21,7 @@
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/dayjs": "^1.4.0",
     "apollo-boost": "^0.4.9",
     "core-js": "2.6.12",
     "cross-fetch": "^3.0.6",

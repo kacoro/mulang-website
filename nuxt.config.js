@@ -4,7 +4,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'nuxt',
+    title: '康索特官网',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -16,6 +16,9 @@ export default {
     port: 5000, // default: 3000
     host: '0.0.0.0' // default: localhost 0.0.0.0
   },
+  css:[
+    '~/assets/css/main.css',
+  ],
   // Global CSS (https://go.nuxtjs.dev/config-css)
   // css: ['element-ui/lib/theme-chalk/index.css'],
 
@@ -36,11 +39,15 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxtjs/proxy',
+    '@nuxtjs/dayjs',
     // https://go.nuxtjs.dev/axios
     // '@nuxtjs/axios',
     // '@nuxtjs/apollo',
   ],
-
+  dayjs: {
+    locales: ['en', 'zh'],
+    defaultLocale: 'en'
+  },
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   // axios: {},
   // apollo: {
@@ -57,10 +64,10 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   proxy: {
     '/graphql':{
-      target: 'http://192.168.179.97:4000',
+      target: 'http://192.168.56.1:4000',
     },
     '/upload':{
-      target: 'http://192.168.179.97:4000',
+      target: 'http://192.168.56.1:4000',
     }
     // 'http://192.168.179.97:4000/graphql/': {
     //   target: 'http://192.168.179.97:4000',
