@@ -187,20 +187,7 @@
 <script>
 import "assets/css/index.css";
 import { request, gql, GraphQLClient, rawRequest } from "graphql-request";
-const postQuery = gql`
-  mutation Login($password: String!, $usernameOrEmail: String!) {
-    login(password: $password, usernameOrEmail: $usernameOrEmail) {
-      errors {
-        field
-        message
-      }
-      user {
-        id
-        email
-      }
-    }
-  }
-`;
+
 const query = gql`
   query Posts($limit: Int!) {
     posts(limit: $limit) {
@@ -212,14 +199,6 @@ const query = gql`
         createdAt
       }
       hasMore
-    }
-  }
-`;
-
-const meQuery = gql`
-  query {
-    me {
-      username
     }
   }
 `;
@@ -236,11 +215,7 @@ export default {
         posts: [],
         hasMore: false,
       },
-      me: {
-        username: "",
-      },
-      password: "",
-      usernameOrEmail: "",
+     
     };
   },
   mounted: function () {
@@ -267,9 +242,10 @@ export default {
         cookie: app.context.req ? app.context.req.headers.cookie : undefined,
       };
     }
-
+    console.log("process",process.env.GRAPHQL_URL)
     const graphQLClient = new GraphQLClient(
-      "http://192.168.56.1:4000/graphql",
+      process.env.GRAPHQL_URL || '/graphql',
+      // "http://192.168.56.1:4000/graphql",
       {
         credentials: "include",
         mode: "cors",
@@ -282,16 +258,13 @@ export default {
     const { data, status } = await graphQLClient.rawRequest(query, {
       limit: 4,
     });
-    console.log(data);
-    const { data: medata } = await graphQLClient.rawRequest(meQuery);
-    console.log("medata", medata);
+  
+  
     if (status === 200) {
       return {
         posts: data.posts,
         hasMore: data.hasMore,
-        me: {
-          username: medata?.me?.username,
-        },
+      
       };
     }
   },
@@ -299,82 +272,8 @@ export default {
     formateDay(day){
       return  this.$dayjs(Number(day)).format('MM/DD');
     },  
-    async submitFrom(e) {
-      console.log("test2");
-
-      const graphQLClient = new GraphQLClient(
-        "http://192.168.56.1:4000/graphql",
-        {
-          credentials: "include",
-          mode: "cors",
-        }
-      );
-      const { data, status } = await graphQLClient.rawRequest(postQuery, {
-        password: this.password,
-        usernameOrEmail: this.usernameOrEmail,
-      });
-      e.preventDefault();
-      // const graphQLClient = new GraphQLClient('http://192.168.179.97:4000/graphql', {
-      //     credentials: 'include',
-      //     mode: 'cors',
-      //   })
-
-      // const {data,status} =  graphQLClient.rawRequest(query,{
-      //     limit:5
-      //   })
-      // .then(json=>{
-      // console.log('success')
-
-      // }).then(function (response) {
-      //   console.log("123")
-      // }).catch(function (err) {
-      //   console.log(err);
-      // })
-      console.log(data, status);
-
-      if (status === 200) {
-        alert("登陆成功");
-        // this.$router.push({
-        //   path: `/`,
-        // });
-      }
-    },
-    //     try {
-    //       const res = await this.$apollo.mutate({
-    //           mutation: login,
-    //           variables: {
-    //               password:this.password,
-    //               usernameOrEmail:this.usernameOrEmail
-    //           }
-    //       })
-    //       console.log(res.data.login)
-    //       const {errors} = res.data.login
-    //       if(!errors){
-    //           alert("登陆成功")
-    //           this.$router.push({
-    //                 path: `/`
-    //             })
-    //       }
-
-    //   } catch (e) {
-    //       console.error(e)
-    //   }
-    //},
+   
   },
 };
 
-// export default {
-//   // apollo: {
-//   //   posts: {
-//   //     // prefetch: true,
-//   //     query: posts,
-//   //     variables () {
-//   //       return { limit: 3 }
-//   //     }
-//   //   }
-//   // },
-//   head: {
-//     title: 'Cars with Apollo'
-//   }
-// }
 </script>

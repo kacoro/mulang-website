@@ -383,10 +383,9 @@ export default {
   },
   methods: {
     async submitFrom(e) {
-      console.log("test2");
 
       const graphQLClient = new GraphQLClient(
-        "http://192.168.56.1:4000/graphql",
+        process.env.GRAPHQL_URL || '/graphql',
         {
           credentials: "include",
           mode: "cors",
@@ -401,7 +400,7 @@ export default {
       console.log(data, status);
 
       if (status === 200) {
-        alert("登陆成功");
+        alert("提交成功");
         // this.$router.push({
         //   path: `/`,
         // });

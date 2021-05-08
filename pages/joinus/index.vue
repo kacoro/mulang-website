@@ -2797,8 +2797,7 @@
                         ><span
                           lang="EN-US"
                           style="font-family: 'Abadi', sans-serif"
-                          ></o:p
-                        ></span>
+                          ></span>
                       </p>
 
                       <p
@@ -2833,8 +2832,7 @@
                         ><span
                           lang="EN-US"
                           style="font-family: 'Abadi', sans-serif"
-                          ></o:p
-                        ></span>
+                          ></span>
                       </p>
 
                       <p
@@ -2865,8 +2863,7 @@
                         ><span
                           lang="EN-US"
                           style="font-family: 'Abadi', sans-serif"
-                          ></o:p
-                        ></span>
+                          ></span>
                       </p>
 
                       <p
@@ -2897,8 +2894,7 @@
                         ><span
                           lang="EN-US"
                           style="font-family: 'Abadi', sans-serif"
-                          ></o:p
-                        ></span>
+                          ></span>
                       </p>
 
                       <p
@@ -2929,8 +2925,7 @@
                         ><span
                           lang="EN-US"
                           style="font-family: 'Abadi', sans-serif"
-                          ></o:p
-                        ></span>
+                          ></span>
                       </p>
 
                       <p
@@ -5858,9 +5853,7 @@
                   <div class="content_text">
                     <h3 class="item_title">岗位职责</h3>
                     <p>
-                      <style type="text/css">
-                        <!--/* Style Definitions */p.MsoNormal, li.MsoNormal, div.MsoNormal{mso-style-unhide:no;mso-style-qformat:yes;mso-style-parent:"";margin:0cm;margin-bottom:.0001pt;mso-pagination:widow-orphan;font-size:12.0pt;font-family:"Times New Roman",serif;mso-fareast-font-family:等线;mso-fareast-theme-font:minor-fareast;}p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph{mso-style-priority:34;mso-style-unhide:no;mso-style-qformat:yes;margin:0cm;margin-bottom:.0001pt;text-align:justify;text-justify:inter-ideograph;text-indent:21.0pt;mso-char-indent-count:2.0;mso-pagination:none;font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:等线;mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:等线;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;mso-font-kerning:1.0pt;}.MsoChpDefault{mso-style-type:export-only;mso-default-props:yes;font-size:10.5pt;mso-ansi-font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:等线;mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;} /* Page Definitions */@page{mso-page-border-surround-header:no;mso-page-border-surround-footer:no;}@page WordSection1{size:612.0pt 792.0pt;margin:72.0pt 90.0pt 72.0pt 90.0pt;mso-header-margin:36.0pt;mso-footer-margin:36.0pt;mso-paper-source:0;}div.WordSection1{page:WordSection1;} /* List Definitions */@list l0{mso-list-id:1849828730;mso-list-type:hybrid;mso-list-template-ids:1760722688 -1075266390 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}@list l0:level1{mso-level-text:%1、;mso-level-tab-stop:none;mso-level-number-position:left;margin-left:18.0pt;text-indent:-18.0pt;}@list l0:level2{mso-level-number-format:alpha-lower;mso-level-text:"%2\)";mso-level-tab-stop:none;mso-level-number-position:left;margin-left:48.0pt;text-indent:-24.0pt;}@list l0:level3{mso-level-number-format:roman-lower;mso-level-tab-stop:none;mso-level-number-position:right;margin-left:72.0pt;text-indent:-24.0pt;}@list l0:level4{mso-level-tab-stop:none;mso-level-number-position:left;margin-left:96.0pt;text-indent:-24.0pt;}@list l0:level5{mso-level-number-format:alpha-lower;mso-level-text:"%5\)";mso-level-tab-stop:none;mso-level-number-position:left;margin-left:120.0pt;text-indent:-24.0pt;}@list l0:level6{mso-level-number-format:roman-lower;mso-level-tab-stop:none;mso-level-number-position:right;margin-left:144.0pt;text-indent:-24.0pt;}@list l0:level7{mso-level-tab-stop:none;mso-level-number-position:left;margin-left:168.0pt;text-indent:-24.0pt;}@list l0:level8{mso-level-number-format:alpha-lower;mso-level-text:"%8\)";mso-level-tab-stop:none;mso-level-number-position:left;margin-left:192.0pt;text-indent:-24.0pt;}@list l0:level9{mso-level-number-format:roman-lower;mso-level-tab-stop:none;mso-level-number-position:right;margin-left:216.0pt;text-indent:-24.0pt;}-->
-                      </style>
+                 
                     </p>
 
                     <p>1.在人工智能各领域进行深入研究；</p>

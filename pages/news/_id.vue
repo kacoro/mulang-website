@@ -48,10 +48,22 @@ export default {
 			app,
 			params,
 		}) {
-      const graphQLClient = new GraphQLClient('http://192.168.56.1:4000/graphql', {
-          credentials: 'include',
-          mode: 'cors',
-        })
+      let headers = {};
+    if (app.context.req) {
+      headers = {
+        cookie: app.context.req ? app.context.req.headers.cookie : undefined,
+      };
+    }
+    
+
+    const graphQLClient = new GraphQLClient(
+      process.env.GRAPHQL_URL || '/graphql',
+      {
+        credentials: "include",
+        mode: "cors",
+        headers,
+      }
+    );
         const {data,status} = await graphQLClient.rawRequest(query,{
             id:parseInt(params.id)
         })
@@ -62,15 +74,7 @@ export default {
             }
         }
     },
-//   apollo: {
-//     post: {
-//       query: post,
-//       prefetch: ({ route }) => ({ id: route.params.id }),
-//       variables () {
-//         return { id: 2 }
-//       }
-//     }
-//   },
+
   head () {
      return {
       title: (this.post ? `${this.post.title}` : 'Loading')
