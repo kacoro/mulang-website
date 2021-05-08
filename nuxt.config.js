@@ -64,10 +64,10 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   proxy: {
     '/graphql':{
-      target: 'http://192.168.56.1:4001',
+      target: 'http://localhost:4001',
     },
     '/upload':{
-      target: 'http://192.168.56.1:4001',
+      target: 'http://localhost:4001',
     }
     // 'http://192.168.179.97:4000/graphql/': {
     //   target: 'http://192.168.179.97:4000',
