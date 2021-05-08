@@ -61,7 +61,7 @@
           <p>
             超多品类和超高性能的算法连接能力，打造一套算法调度平台，实现业务流智能化升级
           </p>
-          <NuxtLink :to="`yunfan`" class="button radius"> 了解更多 </NuxtLink>
+          <NuxtLink :to="`yunqi`" class="button radius"> 了解更多 </NuxtLink>
         </div>
         <div class="item">
           <img class="pic" src="/images/index/2.jpg" />
@@ -69,7 +69,7 @@
           <p>
             超大规模和超高效率的数据连接能力，构建一张智能感知网络，实现业务流数字化改造
           </p>
-          <NuxtLink :to="`yunfan`" class="button radius"> 了解更多 </NuxtLink>
+          <NuxtLink :to="`dajiang`" class="button radius"> 了解更多 </NuxtLink>
         </div>
         <div class="item">
           <img class="pic" src="/images/index/3.jpg" />
@@ -108,7 +108,7 @@
               <p>
                 以人为中心构建全流程智慧通行平台，<br />实现园区内部闭环管理，打造标杆智慧总部园区
               </p>
-              <NuxtLink :to="`yunfan`" class="button radius mid">
+              <NuxtLink :to="`solution`" class="button radius mid">
                 了解更多
               </NuxtLink>
             </div>
@@ -125,7 +125,7 @@
                 软硬一体化组件式通行，通过率超99%
                 <br />单人通行时间小于1秒，真正实现无感通行
               </p>
-              <NuxtLink :to="`yunfan`" class="button radius mid">
+              <NuxtLink :to="`solution`" class="button radius mid">
                 了解更多
               </NuxtLink>
             </div>
@@ -139,7 +139,7 @@
               <dl><span>通用园区</span> | <span>园区管理</span></dl>
               <h3>茅台集团</h3>
               <p>融合园区人、车、设备<br />依托AIoT实现园区智慧化互联互通</p>
-              <NuxtLink :to="`yunfan`" class="button radius mid">
+              <NuxtLink :to="`solution`" class="button radius mid">
                 了解更多
               </NuxtLink>
             </div>

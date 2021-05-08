@@ -94,12 +94,10 @@
     <div class="section-solution">
       <div class="section-solution-header">
         <div class="item">
-          <img class="pic" src="/images/index/1.jpg" />
-          <h2>云启<span>（智能化）</span></h2>
-          <p>
-            超多品类和超高性能的算法连接能力，打造一套算法调度平台，实现业务流智能化升级
-          </p>
-          <NuxtLink :to="`yunqi`" class="button radius"> 了解更多 </NuxtLink>
+          <img class="pic" src="/images/index/3.jpg" />
+          <h2>索特轻量云</h2>
+          <p>致力于为中小企业客户<br>提供一站式轻应用云接入方案</p>
+          <NuxtLink :to="`yunfan`" class="button radius"> 了解更多 </NuxtLink>
         </div>
         <div class="item">
           <img class="pic" src="/images/index/2.jpg" />

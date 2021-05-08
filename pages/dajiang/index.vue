@@ -87,12 +87,10 @@
           <NuxtLink :to="`yunqi`" class="button radius"> 了解更多 </NuxtLink>
         </div>
         <div class="item">
-          <img class="pic" src="/images/index/2.jpg" />
-          <h2>大匠<span>（数学化）</span></h2>
-          <p>
-            超大规模和超高效率的数据连接能力，构建一张智能感知网络，实现业务流数字化改造
-          </p>
-          <NuxtLink :to="`dajiang`" class="button radius"> 了解更多 </NuxtLink>
+          <img class="pic" src="/images/index/3.jpg" />
+          <h2>索特轻量云</h2>
+          <p>致力于为中小企业客户<br>提供一站式轻应用云接入方案</p>
+          <NuxtLink :to="`yunfan`" class="button radius"> 了解更多 </NuxtLink>
         </div>
       </div>
     </div>

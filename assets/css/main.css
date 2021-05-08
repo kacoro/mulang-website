@@ -9,6 +9,10 @@ body{
     margin:0;
     color: #313131;
   }
+  a{
+      text-decoration: none;
+      color: #313131;
+  }
 ul{
     list-style: none;
 }
@@ -65,59 +69,7 @@ h1,h2,h3,h4{
     cursor: pointer;
     
 }
-.page-header .left-part .menu-item .menu-name {
-    font-weight: bold;
-    font-size: 16px;
 
-    text-decoration: none;
-    color: #fff;
-}
-
-.page-header .left-part .menu-item .menu-name.nuxt-link-active{
-    color: #f3cd1d;
-}
-
-.page-header .left-part {
-  margin-top: 21px;
-  display: inline-block;
-    vertical-align: top;
-    margin-left: 120px;
-    margin-right: 15px;
-    font-size: 0;
-    line-height: 0;
-   width: 1135px;
-    max-width: 1135px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.page-header .left-part .menu-item {
-    position: relative;
-    display: inline-block;
-    height: 64px;
-    line-height: 64px;
-    text-align: center;
-    font-size: 14px;
-    cursor: pointer;
-    color: #fff;
-}
-.page-header .left-part .menu-item-core .menu-popover {
-    width: 255px;
-}
-.page-header .left-part .menu-item .menu-popover {
-    position: absolute;
-    cursor: default;
-    top: 50px;
-    left: -25px;
-    z-index: 1;
-    display: none;
-    padding: 18px 0 24px;
-    background: #fff;
-    border-radius: 0 0 1px 1px;
-    box-shadow: 0 4px 4px 0 rgba(0,0,0,.1);
-    line-height: 24px;
-    text-align: left;
-}
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -342,4 +294,6 @@ h1,h2,h3,h4{
         font-size: 13px;
     }
 }
+
+
 

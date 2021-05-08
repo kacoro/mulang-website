@@ -30,16 +30,17 @@ const query = gql`
 `;
 
 const query2 = gql`
-  query Posts($limit:Int!){
-    posts(limit:$limit){
-      posts{
+  query Posts($limit: Int!) {
+    posts(limit: $limit) {
+      posts {
         id
         text
         title
       }
       hasMore
     }
-  }`
+  }
+`;
 
 export default {
   data() {
@@ -54,63 +55,65 @@ export default {
   },
   methods: {
     async submitFrom(e) {
-        console.log("test2")
+      console.log("test2");
 
-        const graphQLClient = new GraphQLClient('http://192.168.56.1:4000/graphql', {
-    credentials: 'include',
-    mode: 'cors',
-})
-          const {data,status} = await graphQLClient.rawRequest(query,{
-            password:this.password,
-            usernameOrEmail:this.usernameOrEmail
-        })
-        e.preventDefault();
+      const graphQLClient = new GraphQLClient(
+        "http://192.168.56.1:4000/graphql",
+        {
+          credentials: "include",
+          mode: "cors",
+        }
+      );
+      const { data, status } = await graphQLClient.rawRequest(query, {
+        password: this.password,
+        usernameOrEmail: this.usernameOrEmail,
+      });
+      e.preventDefault();
       // const graphQLClient = new GraphQLClient('http://192.168.179.97:4000/graphql', {
       //     credentials: 'include',
       //     mode: 'cors',
       //   })
 
-
       // const {data,status} =  graphQLClient.rawRequest(query,{
       //     limit:5
       //   })
-        // .then(json=>{
-    // console.log('success')
+      // .then(json=>{
+      // console.log('success')
 
-    // }).then(function (response) {
-    //   console.log("123")
-    // }).catch(function (err) {
-    //   console.log(err);
-    // })
-  console.log(data,status)
-       
-        if (status === 200) {
-            //  alert("登陆成功")
-              this.$router.push({
-                      path: `/`
-                  })
-        }
+      // }).then(function (response) {
+      //   console.log("123")
+      // }).catch(function (err) {
+      //   console.log(err);
+      // })
+      console.log(data, status);
+
+      if (status === 200) {
+        //  alert("登陆成功")
+        this.$router.push({
+          path: `/`,
+        });
       }
-      //     try {
-      //       const res = await this.$apollo.mutate({
-      //           mutation: login,
-      //           variables: {
-      //               password:this.password,
-      //               usernameOrEmail:this.usernameOrEmail
-      //           }
-      //       })
-      //       console.log(res.data.login)
-      //       const {errors} = res.data.login
-      //       if(!errors){
-      //           alert("登陆成功")
-      //           this.$router.push({
-      //                 path: `/`
-      //             })
-      //       }
+    },
+    //     try {
+    //       const res = await this.$apollo.mutate({
+    //           mutation: login,
+    //           variables: {
+    //               password:this.password,
+    //               usernameOrEmail:this.usernameOrEmail
+    //           }
+    //       })
+    //       console.log(res.data.login)
+    //       const {errors} = res.data.login
+    //       if(!errors){
+    //           alert("登陆成功")
+    //           this.$router.push({
+    //                 path: `/`
+    //             })
+    //       }
 
-      //   } catch (e) {
-      //       console.error(e)
-      //   }
+    //   } catch (e) {
+    //       console.error(e)
+    //   }
     //},
   },
 };

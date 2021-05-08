@@ -1,7 +1,7 @@
 <template>
     <div class="news-detail">
   <div  class="container">
-    <h3>加入我们</h3>
+    <h3>产品中心</h3>
     
     <div>
         建设中...    

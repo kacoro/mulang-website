@@ -6,42 +6,170 @@
         <img src="/images/logo.png" class="logo" />
         </nuxt-link>
         <div class="left-part">
-          <div class="menu-item menu-item-core">
-            <nuxt-link to="/about" class="menu-name">关于CST</nuxt-link> <span class="nav-line"></span>
-          </div>
+          
            <div class="menu-item menu-item-core">
             <nuxt-link to="/yunfan" class="menu-name">云帆创新应用平台</nuxt-link> <span class="nav-line"></span>
           </div>
           <div class="menu-item menu-item-core">
-            <nuxt-link to="/coretech" class="menu-name">核心技术</nuxt-link> <span class="nav-line"></span>
-            <div class="menu-popover" style="opacity: 0; top: 64px">
+            <nuxt-link to="/dajiang" class="menu-name">核心技术</nuxt-link> <span class="nav-line"></span>
+            <div class="menu-popover" >
               <div class="menu-popover-item">
-                <ul>
-                  <a
-                    data-beacon="https://brainpp.megvii.com"
-                    href="https://brainpp.megvii.com/"
-                    target="_blank"
-                  >
+                <ul> 
                     <li>
-                      <span class="menu-popover-name">Brain<sup>++</sup></span
-                      ><span class="menu-popover-name">新一代AI生产力平台</span>
-                    </li>
-                  </a>
+                        <nuxt-link to="/dajiang" class="menu-name">大匠</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/yunqi" class="menu-name">云启</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                     <li>
+                        <nuxt-link to="/yunfan" class="menu-name">索特云</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="menu-item menu-item-core">
-            <nuxt-link to="/solution" class="menu-name">解决方案</nuxt-link> <span class="nav-line"></span>
+            <nuxt-link to="/solution" class="menu-name">解决方案</nuxt-link>
+            <span class="nav-line"></span>
+            <div class="menu-popover" >
+              <div class="menu-popover-item">
+                <ul> 
+                    <h6>
+                      通用园区
+                    </h6>
+                    <li>
+                        <nuxt-link to="/solution/1" class="menu-name">园区管理</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/solution/2" class="menu-name">校园管理</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                     <li>
+                        <nuxt-link to="/solution/3" class="menu-name">医院管理</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/solution/4" class="menu-name">智慧社区</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/solution/5" class="menu-name">写字楼</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/solution/6" class="menu-name">政府机关</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                </ul>
+                <ul> 
+                    <h6>
+                      城市治理
+                    </h6>
+                    <li>
+                        <nuxt-link to="/solution/7" class="menu-name">社会价值</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/solution/8" class="menu-name">方案能力</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                     <li>
+                        <nuxt-link to="/solution/9" class="menu-name">区域公共安全</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/solution/10" class="menu-name">机关事务管理</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/solution/11" class="menu-name">智慧食药监</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/solution/12" class="menu-name">疫情防控</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                     
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="menu-item menu-item-core">
             <nuxt-link to="/product" class="menu-name">产品中心</nuxt-link> <span class="nav-line"></span>
+             <div class="menu-popover" >
+             <div class="menu-popover-item">
+                <ul> 
+                    <h6>
+                      IOT产品
+                    </h6>
+                    <li>
+                        <nuxt-link to="/product/1" class="menu-name">IPC摄像机系列</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/product/2" class="menu-name">人脸终端系列</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                     <li>
+                        <nuxt-link to="/product/3" class="menu-name">停车场出入管理系列</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/product/4" class="menu-name">速通门系列</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/product/5" class="menu-name">智能门锁系列</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/product/6" class="menu-name">门禁读卡器系列</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                </ul>
+                <ul> 
+                    <h6>
+                      云
+                    </h6>
+                    <li>
+                        <nuxt-link to="/product/7" class="menu-name">结构化服务器</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/product/8" class="menu-name">软件平台</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                </ul>
+              </div>
+               </div>
           </div>
           <div class="menu-item menu-item-core">
             <nuxt-link to="/news" class="menu-name">新闻资讯</nuxt-link> <span class="nav-line"></span>
           </div>
           <div class="menu-item menu-item-core">
-            <nuxt-link to="/contact" class="menu-name">联系我们</nuxt-link> <span class="nav-line"></span>
+            <nuxt-link to="/about" class="menu-name">关于我们</nuxt-link> <span class="nav-line"></span>
+            <div class="menu-popover" >
+              <div class="menu-popover-item">
+                <ul> 
+                    <li>
+                        <nuxt-link to="/about" class="menu-name">关于CST</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                      <li>
+                        <nuxt-link to="/contact" class="menu-name">联系我们</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                     <li>
+                        <nuxt-link to="/joinus" class="menu-name">加入我们</nuxt-link> 
+                        <span class="nav-line"></span>
+                      </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -115,6 +243,98 @@
     </div>
   </div>
 </template>
+<style scoped>
+.page-header .left-part .menu-item .menu-name {
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.page-header .left-part .menu-item .menu-name:hover{
+   color: #f3cd1d;
+}
+.page-header .left-part .menu-item .menu-name:active{
+  color: #fff;
+}
+
+.page-header .left-part .menu-item .menu-name.nuxt-link-active{
+    color: #f3cd1d;
+}
+
+.page-header .left-part {
+  align-items: center;
+  display: inline-block;
+    vertical-align: top;
+    margin-left: 120px;
+    margin-right: 50px;
+   width: 1135px;
+    max-width: 1135px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.page-header .left-part .menu-item {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    padding: 0 10px;
+    margin: 0 5px;
+    overflow: hidden;
+
+}
+.page-header .left-part .menu-item:hover{
+  overflow:unset;
+}
+
+
+
+.page-header .left-part .menu-item .menu-popover {
+    opacity: 1;
+    position: absolute;
+    cursor: default;
+    top: 110px;
+    left: -50px;
+    z-index: 1;
+    padding: 18px 25px 24px;
+    border-radius: 0 0 1px 1px;
+    color: #fff;
+    background: #19459a;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.1);
+    line-height: 24px;
+    text-align: center;
+    transition: all .5s ease;
+
+}
+.page-header .left-part .menu-item:hover .menu-popover{
+    opacity: 1;
+    top: 100px;
+    display: block;
+}
+.page-header .left-part .menu-item .menu-popover ul{
+   padding:0 25px;
+}
+.page-header .left-part .menu-item .menu-popover li,.page-header .left-part .menu-item .menu-popover h6{
+  width: 94px;
+  line-height:50px ;
+      min-width: 94px;
+    white-space: nowrap;
+}
+.page-header .left-part .menu-item .menu-popover h6{
+  font-size: 16px;
+  border-bottom: #f3cd1d solid 1px;
+  color: #f3cd1d;
+}
+.page-header .left-part .menu-item .menu-popover a{
+   color: #fff;
+}
+.menu-popover-item{
+  display: flex;
+
+}
+</style>
 <script>
 import { request, gql, GraphQLClient, rawRequest } from "graphql-request";
 
