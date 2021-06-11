@@ -3,8 +3,9 @@
     "test": {
       "presets": [
         [
-          "@babel/preset-env",
+         "@babel/preset-env",
           {
+            "modules": false,
             "targets": {
               "node": "current",
               "browsers": [
@@ -17,7 +18,15 @@
             }
           }
         ]
-      ]
+      ],
+      "plugins": [
+        [
+          "component",
+          {
+            "libraryName": "element-ui",
+            "styleLibraryName": "theme-chalk"
+          }
+        ]]
     }
   }
 }

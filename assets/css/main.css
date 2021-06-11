@@ -70,6 +70,18 @@ h1,h2,h3,h4{
     
 }
 
+
+.el-popup-parent--hidden{
+    height: 100%;
+    overflow: hidden;
+}
+@media only screen and (max-width: 1200px){
+    
+    .logo{
+      margin-left: 20px;
+    }
+  }
+
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -171,8 +183,41 @@ h1,h2,h3,h4{
         border-radius: 5px; 
     }
 }
-
-
+.el-drawer.drwaer-menu{background-color: #19459a; color: #fff;}
+.el-drawer.drwaer-menu .el-drawer__header{color: #fff;}
+.el-drawer.drwaer-menu  .el-submenu__icon-arrow{color: #fff;}
+.drawer-header{height:101px ; position: relative; display: flex; justify-content: center; align-items: center;}
+.drawer-header .toggle-btn{
+    background: #19459a;
+}
+.drwaer-menu .el-menu-item-group__title{color: rgb(243, 205, 29);}
+.toggle-btn{
+    position: absolute;
+    right: 40px;
+}
+.toggle-btn span{
+ display: block;
+   width: 18px;
+   height: 2px;
+   margin-bottom: 3px;
+   background-color: #fff;
+   transition: background .5s cubic-bezier(.77,.2,.05,1),opacity .55s ease,transform .5s cubic-bezier(.77,.2,.05,1),width .5s;
+   left: 0;
+   transform-origin: 16px;
+   border-radius: 3px;
+   opacity: 1;
+}
+.toggle-btn span.first-rotate {
+    transform: rotate(-45deg);
+}
+.toggle-btn span.mid-width {
+    width: 0;
+    opacity: 0;
+    transition: width .5s ease;
+}
+.toggle-btn span.last-rotate {
+    transform: rotate(45deg);
+}
 .img-gray { 
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
@@ -183,6 +228,33 @@ h1,h2,h3,h4{
 	
     filter: gray;
 }
+/* 产品列表 */
+.product-list-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 60px 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .product-list-item ul {
+    font-size: 24px;
+  }
+  .product-list-item ul li {
+    line-height: 40px;
+    position: relative;
+  }
+  .product-list-item h2 {
+    color: #19459a;
+    padding-bottom: 30px;
+  }
+  .product-list-item ul li::before {
+    content: "●";
+    color: #f3cd1d;
+    font-size: 12px;
+    position: absolute;
+    left: -2em;
+  }
 .section-solution{
     padding-bottom: 1.6rem;
   }

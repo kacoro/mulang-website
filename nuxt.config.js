@@ -25,7 +25,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   // plugins: ['@/plugins/element-ui'],
 
-  plugins: ['@/plugins/core'],
+  plugins: ['@/plugins/core','@/plugins/scrollTo', { src: '@/plugins/element-ui', ssr: true }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -78,6 +78,12 @@ export default {
     // }
   },
   build: {
+    // 按需引入element-ui
+    babel: {
+      plugins: [
+        [ "component", {"libraryName": "element-ui",  "styleLibraryName": "theme-chalk"}] 
+      ] 
+    },
     //  transpile:[/^element-ui/]
     //  transpile:['graphql-request','@nuxtjs/proxy'],
     // babel: {

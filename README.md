@@ -32,3 +32,8 @@ graphql不支持写相对地址，如何实现代理呢？new GraphQLClient('htt
       target: 'http://192.168.179.97:4000',
     }
 ```
+
+#pm2
+```
+pm2 start npm --name mydemo -- run star
+```

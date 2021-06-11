@@ -1,15 +1,22 @@
 <template>
 <div class="news-detail">
+  <div class="banner">
+      <div class="banner-bg">
+        <h1>新闻中心</h1>
+      </div>
+    </div>
+    <div class="news-detail-content">
   <div v-if="post" class="container">
     <h3>{{ post.title }}</h3>
     <h4>{{formateDay(post.createdAt)}}</h4>
     <div v-html="post.text"></div>
     
   </div>
+  </div>
 </div>
 </template>
 <style scoped>
-  .news-detail{
+  .news-detail-content{
     padding: 1rem 20px;
     min-height: 50vh;
   }
@@ -20,6 +27,27 @@
     font-weight: normal;
     padding-bottom:20px ;
   }
+  .banner {
+  min-height: 240px;
+  background: url("/images/solution/banner.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+}
+.banner-bg {
+  min-height: 4.9rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.banner-bg h1 {
+  color: #fff;
+  font-size: 40px;
+  padding-bottom: 25px;
+}
 </style>
 <script>
 // import post from '~/apollo/queries/post'
