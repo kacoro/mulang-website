@@ -122,10 +122,6 @@ export default {
       categoryId:0,
       totalPage:1,
       total:1,
-      posts: {
-        posts: [],
-        hasMore: false,
-      },
     };
   },
 

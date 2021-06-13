@@ -4,9 +4,7 @@
 ////Vue.prototype.$notify = Notification;
 
 import Vue from 'vue'
-import { Message } from 'element-ui'
-import { Pagination } from 'element-ui'
-import { Drawer } from 'element-ui'
+import { Icon,Drawer,Pagination ,Message} from 'element-ui'
 import { Menu,
     Submenu,
     MenuItem,
@@ -22,5 +20,6 @@ Vue.use(Submenu);
 Vue.use(MenuItem);
 Vue.use(MenuItemGroup);
 Vue.use(Drawer)
+Vue.use(Icon)
 
 

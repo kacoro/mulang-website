@@ -8,8 +8,9 @@
     <div class="news-detail-content">
   <div v-if="content" class="container">
     <h3>{{ content.title }}</h3>
-    <h4>{{formateDay(content.publishTime)}}</h4>
+    <h4 style="display:inline-block">{{formateDay(content.publishTime)}} </h4> <i class="el-icon-view"></i>{{content.hits}}
     <div class="editor" v-html="content.content"></div>
+   
     <div>
         <ul class="prev-next">
           <li v-if="prev"><nuxt-link :to="`${prev.id}`">上一篇：{{prev.title}}</nuxt-link></li>
@@ -95,20 +96,32 @@ const query = gql`
   }
 `
 
+const updateListHits = gql`
+  mutation updateListHits($id: Int!, $projectIdentifier: String!) {
+    updateListHits(id: $id, projectIdentifier: $projectIdentifier)
+  }
+`
 export default {
     data(){
         return{
             content:null,
             next:null,
-            prev:null
+            prev:null,
+            id:null
         }
+    },
+    async mounted(){
+        const {data} = await getGraphqlClient().rawRequest(updateListHits,{
+            id:this.id,
+            projectIdentifier:"news",
+        })
+
     },
     async asyncData({
 			app,
 			params,
 		}) {
-     
-    
+      console.log(app,params)
         const {data,status} = await getGraphqlClient(app.context).rawRequest(query,{
             id:parseInt(params.id),
             projectIdentifier:"news",
@@ -119,20 +132,36 @@ export default {
             return {
                 content:data.list.content,
                 next:data.list.next,
-                prev:data.list.prev
+                prev:data.list.prev,
+                id:parseInt(params.id),
+                seo:data.list.seo
             }
         }
     },
 
   head () {
+    if(this.seo){
+      const {title,keywords,description} = this.seo
+      return{
+        title:title,
+        meta:[
+          {hid: 'description',
+            name: 'description',
+            content: description},
+            {hid: 'keywords',
+            name: 'keywords',
+            content: keywords},
+        ]
+      }
+    }else
      return {
-        title: (this.content ? `${this.content.title}` : 'Loading')
+        title: this.content ? `${this.content.title}` : 'Loading',
      }
   },
 
   methods: {
     formateDay(day){
-      return  this.$dayjs(day).format('YYYY/MM/DD');
+      return  this.$dayjs(day).format('YYYY / MM / DD');
     },  
   }
 }

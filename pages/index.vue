@@ -153,17 +153,17 @@
         <div class="pic">
           <img src="/images/index/mediademo.png" alt="" />
         </div>
-        <template v-if="posts && posts.posts">
+        <template v-if="list">
           <client-only>
-          <div v-if="posts.posts.length > 0" class="section-news-first">
+          <div v-if="list.length > 0" class="section-news-first">
             
-              <h4><NuxtLink :to="`news/${posts.posts[0].id}`">{{ posts.posts[0].title }}</NuxtLink></h4>
+              <h4><NuxtLink :to="`news/${list[0].id}`">{{ list[0].title }}</NuxtLink></h4>
             
-            <NuxtLink :to="`news/${posts.posts[0].id}`">
-              <div v-html="posts.posts[0].textSnippet"></div>
+            <NuxtLink :to="`news/${list[0].id}`">
+              <div v-html="list[0].textSnippet"></div>
             </NuxtLink>
             <NuxtLink
-              :to="`news/${posts.posts[0].id}`"
+              :to="`news/${list[0].id}`"
               class="button radius mid"
             >
               了解更多
@@ -171,10 +171,10 @@
           </div>
           </client-only>
           <ul class="section-news-list">
-            <template v-for="(post, index) in posts.posts">
+            <template v-for="(post, index) in list">
               <li v-if="index != 0" :key="post.id">
                 <NuxtLink :to="`news/${post.id}`">
-                  {{ formateDay(post.createdAt) }}
+                  {{ formateDay(post.publishTime) }}
                   <span class="blue">&nbsp;|&nbsp;</span>
                   {{ post.title }}
                 </NuxtLink>
@@ -192,21 +192,34 @@
 
 <script>
 import "assets/css/index.css";
-import { request, gql, GraphQLClient, rawRequest } from "graphql-request";
-
+import {gql} from "graphql-request";
+import getGraphqlClient from "~/utils/getGraphqlClient.js";
 const query = gql`
-  query Posts($limit: Int!) {
-    posts(limit: $limit) {
-      posts {
+  query Lists( $categoryId: Int, $identifier: String!,$limit:Int,$page:Int) {
+    lists(
+        categoryId: $categoryId
+        identifier: $identifier,
+        limit:$limit,
+        page: $page
+    ) {
+        lists {
         id
-        text
-        textSnippet
         title
+        projectId
+        categoryId
         createdAt
-      }
-      hasMore
+        other
+        __typename
+        }
+        total
+        limit
+        page
+     
+        totalPage
+        hasMore
+        __typename
     }
-  }
+    }
 `;
 
 // import posts from '~/apollo/queries/posts'
@@ -217,10 +230,7 @@ export default {
     return {
       timer: null,
       show: true,
-      posts: {
-        posts: [],
-        hasMore: false,
-      },
+      list:[]
     };
   },
   mounted: function () {
@@ -238,42 +248,27 @@ export default {
     console.log("destroy");
   },
   async asyncData({ app, params, context }) {
-    // console.log(process.env.GRAPHQL_URL)
-    console.log(app.context.req);
-    let headers = {};
-    if (app.context.req) {
-      //typeof window === "undefined"
-      headers = {
-        cookie: app.context.req ? app.context.req.headers.cookie : undefined,
-      };
-    }
-    console.log("process", process.env.GRAPHQL_URL);
-    const graphQLClient = new GraphQLClient(
-      process.env.GRAPHQL_URL || "/graphql",
-      // "http://192.168.56.1:4000/graphql",
+    const { data, status } = await getGraphqlClient(app.context).rawRequest(
+      query,
       {
-        credentials: "include",
-        mode: "cors",
-        headers,
-        // (typeof window === "undefined"
-        //     ? ctx?.req?.headers.cookie
-        //     : undefined) || "",
+        // categoryId: 56,
+        categoryId: 0,
+        identifier: "news",
+        page: 1,
+        limit:3
       }
     );
-    const { data, status } = await graphQLClient.rawRequest(query, {
-      limit: 4,
-    });
-
-    if (status === 200) {
+   
+    if (status === 200&&data?.lists) {
+      const {lists} = data.lists
       return {
-        posts: data.posts,
-        hasMore: data.hasMore,
+          list:lists,
       };
     }
   },
   methods: {
     formateDay(day) {
-      return this.$dayjs(Number(day)).format("MM/DD");
+      return this.$dayjs(day).format("MM/DD");
     },
   },
 };
