@@ -6,16 +6,35 @@
       </div>
     </div>
     <div class="news-detail-content">
-  <div v-if="post" class="container">
-    <h3>{{ post.title }}</h3>
-    <h4>{{formateDay(post.createdAt)}}</h4>
-    <div v-html="post.text"></div>
-    
+  <div v-if="content" class="container">
+    <h3>{{ content.title }}</h3>
+    <h4>{{formateDay(content.publishTime)}}</h4>
+    <div class="editor" v-html="content.content"></div>
+    <div>
+        <ul class="prev-next">
+          <li v-if="prev"><nuxt-link :to="`${prev.id}`">上一篇：{{prev.title}}</nuxt-link></li>
+          <li v-if="next"><nuxt-link :to="`${next.id}`">下一篇：{{next.title}}</nuxt-link></li>
+        </ul>
+    </div>
   </div>
   </div>
 </div>
 </template>
 <style scoped>
+.prev-next{
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  
+}
+.prev-next li{
+  padding: 15px;
+  border:1px solid transparent
+}
+.prev-next li:hover {
+  border: 1px solid #f3cd1d;
+}
   .news-detail-content{
     padding: 1rem 20px;
     min-height: 50vh;
@@ -50,62 +69,64 @@
 }
 </style>
 <script>
-// import post from '~/apollo/queries/post'
-import { request, gql,GraphQLClient,rawRequest } from 'graphql-request'
+import {gql} from "graphql-request";
+import getGraphqlClient from "~/utils/getGraphqlClient.js";
 
 const query = gql`
-  query Post($id: Int!) {
-    post(id: $id) {
-        id
-        text
-        title
-        creator{
-        username
-        }
+  query List($id: Int!, $projectIdentifier: String!,$isPrevNext:Boolean) {
+    list(id: $id, projectIdentifier: $projectIdentifier,isPrevNext:$isPrevNext) {
+    content
+    seo {
+      title
+      keywords
+      description
+      __typename
     }
+    prev{
+      id
+      title
     }
+    next{
+      id
+      title
+    }
+    __typename
+  }
+  }
 `
 
 export default {
     data(){
         return{
-            post:null
+            content:null,
+            next:null,
+            prev:null
         }
     },
     async asyncData({
 			app,
 			params,
 		}) {
-      let headers = {};
-    if (app.context.req) {
-      headers = {
-        cookie: app.context.req ? app.context.req.headers.cookie : undefined,
-      };
-    }
+     
     
-
-    const graphQLClient = new GraphQLClient(
-      process.env.GRAPHQL_URL || '/graphql',
-      {
-        credentials: "include",
-        mode: "cors",
-        headers,
-      }
-    );
-        const {data,status} = await graphQLClient.rawRequest(query,{
-            id:parseInt(params.id)
+        const {data,status} = await getGraphqlClient(app.context).rawRequest(query,{
+            id:parseInt(params.id),
+            projectIdentifier:"news",
+            isPrevNext:true
         })
 
         if (status === 200) {
             return {
-                post:data.post
+                content:data.list.content,
+                next:data.list.next,
+                prev:data.list.prev
             }
         }
     },
 
   head () {
      return {
-      title: (this.post ? `${this.post.title}` : 'Loading')
+        title: (this.content ? `${this.content.title}` : 'Loading')
      }
   },
 

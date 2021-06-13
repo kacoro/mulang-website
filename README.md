@@ -35,5 +35,5 @@ graphql不支持写相对地址，如何实现代理呢？new GraphQLClient('htt
 
 #pm2
 ```
-pm2 start npm --name mydemo -- run star
+pm2 start npm --name cst-website -- run star
 ```

@@ -4,6 +4,29 @@
         padding-top:  101px;
         min-height: 100vh;
     }
+    table{
+        border-collapse: collapse;
+        border: none;
+
+    }
+    tr{
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+    }
+    td{
+        padding: 15px;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+       
+    }
+    .editor {
+        img{max-width: 100%;}
+        p{
+            margin-block-start: .8em;
+            margin-block-end: .8em;
+            line-height: 1.5;
+        }
+    }
 body{
     padding: 0;
     margin:0;
@@ -16,7 +39,15 @@ body{
 ul{
     list-style: none;
 }
-
+.border-title {
+    border-left: 10px solid #f3cd1d;
+    padding-left: 20px;
+    color: #184290;
+    text-align: left;
+  }
+  .border-title2 h2 {
+    color: #fff;
+  }
 h1,h2,h3,h4{
     font-weight: bold;line-height: 1.2;
   }
@@ -84,6 +115,7 @@ h1,h2,h3,h4{
 
 .container {
     max-width: 1280px;
+    padding: 15px;
     margin: 0 auto;
   }
 .page-footer{

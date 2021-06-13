@@ -74,7 +74,7 @@
         <div class="item">
           <img class="pic" src="/images/index/3.jpg" />
           <h2>索特轻量云</h2>
-          <p>致力于为中小企业客户<br>提供一站式轻应用云接入方案</p>
+          <p>致力于为中小企业客户<br />提供一站式轻应用云接入方案</p>
           <NuxtLink :to="`yunfan`" class="button radius"> 了解更多 </NuxtLink>
         </div>
       </div>
@@ -151,31 +151,37 @@
       <h1 class="blue">新闻中心</h1>
       <div class="section-news-content">
         <div class="pic">
-          <img src="/images/index/mediademo.png"  alt="" />
+          <img src="/images/index/mediademo.png" alt="" />
         </div>
-      <template v-if="posts && posts.posts">
-        <div v-if="posts.posts.length > 0" class="section-news-first">
-          <NuxtLink :to="`news/${posts.posts[0].id}`">
-            <h4>{{ posts.posts[0].title }}</h4>
-          </NuxtLink>
-          <NuxtLink :to="`news/${posts.posts[0].id}`">
-            <div v-html="posts.posts[0].textSnippet"></div>
-          </NuxtLink>
-          <NuxtLink :to="`news/${posts.posts[0].id}`" class="button radius mid">
-                了解更多
-              </NuxtLink>
-        </div>
-        <ul class="section-news-list">
-          <template v-for="(post, index) in posts.posts">
-            <li v-if="index != 0" :key="post.id">
-              <NuxtLink :to="`news/${post.id}`">
-               {{formateDay(post.createdAt)}} <span class="blue">&nbsp;|&nbsp;</span>
-                {{ post.title }}
-              </NuxtLink>
-            </li>
-          </template>
-        </ul>
-      </template>
+        <template v-if="posts && posts.posts">
+          <client-only>
+          <div v-if="posts.posts.length > 0" class="section-news-first">
+            
+              <h4><NuxtLink :to="`news/${posts.posts[0].id}`">{{ posts.posts[0].title }}</NuxtLink></h4>
+            
+            <NuxtLink :to="`news/${posts.posts[0].id}`">
+              <div v-html="posts.posts[0].textSnippet"></div>
+            </NuxtLink>
+            <NuxtLink
+              :to="`news/${posts.posts[0].id}`"
+              class="button radius mid"
+            >
+              了解更多
+            </NuxtLink>
+          </div>
+          </client-only>
+          <ul class="section-news-list">
+            <template v-for="(post, index) in posts.posts">
+              <li v-if="index != 0" :key="post.id">
+                <NuxtLink :to="`news/${post.id}`">
+                  {{ formateDay(post.createdAt) }}
+                  <span class="blue">&nbsp;|&nbsp;</span>
+                  {{ post.title }}
+                </NuxtLink>
+              </li>
+            </template>
+          </ul>
+        </template>
       </div>
     </div>
     <div class="container">
@@ -215,7 +221,6 @@ export default {
         posts: [],
         hasMore: false,
       },
-     
     };
   },
   mounted: function () {
@@ -242,9 +247,9 @@ export default {
         cookie: app.context.req ? app.context.req.headers.cookie : undefined,
       };
     }
-    console.log("process",process.env.GRAPHQL_URL)
+    console.log("process", process.env.GRAPHQL_URL);
     const graphQLClient = new GraphQLClient(
-      process.env.GRAPHQL_URL || '/graphql',
+      process.env.GRAPHQL_URL || "/graphql",
       // "http://192.168.56.1:4000/graphql",
       {
         credentials: "include",
@@ -258,22 +263,18 @@ export default {
     const { data, status } = await graphQLClient.rawRequest(query, {
       limit: 4,
     });
-  
-  
+
     if (status === 200) {
       return {
         posts: data.posts,
         hasMore: data.hasMore,
-      
       };
     }
   },
   methods: {
-    formateDay(day){
-      return  this.$dayjs(Number(day)).format('MM/DD');
-    },  
-   
+    formateDay(day) {
+      return this.$dayjs(Number(day)).format("MM/DD");
+    },
   },
 };
-
 </script>

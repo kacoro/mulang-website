@@ -295,15 +295,7 @@
   justify-content: center;
 }
 
-.border-title {
-  border-left: 10px solid #f3cd1d;
-  padding-left: 20px;
-  color: #184290;
-  text-align: left;
-}
-.border-title2 h2 {
-  color: #fff;
-}
+
 .border-title h2 {
 }
 

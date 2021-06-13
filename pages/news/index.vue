@@ -7,21 +7,21 @@
     </div>
     <div class="container">
       <ul class="news-list">
-        <template v-for="(post, index) in posts.posts">
-          <li v-if="index != 0" :key="post.id">
-            <NuxtLink :to="`news/${post.id}`">
-              {{ formateDay(post.createdAt) }}
+        <template v-for="(item) in list">
+          <li :key="item.id">
+            <NuxtLink :to="`news/${item.id}`">
+              {{ formateDay(item.other.publishTime) }}
               <span class="blue">&nbsp;|&nbsp;</span>
-              {{ post.title }}
+              {{ item.title }}
             </NuxtLink>
           </li>
         </template>
       </ul>
       <div class="my-pagination">
         <el-pagination
-        :total="1000"
-        pager-count="5"
-        :page-size="10"
+        :total="total"
+        :ager-count="5"
+        :page-size="limit"
         :current-page="page"
         layout="prev, pager, next"
         @current-change="change"
@@ -79,21 +79,34 @@
 </style>
 
 <script>
-import {  gql,  rawRequest } from "graphql-request";
+import {gql} from "graphql-request";
 import getGraphqlClient from "~/utils/getGraphqlClient.js";
 const query = gql`
-  query Posts($limit: Int!) {
-    posts(limit: $limit) {
-      posts {
+  query Lists( $categoryId: Int, $identifier: String!,$limit:Int,$page:Int) {
+    lists(
+        categoryId: $categoryId
+        identifier: $identifier,
+        limit:$limit,
+        page: $page
+    ) {
+        lists {
         id
-        text
-        textSnippet
         title
+        projectId
+        categoryId
         createdAt
-      }
-      hasMore
+        other
+        __typename
+        }
+        total
+        limit
+        page
+     
+        totalPage
+        hasMore
+        __typename
     }
-  }
+    }
 `;
 
 // import posts from '~/apollo/queries/posts'
@@ -102,7 +115,13 @@ export default {
   name: "Search",
   data() {
     return {
+      identifier:"news",
       page:1,
+      list:[],
+      limit:10,
+      categoryId:0,
+      totalPage:1,
+      total:1,
       posts: {
         posts: [],
         hasMore: false,
@@ -111,27 +130,45 @@ export default {
   },
 
   async asyncData({ app, params }) {
-    // console.log(process.env.GRAPHQL_URL)
-
-    const { data, status } = await getGraphqlClient(app.context).rawRequest(
+   
+   const { data, status } = await getGraphqlClient(app.context).rawRequest(
       query,
       {
-        limit: 4,
+        // categoryId: 56,
+        categoryId: 0,
+        identifier: "news",
+        page: 1,
+        limit:10
       }
     );
-    if (status === 200) {
+   
+    if (status === 200&&data?.lists) {
+      const {totalPage,total,lists} = data.lists
       return {
-        posts: data.posts,
-        hasMore: data.hasMore,
+          list:lists,
+          totalPage,total
       };
     }
   },
   methods: {
-    change(){
-
+     async change(page){
+        this.page = page
+        const { data } = await getGraphqlClient().rawRequest(
+        query,
+        {
+            categoryId: 0,
+            identifier: "news",
+            page: page,
+            limit:this.limit
+        }
+        );
+        if (data.lists) {
+            this.list=data.lists.lists
+       
+        }
     },
     formateDay(day) {
-      return this.$dayjs(day).format("MM/DD");
+      return this.$dayjs(day).format("YYYY/MM/DD");
     },
   },
 };

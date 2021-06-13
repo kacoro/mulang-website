@@ -17,7 +17,7 @@ export default {
     host: '0.0.0.0' // default: localhost 0.0.0.0
   },
   css:[
-    '~/assets/css/main.css',
+    '~/assets/css/main.scss',
   ],
   // Global CSS (https://go.nuxtjs.dev/config-css)
   // css: ['element-ui/lib/theme-chalk/index.css'],
