@@ -5,10 +5,7 @@
 
 import Vue from 'vue'
 import { Icon,Drawer,Pagination ,Message} from 'element-ui'
-import { Menu,
-    Submenu,
-    MenuItem,
-    MenuItemGroup,Col} from 'element-ui'
+import { Menu,Submenu,MenuItem,MenuItemGroup,Col,Breadcrumb,BreadcrumbItem} from 'element-ui'
 import '../assets/css/element-variables.scss'
 import 'element-ui/lib/theme-chalk/display.css';
 Vue.prototype.$message = Message
@@ -19,6 +16,8 @@ Vue.use(Col);
 Vue.use(Submenu);
 Vue.use(MenuItem);
 Vue.use(MenuItemGroup);
+Vue.use(Breadcrumb);
+Vue.use(BreadcrumbItem);
 Vue.use(Drawer)
 Vue.use(Icon)
 

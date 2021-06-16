@@ -1,57 +1,94 @@
 <template>
-    <div class="solution-wrap">
-        <div class="banner">
+    <div class="solution-content-wrap ">
+        <div class="banner header">
         <div class="banner-bg" >
-             <h1>通用园区</h1>
-             <p>康索特善用技术，从AIoT基建到智能化应用，覆盖校园、园区、小区、楼宇等社会微单元场景，提供包括人车通行、能源管理、支付服务等解决方案，全方位、全天候保障客户生产和运营活动，为人们次提供学习、工作和生活场景的极致体验</p>
+             <h1>{{content.title}}</h1>
+             <p>{{content.note}}</p>
         </div>
     </div>
-    <div class="solution-tabs">
+    <div class="auto_fixed solution-tabs" :class="auto_fixed">
          <ul>
-             <li :class="{active:active==56}" @click="change(56)">
-                 <img src="/images/solution/yuanqu.png" alt="">
-                 <h3>通用园区</h3>
+             <li v-scroll-to="{el: '#summary',offset: -100}"  :class="{active:active==0}" @click="change(0)">
+                 方案概述
              </li>
-             <li  :class="{active:active==57}" @click="change(57)">
-                 <img src="/images/solution/chengshi.png" alt="">
-                 <h3>城市治理</h3>
+             <li  v-scroll-to="{el: '#ability',offset: -170}" :class="{active:active==1}" @click="change(1)">
+                 落地能力
              </li>
-             <li  :class="{active:active==58}" @click="change(58)">
-                 <img src="/images/solution/chuangxin.png" alt="">
-                 <h3>创新业务</h3>
+            
+             <li  v-scroll-to="{el: '#highlights',offset: -170}" :class="{active:active==2}" @click="change(2)">
+                 方案亮点
+             </li>
+             <li  v-scroll-to="{el: '#classicCase',offset: -170}"  :class="{active:active==3}" @click="change(3)">
+                 经典案例
              </li>
          </ul>
     </div>
-     <div class="container">
-          <div class="solution-text" v-show="active==56">
-              <h1 class="blue">广泛赋能</h1>
-                 <p>提供从AIoT基建到智能化应用整体解决方案轻量云部署，灵活高效的组件式软硬件产品和解决方案交付能力支持特殊场景、小众需求产品和解决方案定制开发构建全方位、全天候、全流程智能化服务提升客户生产和运营效率，节约30%管理成本</p>
+     <div >
+        
+         <div  id="summary" class="solution-text">
+           <h1>方案概述</h1>
+           <div v-html="content.summary" class="solution-content"></div>
          </div>
-         <div class="solution-text"  v-show="active==57">
-              <div><h1 class="yellow"  style="display:inline-block">10000+&nbsp;</h1><h5 style="display:inline-block">路IoT数据接入</h5></div>
-              <div><h1 class="yellow"  style="display:inline-block">30+&nbsp;</h1><h5 style="display:inline-block">类AI算法调用端云协同</h5></div>
-                 <p>提供从AIoT基建、数据服务到智能化应用整体解决方案，构建风险预警、决策响应、协同执法、事件闭环的智能服务体系提升城市治理水平和市民居住体验%管理成本</p>
+         <div class="solution-text-2">
+         <div  id="ability" class="solution-text ">
+           <h1>落地能力</h1>
+           <div v-html="content.ability" class="solution-content"></div>
          </div>
-         <div class="solution-list">
-              <h1 class="blue" v-show="active==56||active==57">应用场景</h1>
+         </div>
+         <div  id="highlights" class="solution-text">
+           <h1>方案亮点</h1>
+           <div v-html="content.highlights" class="solution-content"></div>
+         </div>
+         <div id="classicCase" class="solution-text">
+           <h1>经典案例</h1>
+            <div class="solution-list" v-if="list.length>0">
+           <div class="img">
+              <img :src="list[0].other.thumb" v-if="list[0].other.thumb" />
+            <img v-else src="/images/solution/TnB6b0a0Gc1p.png"/>
+           </div>
+          
             <ul>
-                <li :key="item.id" v-for="item in list">
-                    <img :src="item.other.thumb" />
+                <li :key="item.id" v-for="item,index in list" :class="{active:caseActive==index}" @click="changeCase(index)">
                     <div>
-                        <h1>{{item.title}}</h1>
-                        <p>{{item.other.note}}</p>
+                        <div class="list-head">
+                          <span class="title" >{{item.title}}</span>
+                          <span class="subTitle" >{{item.other.subTitle}}</span>
+                        </div>
                        
-                        <nuxt-link :to="`/solution/content/${item.id}`" class="button radius">了解更多</nuxt-link>
+                        <p>{{item.other.note}}</p>
                     </div>
                 </li>
             </ul>
          </div>
-         
+         </div>
      </div>
     </div>
 </template>
 
-<style scoped>
+<style lang="scss">
+.solution-content-wrap{
+  .solution-content{
+  font-size: 14px;
+  padding: 38px 20px;
+  line-height: 24px;
+}
+.solution-text-2{
+  background: #f2f2f2;
+}
+.solution-content ul{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.solution-content ul li{
+  
+  text-align: center;
+}
+.fixed{
+    position: fixed;
+    top: 100px;
+    width: 100%;
+  }
 .banner{
     min-height: 240px;
     background: url('/images/solution/banner.jpg') no-repeat;
@@ -89,84 +126,126 @@
     }
 }
 .solution-tabs{
-    max-width: 1458px;
-    margin: 0 auto;
-    padding-top: 52px;
-    padding-bottom: 30px;
+    background: #19459a;
 }
 .solution-tabs ul{
+  max-width: 1458px;
+  margin: 0 auto;
+
     display: flex;
+
 }
 .solution-tabs ul li{
-    background: #e8ecf5;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    opacity: .5;
-    padding-bottom: 30px;
-    cursor: pointer;
-    transition:all .5s ease;
+   color:#fff;
+   font-weight: bold;
+   height: 70px;
+   line-height: 70px;
+   margin:0 .6rem;
+   position: relative;
+   cursor: pointer;
+   &:after{
+      display: none;
+      width: 100%;
+      content: "";
+      height: 3px;
+      background: #e9c62c;
+      position: absolute;
+      bottom: 0px;
+    }
 }
-.solution-tabs ul li img{
-    margin-top: -17%;
-    max-width: 100%;
-}
-.solution-tabs ul li h2{
-    
-}
+
+
 .solution-tabs ul li.active,.solution-tabs ul li:hover{
-    background: #e9c62c;
-    color: #19459a;
-    opacity:1
+   
+    &:after{
+      display: block;
+    }
 }
-.solution-tabs ul li.active img{
-    
-}
+
 .solution-text{
-    max-width: 900px;
+    max-width: 1280px;
     box-sizing: border-box;
     text-align: center;
     margin: 0 auto;
-    padding: 30px;
-    padding-bottom: .8rem;
+    padding:80px 30px;
 }
-.solution-text p{
-    padding-top: 20px;
-    font-size: 18px;
-}
-.solution-list{
 
+.solution-list{
+  max-width: 991px;
+  margin: 38px auto;
+  display: flex;
+  text-align: left;
 }
-.solution-list h1{
-    text-align: center;
-    padding-bottom: 46px;
+.solution-list .img{
+  box-sizing: border-box;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  width: 100%;
+  img{
+    height: 100%;
+  }
+}
+.solution-list ul {
+    flex: 1;
+    min-width: 50%;
+}
+@media screen and (max-width :768px) {
+  .solution-tabs ul li{
+    font-size: 13px;
+  }
+  .solution-list {
+    flex-wrap: wrap;
+  }
+  .solution-list .img{margin-right: 0;height: 220px; width: 100%;
+  img{
+    width: 100%;
+  }}
+  .subTitle{
+      margin-top: 15px;
+    }
+   
 }
 .solution-list ul li{
-    padding:40px;
-    background: #19459a;
-    margin-bottom: .8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
+    height: 62px;
+    overflow: hidden;
+    background: #e9c62c;
+    padding:0 .48rem;
+    color: #19459a;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all .3s linear;
+    .list-head{
+      margin-top: 15px;
+    }
+    .title{
+      height: 32px;
+      line-height: 32px;
+      display: inline-block;
+      font-size: 24px;
+    }
+    .subTitle{
+      margin-top: 7px;
+      display: inline-block;
+    }
+    &.active{
+      color: #e9c62c;
+        background: #19459a;
+        height:185px ;
+    }
 }
-.solution-list ul li h1{
-    text-align: left;
-}
-.solution-list ul li div{
-    width: 50%;
-}
+
+
 .solution-list ul li p{
-    
+  margin-top: 24px;
+  color: #fff;
     margin-bottom: 50px;
+    font-size: 14px;
     overflow: hidden;text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;
 }
-.solution-list ul li img{
-    width: 50%;
-    padding-right:.4rem
 }
+
+
 </style>
 
 
@@ -174,76 +253,109 @@
 import {  gql   } from "graphql-request";
 import getGraphqlClient from "~/utils/getGraphqlClient.js";
 const query = gql`
-  query Lists( $categoryId: Int, $identifier: String!) {
-    lists(
-       
-        categoryId: $categoryId
-        identifier: $identifier
-    ) {
-        lists {
-        id
-        title
-        projectId
-        categoryId
-        createdAt
-        other
-        __typename
-        }
-        total
-        limit
-        page
-        totalPage
-        hasMore
-        __typename
+  query ListEditPrevInfo($id: Int!, $projectIdentifier: String!) {
+  list(id: $id, projectIdentifier: $projectIdentifier) {
+    content
+    seo {
+      title
+      keywords
+      description
     }
-    }
+  }
+}
+
 `;
+
+const listsByIds = gql`
+query ListsByIds($ids: String!, $projectIdentifier: String!) {
+  listsByIds(ids: $ids, projectIdentifier: $projectIdentifier) {
+    id
+    title
+    projectId
+    categoryId
+    createdAt
+    other
+    __typename
+  }
+}
+
+`
 
 export default {
   name: "solution",
   
   data() {
     return {
-      active:56,
+      active:0,
+      caseActive:0,
+      content:null,
       list:[],
-      
+      auto_fixed: {
+        fixed: false
+      },
+      offset:-170
     };
   },
 
   async asyncData({ app, params }) {
-    // console.log(process.env.GRAPHQL_URL)
-    
+    let content = null
+    let list = []
     const { data, status } = await getGraphqlClient(app.context).rawRequest(
       query,
       {
-        categoryId: parseInt(params.id) || 56,
-        identifier: "solution",
-        page: 1
+        id: parseInt(params.id),
+        projectIdentifier: "solution",
       }
     );
     if (status === 200) {
-      return {
-          list:data.lists.lists,
-          active: parseInt(params.id) || 56
-      };
+      content = data.list.content
+      
     }
+    if(content.classicCase){
+      const {data:data2,status:status2} = await getGraphqlClient(app.context).rawRequest(
+        listsByIds,{
+          ids:content.classicCase,
+          projectIdentifier: "classicCase",
+        }
+      )
+      console.log(data2)
+      if(status2 ==200&&data2.listsByIds){
+        list = data2.listsByIds
+      }
+    }
+    console.log(content,list)
+      return {
+          content,
+          list
+      };
+  },
+   mounted(){
+    this.$nextTick(function () {
+      window.addEventListener('scroll', this.onScroll)
+    })
+  },
+  destroyed(){
+    window.removeEventListener('scroll', this.onScroll)
   },
   methods: {
+    onScroll(){
+      let scrolled = document.documentElement.scrollTop || document.body.scrollTop
+      let header_height = null
+      if(document.getElementsByClassName('header')[0]){
+        header_height = document.getElementsByClassName('header')[0].offsetHeight
+      }
+      // console.log('滚动的距离:'+scrolled,'头部的高度:'+ header_height)
+      this.auto_fixed = {
+        auto_fixed: true,
+        fixed: scrolled >= header_height
+      }
+    },
     async change(active){
         this.active = active
-        const { data } = await getGraphqlClient().rawRequest(
-        query,
-        {
-            categoryId: active,
-            identifier: "solution",
-            page: 1
-        }
-        );
-        if (data.lists) {
-            this.list=data.lists.lists
-       
-        }
     },
+    changeCase(caseActive){
+      this.caseActive = caseActive
+    }
     
   },
 };

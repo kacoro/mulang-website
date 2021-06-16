@@ -2,7 +2,6 @@
   <div class="left-part">
     <div class="menu hidden-sm-and-down">
       <div class="menu-item menu-item-core" v-for="menu,index in menus" :key="index">
-        <!-- 关于我们特殊处理 -->
         <nuxt-link :to="menu.link" class="menu-name">{{menu.title}}</nuxt-link>
         <span class="nav-line"></span>
         <div class="menu-popover" v-if="menu.children">
@@ -11,7 +10,7 @@
                <ul v-for="child,j in menu.children" :key="j">
                   <h6><nuxt-link exact :to="child.link" class="menu-name">{{child.title}}</nuxt-link></h6>
                   <li v-for="item,k in child.children" :key="k">
-                    <nuxt-link exact :to="item.link" class="menu-name"
+                    <nuxt-link :to="item.link" class="menu-name"
                       >{{item.title}}</nuxt-link
                     >
                     <span class="nav-line"></span>
@@ -22,7 +21,7 @@
             <template v-else>
                <ul >
                   <li v-for="child,j in menu.children" :key="j">
-                    <nuxt-link exact :to="child.link" class="menu-name"
+                    <nuxt-link :to="child.link" class="menu-name"
                       >{{child.title}}</nuxt-link
                     >
                    
@@ -69,19 +68,14 @@
                    <template v-for="child,j in menu.children"  >
                       <template v-if="child.children&&child.children.length>0">
                         <el-submenu :index="child.link" :key="j">
-                          <template slot="title">{{child.title}}</template>
-                          <template v-for="item,k in child.children"  >
+                          <template slot="title">{{menu.title}}</template>
+                          <template v-for="item,k in menu.children"  >
                                <el-menu-item :index="item.link"  :key="k">
                                 <template slot="title">
                                   <span>{{item.title}}</span>
                                 </template>
                                  </el-menu-item>
                           </template>
-                          <el-menu-item :index="child.link"  >
-                                <template slot="title">
-                                  <span>前往{{child.title}} <i class="el-icon-right"></i></span>
-                                </template>
-                                 </el-menu-item>
                         </el-submenu>
                     </template>
                     <el-menu-item :index="child.link" v-else  :key="j">

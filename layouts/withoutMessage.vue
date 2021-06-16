@@ -11,7 +11,7 @@
     </div>
     
     <Nuxt />
-    <message />
+  
     <div class="page-footer">
       <div>
         <img src="/images/logo-footer.png" class="footer-logo" />

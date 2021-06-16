@@ -215,6 +215,19 @@ h1,h2,h3,h4{
         border-radius: 5px; 
     }
 }
+@media screen and (max-width: 768px){
+    .button,.button.mid{
+        width: auto!important;
+        word-break: keep-all;
+        height: auto!important;
+        font-size: 14px;
+        line-height: 1!important;
+        padding: 5px 10px;
+    } 
+    .button.radius{
+        border-radius: 3px; 
+    }
+}
 .el-drawer.drwaer-menu{background-color: #19459a; color: #fff;}
 .el-drawer.drwaer-menu .el-drawer__header{color: #fff;}
 .el-drawer.drwaer-menu  .el-submenu__icon-arrow{color: #fff;}
@@ -399,5 +412,10 @@ h1,h2,h3,h4{
     }
 }
 
+
+.my-pagination {
+    text-align: center;
+    margin: 1rem 0;
+  }
 
 
