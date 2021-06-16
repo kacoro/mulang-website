@@ -40,7 +40,7 @@
         <el-pagination
           background
           :total="total"
-          :pager-count="4"
+          :page-count="4"
           :page-size="limit"
           :current-page="page"
           layout="prev, pager, next"
