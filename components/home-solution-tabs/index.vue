@@ -21,7 +21,7 @@
             <div class="bg " :style="{backgroundImage: `url(${item.other.thumb})`}"></div>
             <div class="solution-right-content">
               <h1>0{{index+1}}</h1>
-              <dl><span @click="goto(`solution?categoryId=${item.categoryId}`) ">通用园区</span> </dl>
+              <dl><span @click="goto(`solution?categoryId=${item.categoryId}`) ">{{item.categoryId==56?`通用园区`:`智慧城市`}}</span> </dl>
               <h3 @click="goto(`solution/${item.id}`) ">{{item.title}}</h3>
               <p>
                 {{item.textSnippet}}...
@@ -44,6 +44,7 @@ import { gql } from "graphql-request";
 import getGraphqlClient from "~/utils/getGraphqlClient.js";
 const query = gql`
   query Lists($categoryId: Int, $identifier: String!,$limit:Int) {
+    
     lists(categoryId: $categoryId, identifier: $identifier,limit:$limit) {
       lists {
         id
@@ -70,8 +71,9 @@ export default {
 
   data() {
     return {
-      active: 56,
+      active: false,
       list: [],
+      
     };
   },
   mounted(){
@@ -83,13 +85,14 @@ export default {
 
   methods: {
     async change(active) {
-      this.active = active;
+      if(active==this.active) return false
       const { data } = await getGraphqlClient().rawRequest(query, {
         categoryId: active,
         identifier: "solution",
         page: 1,
         limit:3
       });
+      this.active = active;
       if (data.lists) {
         this.list = data.lists.lists;
       }
