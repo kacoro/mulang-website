@@ -37,9 +37,9 @@
                 :placeholder="rules.email[0].message"
               ></el-input>
             </el-form-item>
-            <el-form-item label="联系问题" prop="note">
+            <el-form-item label="联系问题" prop="note" >
               <el-input
-                type="textarea"
+                type="textarea" :autosize="{minRows:4,maxRow:6}"
                 v-model="ruleForm.note"
                 :placeholder="rules.note[0].message"
               ></el-input>
@@ -130,7 +130,25 @@ export default {
   computed: {
     contact() {
       return this.$store.state.contact;
+    },site() {
+      return this.$store.state.site;
     },
+  },
+ 
+    head() {
+    if (this.site?.seo) {
+      const { title, keywords, description } = this.site.seo;
+      return {
+        title: title+"|商务合作",
+        meta: [
+          { hid: "description", name: "description", content: "业务合作类，如业务需求、落地场景、所需产品功能等描述" },
+          { hid: "keywords", name: "keywords", content: keywords },
+        ],
+      };
+    } else
+      return {
+        title: "康索特官网|商务合作",
+      };
   },
   data() {
     var validatePass = (rule, value, callback) => {

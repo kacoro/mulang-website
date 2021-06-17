@@ -2,7 +2,8 @@
 
   export const state = () => ({
     contact: {},
-    menus:[]
+    menus:[],
+    site:{}
   })
 
   export const mutations = {
@@ -11,6 +12,9 @@
     },
     setMenu (state,data) {
       state.menus = data
+    },
+    setSite (state,data) {
+      state.site = data
     }
   }
   

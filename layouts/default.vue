@@ -5,31 +5,30 @@
         <nuxt-link to="/">
           <img src="/images/logo.png" class="logo" />
         </nuxt-link>
-        <Menu  />
-        
+        <Menu />
       </div>
     </div>
-    
+
     <Nuxt />
     <message />
     <div class="page-footer">
       <div>
         <img src="/images/logo-footer.png" class="footer-logo" />
         <p>
-          公司地址：{{contact.address}}<br /><span
+          公司地址：{{ contact.address }}<br /><span
             style="padding-left: 5.5em"
-            >{{contact.adress2}}</span
+            >{{ contact.adress2 }}</span
           >
         </p>
-        <p>官方热线：{{contact.tel}}</p>
-        <p>官方邮箱：{{contact.email}}</p>
+        <p>官方热线：{{ contact.tel }}</p>
+        <p>官方邮箱：{{ contact.email }}</p>
       </div>
       <div>
         <h4>商务合作</h4>
-        <p>售前咨询： {{contact.saletel}}</p>
-        <p>商务合作： {{contact.business}}</p>
-        <p>媒体合作： {{contact.media}}</p>
-        <p>供应商合作： {{contact.supplier}}</p>
+        <p>售前咨询： {{ contact.saletel }}</p>
+        <p>商务合作： {{ contact.business }}</p>
+        <p>媒体合作： {{ contact.media }}</p>
+        <p>供应商合作： {{ contact.supplier }}</p>
       </div>
       <div class="links">
         <h4>相关链接</h4>
@@ -47,58 +46,73 @@
   </div>
 </template>
 <style scoped>
-
 </style>
 <script>
-
-
-import Message from '~/components/Message.vue';
-import {  gql } from "graphql-request";
+import Message from "~/components/Message.vue";
+import { gql } from "graphql-request";
 import getGraphqlClient from "~/utils/getGraphqlClient.js";
 const query = gql`
- query list($id: Int!, $projectIdentifier: String!) {
-  list(id: $id, projectIdentifier: $projectIdentifier) {
-    content
+  query list($id: Int!, $projectIdentifier: String!) {
+    list(id: $id, projectIdentifier: $projectIdentifier) {
+      content
+    }
+    site {
+      id
+      title
+      note
+      logo
+      shortcut
+      copyright
+      isDefault
+      seo {
+        title
+        keywords
+        description
+        __typename
+      }
+      __typename
+    }
   }
-}
 `;
 
 export default {
-  computed:{
-    contact(){
-      return this.$store.state.contact
-    }
+  computed: {
+    contact() {
+      return this.$store.state.contact;
+    },
   },
   components: { Message },
   // components: { nav },
   data() {
     return {
-      drawer:false,
+      drawer: false,
       // contact:{}
     };
   },
-  
+
   async fetch() {
-    const { data, status } = await getGraphqlClient(this.$nuxt.context).rawRequest(
-      query,
-      {
-        id: 1,projectIdentifier: "contact"
-      }
-    );
+    const { data, status } = await getGraphqlClient(
+      this.$nuxt.context
+    ).rawRequest(query, {
+      id: 1,
+      projectIdentifier: "contact",
+    });
+  
     // console.log(data)
     if (data.list) {
-      this.$store.commit('setContact', data.list.content)
+      this.$store.commit("setContact", data.list.content);
       //this.contact = data.list.content
-     
+    }
+    if(data.site){
+      this.$store.commit("setSite", data.site);
     }
   },
   mounted: function () {
     // 此处的16跟上面的16对应，同样是倍数
     const baseSize = 100;
-     
+
     // 设置根节点的font-size大小函数
     function setRem() {
-     
       // 375为设计稿页面宽度，如为750，把375改为750
       const scale = document.documentElement.clientWidth / 1920;
       // 设置页面根节点字体大小
@@ -117,8 +131,8 @@ export default {
   },
   methods: {
     handleClose(done) {
-        done();
-     },
+      done();
+    },
   },
 };
 </script>

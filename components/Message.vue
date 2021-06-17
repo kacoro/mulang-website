@@ -15,20 +15,22 @@
             <p>深圳市南山区高新南九道10号</p>
             <p>深圳湾科技生态园10栋A座27F</p>
           </div>
-          <form @submit.prevent="submitFrom" class="messages-form">
+          <form @submit.prevent="submitFrom" class="messages-form" autocomplete="off">
             <div class="messages-form-content">
               <div class="messages-form-input">
                 <input
+                  
                   name="username"
                   v-model="username"
                   placeholder="您的姓名"
                 />
-                <input type="email" v-model="email" placeholder="您的邮箱" />
+                <input type="email" autocomplete="email" v-model="email" placeholder="您的邮箱" />
               </div>
               <div class="messages-form-input">
-                <input type="tel" v-model="tel" placeholder="您的电话" />
+                <input type="tel" v-model="tel" autocomplete="tel" placeholder="您的电话" />
                 <input
                   type="company"
+                  autocomplete='organization'
                   v-model="company"
                   placeholder="公司名称"
                 />
@@ -36,6 +38,7 @@
               <div class="messages-form-input">
                 <textarea
                   name="address"
+                  autocomplete='street-address'
                   v-model="address"
                   placeholder="您的地址"
                 ></textarea>

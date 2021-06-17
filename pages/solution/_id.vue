@@ -283,7 +283,21 @@ query ListsByIds($ids: String!, $projectIdentifier: String!) {
 
 export default {
   name: "solution",
-  
+    head() {
+    if (this.seo) {
+      const { title, keywords, description } = this.seo;
+      return {
+        title: title,
+        meta: [
+          { hid: "description", name: "description", content: description },
+          { hid: "keywords", name: "keywords", content: keywords },
+        ],
+      };
+    } else
+      return {
+        title: this.content ? `${this.content.title}` : "Loading",
+      };
+  },
   data() {
     return {
       active:0,

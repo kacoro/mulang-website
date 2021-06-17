@@ -210,6 +210,11 @@ export default {
     };
     
   },
+  head(){
+    return {
+        title: "康索特官网|加入我们",
+     };
+  },
   async asyncData({ app, params }) {
     const { data, status } = await getGraphqlClient(app.context).rawRequest(query, {
       limit: 100,

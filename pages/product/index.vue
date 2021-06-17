@@ -207,7 +207,20 @@ const query = gql`
 
 export default {
   name: "solution",
-
+   head(){
+     if(this.categoryId==50){
+       return {
+        title: "康索特官网|IOT产品",
+     };
+     }else if(this.categoryId=54){
+       return {
+        title: "康索特官网|云端产品",
+     };
+     }
+    return {
+        title: "康索特官网|产品中心",
+     };
+  },
   data() {
     return {
       categoryId: 50,

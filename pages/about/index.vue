@@ -496,6 +496,26 @@ export default {
       return this.$dayjs(day).format("MM/DD");
     },
   },
+  computed: {
+    site() {
+      return this.$store.state.site;
+    },
+  },
+    head() {
+    if (this.site?.seo) {
+      const { title, keywords, description } = this.site.seo;
+      return {
+        title: title+"|关于康索特",
+        meta: [
+          { hid: "description", name: "description", content: description },
+          { hid: "keywords", name: "keywords", content: keywords },
+        ],
+      };
+    } else
+      return {
+        title: this.content ? `${this.content.title}` : "Loading",
+      };
+  },
 };
 </script>
 

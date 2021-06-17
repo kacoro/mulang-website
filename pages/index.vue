@@ -158,6 +158,11 @@ const query = gql`
 // import posts from '~/apollo/queries/posts'
 
 export default {
+  computed: {
+    site() {
+      return this.$store.state.site;
+    },
+  },
   name: "Search",
   data() {
     return {
@@ -203,6 +208,21 @@ export default {
     formateDay(day) {
       return this.$dayjs(day).format("MM/DD");
     },
+  },
+  head() {
+    if (this.site?.seo) {
+      const { title, keywords, description } = this.site.seo;
+      return {
+        title: title,
+        meta: [
+          { hid: "description", name: "description", content: description },
+          { hid: "keywords", name: "keywords", content: keywords },
+        ],
+      };
+    } else
+      return {
+        title: this.content ? `${this.content.title}` : "Loading",
+      };
   },
 };
 </script>

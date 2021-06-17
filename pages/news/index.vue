@@ -201,7 +201,11 @@ export default {
       total: 1,
     };
   },
-
+  head(){
+    return {
+        title: "康索特官网|新闻中心",
+     };
+  },
   async asyncData({ app, params }) {
     const { data, status } = await getGraphqlClient(app.context).rawRequest(
       query,
