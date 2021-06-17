@@ -158,8 +158,9 @@
     display: none;
 }
 .row_detail .col_left {
-    width: 66%;
+    
 }
+
 .section_sub_page.section_auto_height .content_text, .section_sub_page .feature {
     opacity: 1;
     visibility: visible;

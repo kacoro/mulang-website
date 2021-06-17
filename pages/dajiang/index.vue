@@ -211,6 +211,7 @@
   max-width: 100%;
 }
 .section-input-list ul li{
+  box-sizing: border-box;
     padding: 37px 30px;
   border:1px solid #fff;
   font-size: 24px;
@@ -223,9 +224,22 @@
 .section-input-list ul li:hover{
   border:1px solid #f3cd1d;
 }
-
+@media screen  and (max-width: 768px){
+  .section-input-list{
+    flex-wrap: wrap;
+  }
+  .section-parner ul{
+    padding: 15px;
+  }
+  .section-input-list ul li{
+    white-space:normal;
+    padding:10px
+  }
+}
 .section-iot{
   max-width: 1000px;
+  box-sizing: border-box;
+  padding: 10px;
   margin: 0.8rem auto;
   text-align: center;
 }

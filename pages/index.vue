@@ -79,74 +79,7 @@
         </div>
       </div>
     </div>
-    <div class="section-solution-content">
-      <div class="solution-left">
-        <h1>解决方案</h1>
-        <ul class="solution-nav">
-          <li class="active">
-            <h2 class="blue">通用园区</h2>
-            <p>为人们提供学习、工作和生活场景的极致体验</p>
-          </li>
-          <li>
-            <h2 class="blue">智慧城市</h2>
-            <p>打造“深度感知、数据驱动”智慧城市标杆</p>
-          </li>
-        </ul>
-        <h2 class="more">MORE</h2>
-      </div>
-
-      <div class="solution-right">
-        <ul>
-          <li>
-            <div class="bg">
-              <img src="/images/index/s1.jpg" alt="" class="img-gray" />
-            </div>
-            <div class="solution-right-content">
-              <h1>01</h1>
-              <dl><span>通用园区</span> | <span>园区管理</span></dl>
-              <h3>茅台集团</h3>
-              <p>
-                以人为中心构建全流程智慧通行平台，<br />实现园区内部闭环管理，打造标杆智慧总部园区
-              </p>
-              <NuxtLink :to="`solution`" class="button radius mid">
-                了解更多
-              </NuxtLink>
-            </div>
-          </li>
-          <li>
-            <div class="bg">
-              <img src="/images/index/s2.jpg" alt="" class="" />
-            </div>
-            <div class="solution-right-content">
-              <h1>02</h1>
-              <dl><span>通用园区</span> | <span>智能楼宇</span></dl>
-              <h3>茅台集团</h3>
-              <p>
-                软硬一体化组件式通行，通过率超99%
-                <br />单人通行时间小于1秒，真正实现无感通行
-              </p>
-              <NuxtLink :to="`solution`" class="button radius mid">
-                了解更多
-              </NuxtLink>
-            </div>
-          </li>
-          <li>
-            <div class="bg">
-              <img src="/images/index/s3.jpg" alt="" class="" />
-            </div>
-            <div class="solution-right-content">
-              <h1>03</h1>
-              <dl><span>通用园区</span> | <span>园区管理</span></dl>
-              <h3>茅台集团</h3>
-              <p>融合园区人、车、设备<br />依托AIoT实现园区智慧化互联互通</p>
-              <NuxtLink :to="`solution`" class="button radius mid">
-                了解更多
-              </NuxtLink>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <home-solution-tabs ></home-solution-tabs>
     <div class="section-news">
       <h1 class="blue">新闻中心</h1>
       <div class="section-news-content">
@@ -191,7 +124,7 @@
 </template>
 
 <script>
-import "assets/css/index.css";
+import "assets/css/index.scss";
 import {gql} from "graphql-request";
 import getGraphqlClient from "~/utils/getGraphqlClient.js";
 const query = gql`

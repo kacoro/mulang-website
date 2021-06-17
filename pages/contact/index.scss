@@ -1,0 +1,41 @@
+@import "@/assets/css/element-variables.scss";
+.contact-detail{
+    &__container{
+       background: #e8ecf5;
+       padding:80px 10px;
+    }
+}
+.contact-ruleForm {
+    max-width: 1200px;
+    margin: 0 auto;
+  &__right {
+    display: flex;
+    flex-direction: column;
+    
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      .el-form-item__content{
+          margin-left: 0!important;
+      }
+      &__tips{
+          color:$--color-primary;
+          &.error{
+            color:$--color-danger;
+          }
+      }
+    }
+  }
+
+  @media screen and(min-width:768px) {
+    display: flex;
+    &__left,
+    &__right {
+      width: 50%;
+    }
+
+  }
+}

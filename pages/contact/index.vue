@@ -1,24 +1,84 @@
 <template>
-    <div class="contact-detail">
-       <div class="banner">
+  <div class="contact-detail">
+    <div class="banner">
       <div class="banner-bg">
         <div class="border-title border-title2">
           <h2>商务合作</h2>
-          
-
         </div>
         <p>业务合作类，如业务需求、落地场景、所需产品功能等描述</p>
       </div>
     </div>
-  <div  class="container">
-    
-   
+    <div class="contact-detail__container">
+      <no-ssr>
+        <el-form
+          :model="ruleForm"
+          status-icon
+          :rules="rules"
+          ref="ruleForm"
+          label-width="85px"
+          class="contact-ruleForm"
+        >
+          <div class="contact-ruleForm__left">
+            <el-form-item label="联系人" prop="username">
+              <el-input
+                v-model="ruleForm.username"
+                :placeholder="rules.username[0].message"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="联系电话" prop="tel">
+              <el-input
+                v-model="ruleForm.tel"
+                :placeholder="rules.tel[0].message"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="联系邮箱" prop="email">
+              <el-input
+                v-model="ruleForm.email"
+                :placeholder="rules.email[0].message"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="联系问题" prop="note">
+              <el-input
+                type="textarea"
+                v-model="ruleForm.note"
+                :placeholder="rules.note[0].message"
+              ></el-input>
+            </el-form-item>
+          </div>
+          <div class="contact-ruleForm__right">
+            <el-form-item label="公司名称" prop="company">
+              <el-input
+                v-model="ruleForm.company"
+                :placeholder="rules.company[0].message"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="所在地址" prop="address">
+              <el-input
+                v-model="ruleForm.address"
+                :placeholder="rules.address[0].message"
+              ></el-input>
+            </el-form-item>
+            <div class="contact-ruleForm__right__content">
+              <el-form-item>
+                <p class="contact-ruleForm__right__content__tips" v-if="valid">
+                  已提交，工作人员审核问题通过后将您联系
+                </p>
+              </el-form-item>
+              <el-form-item>
+                <el-button type="primary" @click="submitForm('ruleForm')"
+                  >立即创建</el-button
+                >
+              </el-form-item>
+            </div>
+          </div>
+        </el-form>
+      </no-ssr>
+    </div>
   </div>
-</div>
 </template>
 
 <style scoped>
-  .banner {
+.banner {
   min-height: 320px;
   height: 5rem;
   background: url("/images/contact/banner.jpg") no-repeat;
@@ -44,19 +104,20 @@
   align-items: center;
   justify-content: center;
 }
-.border-title2{
+.border-title2 {
   margin-bottom: 1.5em;
 }
 .banner-bg p {
   color: #fff;
   font-size: 14px;
 }
-.container{margin: 1rem auto;}
-
+.container {
+  margin: 1rem auto;
+}
 </style>
-
 <script>
-import {  gql, } from "graphql-request";
+import "./index.scss";
+import { gql } from "graphql-request";
 import getGraphqlClient from "~/utils/getGraphqlClient.js";
 const CreateListMutation = gql`
   mutation CreateList($json: JSON!, $projectIdentifier: String!) {
@@ -65,73 +126,96 @@ const CreateListMutation = gql`
 `;
 
 export default {
-  layout:"withoutMessage",
-  computed:{
-    contact(){
-      return this.$store.state.contact
-    }
+  layout: "withoutMessage",
+  computed: {
+    contact() {
+      return this.$store.state.contact;
+    },
   },
-   data() {
-    return {
-      drawer:false,
-      username: "",
-      email: "",
-      tel: "",
-      address: "",
-      company: "",
-    };
-  },methods: {
-    async submitFrom(e) {
-      if (this.username == "") {
-        this.$message({
-          message: "请填写您的姓名！",
-          type: "warning",
-        });
-        return false;
-      }
-      if (this.tel == "") {
-        this.$message({
-          message: "请填写您的电话！",
-          type: "warning",
-        });
-        return false;
-      }
-      if (this.email == "") {
-        this.$message({
-          message: "请填写您的邮箱！",
-          type: "warning",
-        });
-        return false;
-      }
-
-      const { data, status } = await getGraphqlClient().rawRequest(
-        CreateListMutation,
-        {
-          json: {
-            title: this.username + "的申请",
-            username: this.username,
-            email: this.email,
-            tel: this.tel,
-            address: this.address,
-            company: this.company,
-          },
-          projectIdentifier: "message",
+  data() {
+    var validatePass = (rule, value, callback) => {
+      if (value === "") {
+        callback(new Error("请输入密码"));
+      } else {
+        if (this.ruleForm.checkPass !== "") {
+          this.$refs.ruleForm.validateField("checkPass");
         }
-      );
-      e.preventDefault();
+        callback();
+      }
+    };
 
+    return {
+      drawer: false,
+      valid: false,
+      loading: false,
+      ruleForm: {
+        username: "",
+        email: "",
+        tel: "",
+        address: "",
+        company: "",
+        note: "",
+      },
+      rules: {
+        username: [
+          { required: true, message: "请输入联系人姓名", trigger: "blur" },
+        ],
+        tel: [
+          { required: true, message: "请输入联系人电话", trigger: "change" },
+        ],
+        email: [
+          { required: true, message: "请输入联系人邮箱", trigger: "change" },
+        ],
+        note: [
+          {
+            required: true,
+            message: "请描述您的应用场景和技术要求",
+            trigger: "change",
+          },
+        ],
+        company: [
+          { required: false, message: "请输入公司名称", trigger: "blur" },
+        ],
+        address: [
+          { required: false, message: "请输入所在地址", trigger: "blur" },
+        ],
+      },
+    };
+  },
+  methods: {
+    async submitForm(formName) {
+      this.$refs[formName].validate((valid) => {
+        this.valid = valid;
+        if (valid) {
+          if (!this.loading) this.cunstomfetch();
+        } else {
+          return false;
+        }
+      });
+    },
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
+    },
+    async cunstomfetch(e) {
+      this.loading = true;
+      const { data } = await getGraphqlClient().rawRequest(CreateListMutation, {
+        json: {
+          title: this.ruleForm.username + "的申请",
+          ...this.ruleForm,
+        },
+        projectIdentifier: "message",
+      });
+      this.loading = false;
       if (data.createList) {
-        (this.username = ""),
-          (this.email = ""),
-          (this.tel = ""),
-          (this.address = ""),
-          (this.company = "");
+        this.valid = true;
+        this.resetForm("ruleForm");
         this.$message({
           message: "提交成功！",
           type: "success",
           duration: 1000,
         });
       } else {
+        this.valid = false;
         this.$message({
           message: "提交失败！",
           type: "error",
@@ -140,5 +224,5 @@ export default {
       }
     },
   },
-}
+};
 </script>

@@ -4,8 +4,9 @@
 ////Vue.prototype.$notify = Notification;
 
 import Vue from 'vue'
-import { Icon,Drawer,Pagination ,Message} from 'element-ui'
-import { Menu,Submenu,MenuItem,MenuItemGroup,Col,Breadcrumb,BreadcrumbItem} from 'element-ui'
+import { Message} from 'element-ui'
+import { Menu,Submenu,MenuItem,MenuItemGroup,Col,Breadcrumb,BreadcrumbItem,Icon,Drawer,Pagination } from 'element-ui'
+import {Form,FormItem,Input,Button } from 'element-ui'
 import '../assets/css/element-variables.scss'
 import 'element-ui/lib/theme-chalk/display.css';
 Vue.prototype.$message = Message
@@ -20,5 +21,9 @@ Vue.use(Breadcrumb);
 Vue.use(BreadcrumbItem);
 Vue.use(Drawer)
 Vue.use(Icon)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Input)
+Vue.use(Button)
 
 

@@ -332,6 +332,15 @@
   width: 50%;
   padding-right: 0.4rem;
 }
+@media screen and (max-width:640px) {
+  .solution-list ul li{padding:30px 15px; font-size: 12px;flex-wrap: wrap;}
+  .solution-list ul li img{width: 100%;}
+  .solution-list ul li div{width: 100%;
+ 
+  }
+    .solution-list ul li  p{margin-bottom: 15px;font-size: 12px;}
+  .solution-list ul li h1{padding:15px 0}
+}
 </style>
 
 
@@ -401,9 +410,6 @@ export default {
     }
   },
   methods: {
-    change2() {
-      this.r;
-    },
     async change(active) {
       this.active = active;
       const { data } = await getGraphqlClient().rawRequest(query, {

@@ -52,7 +52,7 @@
       <h3>根据不同业务场景需求进行赋能，</h3>
       <h3>与作业系统高效耦合快速实现智能化</h3>
       </div>
-      <div class="section-yunfan-content">
+      <div class="section-yunfan-content section-yunfan-content-2">
       <img src="/images/yunfan/2.png" class="pic" /></div>
     </div>
     <div class="section-solution">
@@ -139,14 +139,23 @@
 }
 .section-yunfan-2 .section-yunfan-content{
     align-items:flex-start;
+    position: relative;
+    z-index: 2;
   
+}
+.section-yunfan-2 .section-yunfan-content-2{
+  z-index: 1;
 }
 .section-yunfan-2 h3{
     line-height: 53px;
 }
+@media screen and (max-width: 768px){
+  .section-solution-header .item h2{padding: 10px;}
+  .section-solution-header p{font-size: 13px;}
+}
 .section-yunfan-content h3{
   white-space: nowrap;
-  line-height: .9rem;
+  line-height:3;
 }
 .section-yunfan-content p{
   font-size: 18px;
