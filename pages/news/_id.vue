@@ -73,6 +73,7 @@
   &__header {
     border-bottom: 1px solid #19459a;
     padding: 0 30px;
+    margin-bottom: 30px;
   }
   &__editor {
     padding: 0 30px;
