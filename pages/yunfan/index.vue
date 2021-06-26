@@ -55,7 +55,7 @@
       <div class="section-yunfan-content section-yunfan-content-2">
       <img src="/images/yunfan/2.png" class="pic" /></div>
     </div>
-    <div class="section-solution">
+    <!-- <div class="section-solution">
       <div class="section-solution-header">
         <div class="item">
           <img class="pic" src="/images/index/1.jpg" />
@@ -75,7 +75,7 @@
         </div>
         
       </div>
-    </div>
+    </div> -->
     <div class="container">
       <div></div>
     </div>

@@ -28,7 +28,6 @@
         <h4>商务合作</h4>
         <p>售前咨询： {{contact.saletel}}</p>
         <p>商务合作： {{contact.business}}</p>
-        <p>媒体合作： {{contact.media}}</p>
         <p>供应商合作： {{contact.supplier}}</p>
       </div>
       <div class="links">
@@ -39,10 +38,10 @@
         <NuxtLink :to="`/product`">产品中心</NuxtLink>
         <NuxtLink :to="`/solution`">解决方案</NuxtLink>
       </div>
-      <div>
+      <!-- <div>
         <h4><NuxtLink :to="`/news`">新闻媒体</NuxtLink></h4>
         <NuxtLink :to="`/joinus`">加入我们</NuxtLink>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

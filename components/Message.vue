@@ -2,11 +2,11 @@
     <div class="messages">
       <div class="messages-wrap">
         <h1 style="font-size: 0.41rem">
-          如想加入我们，您可留下您的信息，我们取得您的信息后将会与您联系
+          如有业务合作，您可留下您的信息，我们取得您的信息后将会与您联系
         </h1>
         <div class="messages-content">
           <div class="messages-content-left">
-            <p>深圳市看索特软件有限公司</p>
+            <p>深圳市康索特软件有限公司</p>
             <p>&nbsp;</p>
             <p style="font-size: 30px; font-weight: bold">400-0755-972</p>
             <p>&nbsp;</p>
@@ -37,10 +37,10 @@
               </div>
               <div class="messages-form-input">
                 <textarea
-                  name="address"
-                  autocomplete='street-address'
-                  v-model="address"
-                  placeholder="您的地址"
+                  name="note"
+                  
+                  v-model="note"
+                  placeholder="交流事宜"
                 ></textarea>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default {
       username: "",
       email: "",
       tel: "",
-      address: "",
+      note: "",
       company: "",
     };
   },
@@ -197,7 +197,7 @@ export default {
             username: this.username,
             email: this.email,
             tel: this.tel,
-            address: this.address,
+            note: this.note,
             company: this.company,
           },
           projectIdentifier: "message",

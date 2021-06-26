@@ -18,7 +18,7 @@
             width="100%"
           />
           <p>
-康索特“云启”AI算法智能调度引擎，支持商汤、旷视、云天励飞、极视角等主流第三方厂商的算法接入，拥有自适应场景适配能力，多算法管理调度能力，包括计算机视觉、自然语言处理、文字识别等算法，实现AI算法与业务场景需求的深度结合，推动AI算法价值变现，赋能泛园区、社会治理、智慧环卫等多个应用领域智能化升级。          </p>
+康索特“云启”AI算法智能调度引擎，支持商汤、旷视、云天励飞、极视角等主流第三方厂商的算法接入，拥有自适应场景适配能力，多算法管理调度能力，包括计算机视觉、自然语言处理、文字识别等算法，实现AI算法与业务场景需求的深度结合，推动AI算法价值变现，赋能泛园区、城市治理、智慧环卫等多个应用领域智能化升级。          </p>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@
     </div>
 
 
-    <div class="section-solution">
+    <!-- <div class="section-solution">
       <div class="section-solution-header">
         <div class="item">
           <img class="pic" src="/images/index/3.jpg" />
@@ -108,7 +108,7 @@
           <NuxtLink :to="`dajiang`" class="button radius"> 了解更多 </NuxtLink>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="container">
       <div></div>
     </div>

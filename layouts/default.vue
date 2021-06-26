@@ -27,7 +27,6 @@
         <h4>商务合作</h4>
         <p>售前咨询： {{ contact.saletel }}</p>
         <p>商务合作： {{ contact.business }}</p>
-        <p>媒体合作： {{ contact.media }}</p>
         <p>供应商合作： {{ contact.supplier }}</p>
       </div>
       <div class="links">
@@ -38,10 +37,10 @@
         <NuxtLink :to="`/product`">产品中心</NuxtLink>
         <NuxtLink :to="`/solution`">解决方案</NuxtLink>
       </div>
-      <div>
+      <!-- <div>
         <h4><NuxtLink :to="`/news`">新闻媒体</NuxtLink></h4>
         <NuxtLink :to="`/joinus`">加入我们</NuxtLink>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -114,7 +113,10 @@ export default {
     // 设置根节点的font-size大小函数
     function setRem() {
       // 375为设计稿页面宽度，如为750，把375改为750
-      const scale = document.documentElement.clientWidth / 1920;
+     
+      let clientWidth = Math.min(document.documentElement.clientWidth,1920)
+      //  let clientWidth = window.screen.width
+      const scale = clientWidth / 1920;
       // 设置页面根节点字体大小
       document.documentElement.style.fontSize =
         baseSize * Math.min(scale, 2) + "px";

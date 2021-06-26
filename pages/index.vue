@@ -14,8 +14,7 @@
           </div>
           <div>
             <h1>关于CST</h1>
-            <p>
-              康索特成立于2006年10月，作为业内领先的AIoT产品和解决方案提供商，端云协同应用能力是康索特的核心优势，也是人工智能和物联网产生价值的关键。我们专注于通用园区和城市
+            <p style="text-align: left;">康索特成立于2006年10月，作为业内领先的AIoT产品和解决方案提供商，端云协同应用能力是康索特的核心优势，也是人工智能和物联网产生价值的关键。我们专注于通用园区和城市
               治理领域，连接数据、算法及应用，为客户提供领先的AIoT软硬件产品和智能化应用解决方案。
             </p>
             <NuxtLink :to="`about`" class="button radius">了解更多 </NuxtLink>
@@ -33,7 +32,7 @@
           </div>
           <div class="item item-3">
             <h1>价值观</h1>
-            <p>善用技术，达人达己</p>
+            <p>专业致胜 阳光平等 以客户为中心</p>
           </div>
         </div>
       </div>
@@ -65,7 +64,7 @@
         </div>
         <div class="item">
           <img class="pic" src="/images/index/2.jpg" />
-          <h2>大匠<span>（数学化）</span></h2>
+          <h2>大匠<span>（数字化）</span></h2>
           <p>
             超大规模和超高效率的数据连接能力，构建一张智能感知网络，实现业务流数字化改造
           </p>
@@ -73,7 +72,7 @@
         </div>
         <div class="item">
           <img class="pic" src="/images/index/3.jpg" />
-          <h2>索特轻量云</h2>
+          <h2>云帆<span>（平台化）</span></h2>
           <p>致力于为中小企业客户<br />提供一站式轻应用云接入方案</p>
           <NuxtLink :to="`yunfan`" class="button radius"> 了解更多 </NuxtLink>
         </div>

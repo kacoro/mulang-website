@@ -1,6 +1,6 @@
 <template>
     <div class="solution-content-wrap ">
-        <div class="banner header">
+        <div class="banner header" :class="{banner2:content.categoryId==57,banner3:content.categoryId==58}">
         <div class="banner-bg" >
              <h1>{{content.title}}</h1>
              <p>{{content.note}}</p>
@@ -96,6 +96,18 @@
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
+}
+.banner2 {
+  background: url("/images/solution/banner2.jpg") no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.banner3 {
+  background: url("/images/solution/banner3.jpg") no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .banner-bg{
     min-height: 4.9rem;
@@ -256,6 +268,7 @@ const query = gql`
   query ListEditPrevInfo($id: Int!, $projectIdentifier: String!) {
   list(id: $id, projectIdentifier: $projectIdentifier) {
     content
+    
     seo {
       title
       keywords
@@ -332,7 +345,7 @@ export default {
           projectIdentifier: "classicCase",
         }
       )
-      console.log(data2)
+    
       if(status2 ==200&&data2.listsByIds){
         list = data2.listsByIds
       }

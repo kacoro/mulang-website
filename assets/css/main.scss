@@ -1,3 +1,4 @@
+@import "@/assets/css/element-variables.scss";
 *{font-size: 16px;padding: 0;margin: 0;font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC",
     "Helvetica Neue", "Helvetica", "Arial", sans-serif;}
     #__wrap{
@@ -175,7 +176,7 @@ h1,h2,h3,h4{
 .button{
    cursor: pointer;
    text-decoration: none;
-   color: #19459a;
+   color: $--color-primary;
    background-color: #f3cd1d;
    border:2px solid #f3cd1d;
    font-size: 28px;
@@ -184,7 +185,14 @@ h1,h2,h3,h4{
    line-height: 70px;
    display: inline-block;
    text-align: center;
-   transition: all .5s ease;
+   transition: all .1s ease;
+   &:hover{
+    color: lighten($--color-primary,5%);
+    background-color: lighten($--color-warning,5%);
+    border:2px solid lighten($--color-warning,5%);
+    outline: lighten($--color-warning,5%);
+    transform: translateY(-5%);
+   }
 }
 .button.radius{
     border-radius: 10px; 
@@ -286,6 +294,10 @@ h1,h2,h3,h4{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    img{
+        max-width: 300px;
+        max-height: 300px;
+    }
   }
   .product-list-item ul {
     font-size: 24px;
@@ -293,6 +305,7 @@ h1,h2,h3,h4{
   .product-list-item ul li {
     line-height: 40px;
     position: relative;
+    
   }
   .product-list-item h2 {
     color: #19459a;

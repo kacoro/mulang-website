@@ -19,7 +19,6 @@
     <div class="about-section-1">
       <div class="about-section-1-left">
         <div>人工智能&物联网跨界创新<br>华为基因，十六年的懂行团队。</div>
-        
       </div>
       <div class="about-section-1-right">
         <ul>
@@ -33,13 +32,9 @@
           </li>
           <li>
               <dl><dt>价值观</dt>
-        <dd>善用技术，达人达己</dd></dl>
+        <dd>专业致胜 阳光平等 以客户为中心</dd></dl>
           </li>
         </ul>
-        
-        
-        
-        
       </div>
     </div>
     <div>
@@ -53,8 +48,7 @@
         </div>
         <div class="img"><img src="/images/about/partner.jpg" /></div>
       </div>
-    </div>
-    <div class="success-case">
+      <div class="success-case">
       康索特通用园区与城市治理解决方案服务超过
       <dl class="cusumer">
         <dt>1700+</dt>
@@ -97,6 +91,8 @@
         </div>
       </div>
     </div>
+    </div>
+    
     <div class="about-honnor">
       <img src="/images/about/honnor.png" width="100%" />
     </div>

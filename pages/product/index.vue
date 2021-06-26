@@ -70,6 +70,9 @@
 }
 .banner2{
   background: url("/images/product/banner2.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .banner-bg {
   min-height: 4.9rem;

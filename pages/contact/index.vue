@@ -66,7 +66,7 @@
               </el-form-item>
               <el-form-item>
                 <el-button type="primary" @click="submitForm('ruleForm')"
-                  >立即创建</el-button
+                  >确认提交</el-button
                 >
               </el-form-item>
             </div>

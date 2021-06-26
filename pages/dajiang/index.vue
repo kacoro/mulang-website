@@ -18,7 +18,7 @@
             width="100%"
           />
           <p>
-            康索特“云启”AI算法智能调度引擎，支持商汤、旷视、云天励飞、极视角等主流第三方厂商的算法接入，拥有自适应场景适配能力，多算法管理调度能力，包括计算机视觉、自然语言处理、文字识别等算法，实现AI算法与业务场景需求的深度结合，推动AI算法价值变现，赋能泛园区、社会治理、智慧环卫等多个应用领域智能化升级。
+            康索特“大匠”IoT数据连接引擎，由康索特旗下全资子公司大匠智联倾力打造，拥有生态+自研全品类IoT数据连接能力。经过多年沉淀，目前已兼容行业协议100+，累计接入全品类设备量已达100万+，通过结合不同行业需求，提供一站式产品联网服务，帮助客户快速实现业务场景数字化升级。
           </p>
         </div>
       </div>
@@ -39,12 +39,16 @@
       <h4>支持超大规模数据连接</h4>
       <ul>
         <li>
-          <h1>XX</h1>
-          <h4>大类</h4>
+          <h1>300W+</h1>
+          <h4>IoT设备接入</h4>
         </li>
         <li>
-          <h1>XX</h1>
-          <h4>小类</h4>
+          <h1>30+</h1>
+          <h4>兼容行业协议</h4>
+        </li>
+        <li>
+          <h1>0.01s</h1>
+          <h4>平均响应时间</h4>
         </li>
       </ul>
     </div>
@@ -72,11 +76,10 @@
       <h4>
         基于对行业场景数字化需求的深刻理解，客制化设计开发IoT设备，可以高效运行第三方AI算法，提升人工智能算法技术及物联传感技术在行业解决方案中的高效性及场景适应性。
       </h4>
-      <h4 class="blue">已独立实现批量供货</h4>
       <img class="pic" src="/images/dajiang/2.png" />
     </div>
 
-    <div class="section-solution">
+    <!-- <div class="section-solution">
       <div class="section-solution-header">
         <div class="item">
           <img class="pic" src="/images/index/1.jpg" />
@@ -93,7 +96,7 @@
           <NuxtLink :to="`yunfan`" class="button radius"> 了解更多 </NuxtLink>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="container">
       <div></div>
     </div>
@@ -105,7 +108,7 @@
 }
 .banner {
   min-height: 320px;
-  background: url("/images/yunqi/banner.jpg") no-repeat;
+  background: url("/images/dajiang/banner.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

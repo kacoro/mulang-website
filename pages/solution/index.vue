@@ -1,6 +1,6 @@
 <template>
   <div class="solution-wrap">
-    <div class="banner">
+    <div class="banner" :class="{banner2:active==57,banner3:active==58}">
       <div class="banner-bg">
         <template v-if="active == 56">
           <h1>通用园区</h1>
@@ -11,7 +11,7 @@
         <template v-else-if="active == 57">
           <h1>城市治理</h1>
           <p>
-            康索特善用技术，从AIoT基建到智能化应用，覆盖校园、园区、小区、楼宇等社会微单元场景，提供包括人车通行、能源管理、支付服务等解决方案，全方位、全天候保障客户生产和运营活动，为人们次提供学习、工作和生活场景的极致体验
+            康索特善用技术，从AIoT基建、数据服务到智能化应用，覆盖区域公共安全、机关事务管理、智慧监管、疫情防控等城市治理场景，构建基础设施集约智能、信息资源共享开放的智慧化发展体系，打造“深度感知、数据驱动”智慧城市标杆，助力政府治理体系和治理能力现代化。
           </p>
         </template>
         <template v-else>
@@ -205,10 +205,23 @@
 .banner {
   min-height: 240px;
   background: url("/images/solution/banner.jpg") no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+}
+.banner2 {
+  background: url("/images/solution/banner2.jpg") no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.banner3 {
+  background: url("/images/solution/banner3.jpg") no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .banner-bg {
   min-height: 4.9rem;

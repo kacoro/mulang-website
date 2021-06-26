@@ -8,7 +8,7 @@
             <p>为人们提供学习、工作和生活场景的极致体验</p>
           </li>
           <li  :class="{active:active==57}" @click="change(57)">
-            <h2 class="blue">智慧城市</h2>
+            <h2 class="blue">城市治理</h2>
             <p>打造“深度感知、数据驱动”智慧城市标杆</p>
           </li>
         </ul>
@@ -21,7 +21,7 @@
             <div class="bg " :style="{backgroundImage: `url(${item.other.thumb})`}"></div>
             <div class="solution-right-content">
               <h1>0{{index+1}}</h1>
-              <dl><span @click="goto(`solution?categoryId=${item.categoryId}`) ">{{item.categoryId==56?`通用园区`:`智慧城市`}}</span> </dl>
+              <!-- <dl><span @click="goto(`solution?categoryId=${item.categoryId}`) ">{{item.categoryId==56?`通用园区`:`智慧城市`}}</span> </dl> -->
               <h3 @click="goto(`solution/${item.id}`) ">{{item.title}}</h3>
               <p>
                 {{item.textSnippet}}...
