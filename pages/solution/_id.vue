@@ -1,6 +1,6 @@
 <template>
     <div class="solution-content-wrap ">
-        <div class="banner header" :class="{banner2:content.categoryId==57,banner3:content.categoryId==58}">
+        <div class="banner header" :class="{banner2:categoryId==57,banner3:categoryId==58}">
         <div class="banner-bg" >
              <h1>{{content.title}}</h1>
              <p>{{content.note}}</p>
@@ -23,7 +23,7 @@
              </li>
          </ul>
     </div>
-     <div >
+     <div v-if="content" >
         
          <div  id="summary" class="solution-text">
            <h1>方案概述</h1>
@@ -313,6 +313,7 @@ export default {
   },
   data() {
     return {
+      
       active:0,
       caseActive:0,
       content:null,
@@ -327,6 +328,7 @@ export default {
   async asyncData({ app, params }) {
     let content = null
     let list = []
+    let categoryId = 0;
     const { data, status } = await getGraphqlClient(app.context).rawRequest(
       query,
       {
@@ -336,7 +338,7 @@ export default {
     );
     if (status === 200) {
       content = data.list.content
-      
+      categoryId = content.categoryId
     }
     if(content.classicCase){
       const {data:data2,status:status2} = await getGraphqlClient(app.context).rawRequest(
@@ -350,8 +352,8 @@ export default {
         list = data2.listsByIds
       }
     }
-    console.log(content,list)
       return {
+          categoryId,
           content,
           list
       };
