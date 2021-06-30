@@ -3,6 +3,7 @@
   export const state = () => ({
     contact: {},
     menus:[],
+    bottomMenu:[],
     site:{}
   })
 
@@ -12,6 +13,9 @@
     },
     setMenu (state,data) {
       state.menus = data
+    },
+    setBottomMenu (state,data) {
+      state.bottomMenu = data
     },
     setSite (state,data) {
       state.site = data

@@ -423,6 +423,7 @@ export default {
     }
   },
   methods: {
+   
     async change(active) {
       this.active = active;
       const { data } = await getGraphqlClient().rawRequest(query, {

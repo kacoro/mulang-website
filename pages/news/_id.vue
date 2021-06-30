@@ -25,7 +25,7 @@
               <span class="text">上一篇：</span>
               <div>
                 <nuxt-link :to="`${prev.id}`">{{ prev.title }}</nuxt-link>
-                <p class="prev-next__time" v-if="next.publishTime">
+                <p class="prev-next__time" v-if="next&&next.publishTime">
                   {{ formateDay2(next.publishTime) }}
                 </p>
               </div>
@@ -39,7 +39,7 @@
               <span class="text">下一篇：</span>
               <div>
                 <nuxt-link :to="`${next.id}`">{{ next.title }}</nuxt-link>
-                <p class="prev-next__time" v-if="next.publishTime">
+                <p class="prev-next__time" v-if="next&&next.publishTime">
                   {{ formateDay2(next.publishTime) }}
                 </p>
               </div>
@@ -198,7 +198,6 @@ export default {
     });
   },
   async asyncData({ app, params }) {
-    console.log(app, params);
     const { data, status } = await getGraphqlClient(app.context).rawRequest(
       query,
       {

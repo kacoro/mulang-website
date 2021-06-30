@@ -88,7 +88,6 @@
         <template v-if="list">
           <client-only>
           <div v-if="list.length > 0" class="section-news-first">
-            
               <h4><NuxtLink :to="`news/${list[0].id}`">{{ list[0].title }}</NuxtLink></h4>
             
             <NuxtLink :to="`news/${list[0].id}`">

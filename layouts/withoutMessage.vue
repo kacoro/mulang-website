@@ -12,37 +12,7 @@
     
     <Nuxt />
   
-    <div class="page-footer">
-      <div>
-        <img src="/images/logo-footer.png" class="footer-logo" />
-        <p>
-          公司地址：{{contact.address}}<br /><span
-            style="padding-left: 5.5em"
-            >{{contact.adress2}}</span
-          >
-        </p>
-        <p>官方热线：{{contact.tel}}</p>
-        <p>官方邮箱：{{contact.email}}</p>
-      </div>
-      <div>
-        <h4>商务合作</h4>
-        <p>售前咨询： {{contact.saletel}}</p>
-        <p>商务合作： {{contact.business}}</p>
-        <p>供应商合作： {{contact.supplier}}</p>
-      </div>
-      <div class="links">
-        <h4>相关链接</h4>
-        <NuxtLink :to="`/about`">关于我们</NuxtLink>
-        <NuxtLink :to="`/dajiang`">核心技术</NuxtLink>
-        <NuxtLink :to="`/yunfan`">云帆创新技术平台</NuxtLink>
-        <NuxtLink :to="`/product`">产品中心</NuxtLink>
-        <NuxtLink :to="`/solution`">解决方案</NuxtLink>
-      </div>
-      <!-- <div>
-        <h4><NuxtLink :to="`/news`">新闻媒体</NuxtLink></h4>
-        <NuxtLink :to="`/joinus`">加入我们</NuxtLink>
-      </div> -->
-    </div>
+    <foot />
   </div>
 </template>
 <style scoped>
@@ -54,6 +24,7 @@
 import Message from '~/components/Message.vue';
 import {  gql } from "graphql-request";
 import getGraphqlClient from "~/utils/getGraphqlClient.js";
+import Foot from '~/components/Foot.vue';
 const query = gql`
  query list($id: Int!, $projectIdentifier: String!) {
   list(id: $id, projectIdentifier: $projectIdentifier) {
@@ -68,7 +39,7 @@ export default {
       return this.$store.state.contact
     }
   },
-  components: { Message },
+  components: { Message, Foot },
   // components: { nav },
   data() {
     return {
