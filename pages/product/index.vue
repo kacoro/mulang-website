@@ -58,7 +58,7 @@
   margin: 0 auto;
 }
 .product-content {
-  padding: 0 35px 35px;
+  padding: 0 15px 35px;
 }
 .banner {
   min-height: 240px;

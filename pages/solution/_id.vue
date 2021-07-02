@@ -27,17 +27,17 @@
         
          <div  id="summary" class="solution-text">
            <h1>方案概述</h1>
-           <div v-html="content.summary" class="solution-content"></div>
+           <div v-html="content.summary" class="solution-content editor"></div>
          </div>
          <div class="solution-text-2">
          <div  id="ability" class="solution-text ">
            <h1>落地能力</h1>
-           <div v-html="content.ability" class="solution-content"></div>
+           <div v-html="content.ability" class="solution-content editor"></div>
          </div>
          </div>
          <div  id="highlights" class="solution-text">
            <h1>方案亮点</h1>
-           <div v-html="content.highlights" class="solution-content"></div>
+           <div v-html="content.highlights" class="solution-content editor"></div>
          </div>
          <div id="classicCase" class="solution-text">
            <h1>经典案例</h1>
@@ -69,21 +69,13 @@
 .solution-content-wrap{
   .solution-content{
   font-size: 14px;
-  padding: 38px 20px;
+  padding: 38px 0px;
   line-height: 24px;
 }
 .solution-text-2{
   background: #f2f2f2;
 }
-.solution-content ul{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.solution-content ul li{
-  
-  text-align: center;
-}
+
 .fixed{
     position: fixed;
     top: 100px;
@@ -109,33 +101,40 @@
   background-position: center;
   background-size: cover;
 }
-.banner-bg{
-    min-height: 4.9rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.banner-bg {
+  min-height: 4.9rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 60px 0px;
 }
-.banner-bg h1{
-    color: #fff;
-    font-size: 40px;
-    padding-bottom: 25px;
+.banner-bg h1 {
+  color: #fff;
+  font-size: 40px;
+  padding-bottom: 25px;
 }
-.banner-bg p{
-    color: #fff;
-    font-size: .18rem;
-    text-align: center;
-    max-width: 834px;
-    line-height: 24px;
-    
+.banner-bg p {
+  color: #fff;
+  font-size: 0.18rem;
+  text-align: center;
+  max-width: 834px;
+  line-height: 24px;
 }
-@media screen and (max-width :1024px) {
-    .banner-bg p{
-        max-width: 100%;
-        padding:0 15px;
-        box-sizing: border-box;
-    }
+@media screen and (max-width: 1024px) {
+  .banner-bg p {
+    font-size: 14px;
+    max-width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner-bg p {
+   font-size: 12px;
+  }
 }
 .solution-tabs{
     background: #19459a;
@@ -179,7 +178,7 @@
     box-sizing: border-box;
     text-align: center;
     margin: 0 auto;
-    padding:80px 30px;
+    padding:80px 15px;
 }
 
 .solution-list{

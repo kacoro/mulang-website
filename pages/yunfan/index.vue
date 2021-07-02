@@ -7,14 +7,14 @@
             src="/images/yunfan/banner-text-1.png"
             style="width: 2.36rem"
             alt=""
-            class="pic"
+            class="pic pic1"
             width="100%"
           />
           <img
             src="/images/yunfan/banner-text-2.png"
             alt=""
             style="width: 3.61rem"
-            class="pic"
+            class="pic pic2"
             width="100%"
           />
         </div>
@@ -95,6 +95,7 @@
   margin: 0 auto;
   position: relative;
   min-height: 6.45rem;
+  padding: 60px 0;
   width: 100%;
   display: flex;
   overflow: hidden;
@@ -120,11 +121,35 @@
   font-size: 0.16rem;
   max-width: 834px;
   line-height: 24px;
-  overflow: hidden;
+  /* overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical; */
+}
+@media screen and (max-width: 1024px) {
+  
+  .banner-bg p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  
+  .banner-bg {
+    display: block;
+  }
+  .pic1{width: 90px!important;}
+  .pic2{width: 137px!important;}
+  .banner-left,.banner-right{
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    margin-top:0px;
+    max-width: 100%;
+  }
+  .banner-bg p {
+   font-size: 12px;
+  }
 }
 .section-yunfan{
   display: flex;

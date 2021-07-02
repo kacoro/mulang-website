@@ -131,6 +131,7 @@
 .banner-border {
   border-left: 10px solid #f3cd1d;
   padding-left: 35px;
+  margin: 60px 0;
 }
 .banner-bg img {
   padding-bottom: 25px;
@@ -150,13 +151,17 @@
   font-size: 0.18rem;
   max-width: 1342px;
   line-height: 24px;
-  overflow: hidden;
+  /* overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical; */
 }
-
+@media screen and (max-width:719px) {
+  .banner-bg p{
+    font-size: 12px;
+  }
+}
 .section-parner {
   padding-top: 0.8rem;
   text-align: center;

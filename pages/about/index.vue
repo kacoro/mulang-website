@@ -18,21 +18,27 @@
     </div>
     <div class="about-section-1">
       <div class="about-section-1-left">
-        <div>人工智能&物联网跨界创新<br>华为基因，十六年的懂行团队。</div>
+        <div>人工智能&物联网跨界创新<br />华为基因，十六年的懂行团队。</div>
       </div>
       <div class="about-section-1-right">
         <ul>
           <li>
-              <dl><dt>使命</dt>
-        <dd>普惠AI应用，<br />让美好生活触手可及。</dd></dl>
+            <dl>
+              <dt>使命</dt>
+              <dd>普惠AI应用，<br />让美好生活触手可及。</dd>
+            </dl>
           </li>
           <li>
-              <dl><dt>愿景</dt>
-        <dd>成为全球领先的AIoT产品和<br />解决方案提供商</dd></dl>
+            <dl>
+              <dt>愿景</dt>
+              <dd>成为全球领先的AIoT产品和<br />解决方案提供商</dd>
+            </dl>
           </li>
           <li>
-              <dl><dt>价值观</dt>
-        <dd>专业致胜 阳光平等 以客户为中心</dd></dl>
+            <dl>
+              <dt>价值观</dt>
+              <dd>专业致胜 阳光平等 以客户为中心</dd>
+            </dl>
           </li>
         </ul>
       </div>
@@ -49,50 +55,52 @@
         <div class="img"><img src="/images/about/partner.jpg" /></div>
       </div>
       <div class="success-case">
-      康索特通用园区与城市治理解决方案服务超过
-      <dl class="cusumer">
-        <dt>1700+</dt>
-        <dd>家企事业单位</dd>
-        <dt>200+</dt>
-        <dd>所高校</dd>
-        <dt>4000+</dt>
-        <dd>所中小幼学校</dd>
-      </dl>
-      <div class="success-case-content">
-        <div class="success-case-content-left">
-          <div class="success-case-title"><span>企事业单位</span></div>
-          <ul>
-            <li v-for="(item, index) in companys" :key="index">{{ item }}</li>
-            <li>...</li>
-          </ul>
+        康索特通用园区与城市治理解决方案服务超过
+        <dl class="cusumer">
+          <dt>1700+</dt>
+          <dd>家企事业单位</dd>
+          <dt>200+</dt>
+          <dd>所高校</dd>
+          <dt>4000+</dt>
+          <dd>所中小幼学校</dd>
+        </dl>
+        <div class="success-case-content">
+          <div class="success-case-content-left">
+            <div class="success-case-title"><span>企事业单位</span></div>
+            <ul>
+              <li v-for="(item, index) in companys" :key="index">{{ item }}</li>
+              <li>...</li>
+            </ul>
+          </div>
+          <div class="success-case-content-right">
+            <div class="success-case-title"><span>高校</span></div>
+            <ul>
+              <li v-for="(item, index) in schools" :key="index">{{ item }}</li>
+              <li>...</li>
+            </ul>
+          </div>
         </div>
-        <div class="success-case-content-right">
-          <div class="success-case-title"><span>高校</span></div>
-          <ul>
-            <li v-for="(item, index) in schools" :key="index">{{ item }}</li>
-            <li>...</li>
-          </ul>
-        </div>
-      </div>
-      <div class="success-case-content">
-        <div class="success-case-content-left">
-          <div class="success-case-title"><span>政府机关</span></div>
-          <ul>
-            <li v-for="(item, index) in govs" :key="index">{{ item }}</li>
-            <li>...</li>
-          </ul>
-        </div>
-        <div class="success-case-content-right">
-          <div class="success-case-title"><span>中小幼学校</span></div>
-          <ul>
-            <li v-for="(item, index) in midSchools" :key="index">{{ item }}</li>
-            <li>...</li>
-          </ul>
+        <div class="success-case-content">
+          <div class="success-case-content-left">
+            <div class="success-case-title"><span>政府机关</span></div>
+            <ul>
+              <li v-for="(item, index) in govs" :key="index">{{ item }}</li>
+              <li>...</li>
+            </ul>
+          </div>
+          <div class="success-case-content-right">
+            <div class="success-case-title"><span>中小幼学校</span></div>
+            <ul>
+              <li v-for="(item, index) in midSchools" :key="index">
+                {{ item }}
+              </li>
+              <li>...</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-    </div>
-    
+
     <div class="about-honnor">
       <img src="/images/about/honnor.png" width="100%" />
     </div>
@@ -102,52 +110,116 @@
 .about-section-1 {
   display: flex;
 }
-.about-section-1-left{ width:60%;display: flex; flex-direction: column; justify-content: center; align-items: center;}
-.about-section-1-left div{font-size: 55px; color: #184290; font-weight: bold; text-align: center;}
-.about-section-1-right{ width:40%}
- 
-.about-section-1-right ul{ display: flex; flex-direction: column; padding-top: 1rem;padding-left:40px;}
-.about-section-1-right li{ height: 67px; display: flex; align-items: center; position: relative; padding-bottom: 1rem;}
-.about-section-1-right ul li::before {
-    content: "⚬";
-    color: #f3cd1d;
-    font-weight: bold;
-    font-size: 40px;
-    position: absolute;
-    left: -1em;
+.about-section-1-left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.about-section-1-right dl{ display: flex;align-items: center; flex: 1;}
-.about-section-1-right dt{ width: 30%; font-size: 40px;color: #f3cd1d;
-    font-weight: bold;}
-    .about-section-1-right dd{font-size: 18px; color: #184290;}
+.about-section-1-left div {
+  font-size: 55px;
+  color: #184290;
+  font-weight: bold;
+  text-align: center;
+}
+.about-section-1-right {
+  width: 40%;
+}
 
+.about-section-1-right ul {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-left: 40px;
+}
+.about-section-1-right li {
+  height: 67px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+.about-section-1-right ul li::before {
+  content: "⚬";
+  color: #f3cd1d;
+  font-weight: bold;
+  font-size: 40px;
+  position: absolute;
+  left: -1em;
+}
+.about-section-1-right dl {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.about-section-1-right dt {
+  width: 30%;
+  font-size: 40px;
+  color: #f3cd1d;
+  font-weight: bold;
+}
+.about-section-1-right dd {
+  font-size: 18px;
+  color: #184290;
+}
 
-@media screen and (max-width :1280px) {
-  .about-section-1-right dd{font-size: 16px; }
-   .about-section-1-right dt {font-size: 32px;}
-   .about-section-1-left div{font-size: 40px;}
-
- }
-    @media screen and (max-width :768px) {
-        .about-section-1-right dd{font-size: 14px; }
-   .about-section-1-right dt {font-size: 24px;}
-   .about-section-1-right ul li::before {font-size: 24px;}
-   .about-section-1-left div{font-size: 28px;}
-
-    }
-    @media screen and (max-width :414px) {
-        .about-section-1-right dd{font-size: 12px; }
-   .about-section-1-right dt {font-size: 16px;}
-   .about-section-1-right ul li::before {font-size: 16px;}
-   .about-section-1-left div{font-size: 16px;}
-    }
-     @media screen and (max-width :320px) {
-       .about-section-1-right ul {padding-left: 12px;}
-        .about-section-1-right dd{font-size: 12px; }
-   .about-section-1-right dt {font-size: 14px;}
-   .about-section-1-right ul li::before {font-size: 14px;}
-   .about-section-1-left div{font-size: 14px;}
-    }
+@media screen and (max-width: 1280px) {
+  .about-section-1-right dd {
+    font-size: 16px;
+  }
+  .about-section-1-right dt {
+    font-size: 32px;
+  }
+  .about-section-1-left div {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about-section-1-right dd {
+    font-size: 14px;
+  }
+  .about-section-1-right dt {
+    font-size: 24px;
+  }
+  .about-section-1-right ul li::before {
+    font-size: 24px;
+  }
+  .about-section-1-left div {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .about-section-1-right dd {
+    font-size: 12px;
+  }
+  .about-section-1-right dt {
+    font-size: 16px;
+  }
+  .about-section-1-right ul li::before {
+    font-size: 16px;
+  }
+  .about-section-1-left div {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .about-section-1-right ul {
+    padding-left: 12px;
+  }
+  .about-section-1-right dd {
+    font-size: 12px;
+  }
+  .about-section-1-right dt {
+    font-size: 14px;
+  }
+  .about-section-1-right ul li::before {
+    font-size: 14px;
+  }
+  .about-section-1-left div {
+    font-size: 14px;
+  }
+}
 
 .about-section-1 .success-case {
   max-width: 1486px;
@@ -158,7 +230,7 @@
 .about-honnor {
   margin-bottom: 1rem;
 }
-.success-case{
+.success-case {
   padding: 15px;
   box-sizing: border-box;
 }
@@ -188,24 +260,24 @@
 .success-case-content-right {
   max-width: 594px;
 }
-@media screen and (max-width :1280px) {
-   .success-case-content-left,
-.success-case-content-right {
-  padding: 20px;
-  box-sizing: border-box;
-  width: 50%;
+@media screen and (max-width: 1280px) {
+  .success-case-content-left,
+  .success-case-content-right {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 50%;
+  }
 }
- }
-  @media screen and (max-width :768px) {
-    .success-case-content{
-      justify-content: center;
-    }
-       .success-case-content-left,
-.success-case-content-right{
-  padding: 0;
-  width: 100%;
+@media screen and (max-width: 768px) {
+  .success-case-content {
+    justify-content: center;
+  }
+  .success-case-content-left,
+  .success-case-content-right {
+    padding: 0;
+    width: 100%;
+  }
 }
-    }
 .success-case-title {
   text-align: center;
   position: relative;
@@ -260,6 +332,7 @@
 .banner-content p {
   padding-bottom: 20px;
 }
+
 .about-section-parner {
   position: relative;
   text-align: center;
@@ -280,7 +353,7 @@
 .banner-bg {
   max-width: 1420px;
   box-sizing: border-box;
-  padding: 15px;
+  padding:  60px 15px;
   margin: 0 auto;
   position: relative;
   min-height: 5rem;
@@ -290,7 +363,6 @@
   flex-direction: column;
   justify-content: center;
 }
-
 
 .border-title h2 {
 }
@@ -306,6 +378,17 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+@media screen and (max-width: 1280px) {
+  .banner-bg p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner-bg p {
+    font-size: 12px;
+  }
+}
+
 </style>
 
 <script>
@@ -497,11 +580,11 @@ export default {
       return this.$store.state.site;
     },
   },
-    head() {
+  head() {
     if (this.site?.seo) {
       const { title, keywords, description } = this.site.seo;
       return {
-        title: title+"|关于康索特",
+        title: title + "|关于康索特",
         meta: [
           { hid: "description", name: "description", content: description },
           { hid: "keywords", name: "keywords", content: keywords },

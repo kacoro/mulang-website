@@ -230,6 +230,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  box-sizing: border-box;
+  padding: 60px 0px;
 }
 .banner-bg h1 {
   color: #fff;
@@ -245,9 +247,15 @@
 }
 @media screen and (max-width: 1024px) {
   .banner-bg p {
+    font-size: 14px;
     max-width: 100%;
     padding: 0 15px;
     box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner-bg p {
+   font-size: 12px;
   }
 }
 .solution-tabs {
