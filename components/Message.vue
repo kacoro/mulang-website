@@ -8,12 +8,12 @@
           <div class="messages-content-left">
             <p>深圳市康索特软件有限公司</p>
             <p>&nbsp;</p>
-            <p style="font-size: 30px; font-weight: bold">400-0755-972</p>
+            <p style="font-size: 30px; font-weight: bold">{{ contact.tel }}</p>
             <p>&nbsp;</p>
             <p>commsoft@commsoft.com.cn</p>
             <p>&nbsp;</p>
-            <p>深圳市南山区高新南九道10号</p>
-            <p>深圳湾科技生态园10栋A座27F</p>
+            <p>{{ contact.address }}</p>
+            <p>{{ contact.adress2 }}</p>
           </div>
           <form @submit.prevent="submitFrom" class="messages-form" autocomplete="off">
             <div class="messages-form-content">
@@ -155,6 +155,7 @@ const CreateListMutation = gql`
   }
 `;
 export default {
+  
     data() {
     return {
       drawer:false,
@@ -164,6 +165,12 @@ export default {
       note: "",
       company: "",
     };
+  },
+  computed: {
+    contact() {
+      return this.$store.state.contact;
+    }
+   
   },
      methods: {
     async submitFrom(e) {

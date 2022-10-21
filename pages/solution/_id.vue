@@ -43,8 +43,8 @@
            <h1>经典案例</h1>
             <div class="solution-list" v-if="list.length>0">
            <div class="img">
-              <img :src="list[0].other.thumb" v-if="list[0].other.thumb" />
-            <img v-else src="/images/solution/TnB6b0a0Gc1p.png"/>
+              <img :src="list[caseActive].other.thumb" v-if="list[caseActive].other.thumb" />
+             <img v-else src="/images/solution/TnB6b0a0Gc1p.png"/>
            </div>
           
             <ul>
