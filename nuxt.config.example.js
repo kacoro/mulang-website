@@ -13,7 +13,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   server: {
-    port: 5002, // default: 3000
+    port: 5000, // default: 3000
     host: '0.0.0.0' // default: localhost 0.0.0.0
   },
   css:[
@@ -64,10 +64,10 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   proxy: {
     '/graphql':{
-      target: 'http://localhost:4002',
+      target: 'http://localhost:4000',
     },
     '/upload':{
-      target: 'http://localhost:4002',
+      target: 'http://localhost:4000',
     }
     // 'http://192.168.179.97:4000/graphql/': {
     //   target: 'http://192.168.179.97:4000',

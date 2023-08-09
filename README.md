@@ -1,4 +1,25 @@
 # nuxt
+## perpare
+
+copy .env.local to .env
+
+copy nuxt.congig.example.js to nuxt.congif.js and exchange website server port  and  graphql api port  
+
+```
+  server: {
+    port: 5000, // default: 3000
+    host: '0.0.0.0' // default: localhost 0.0.0.0
+  },
+  ...
+    proxy: {
+    '/graphql':{
+      target: 'http://localhost:4002',
+    },
+    '/upload':{
+      target: 'http://localhost:4002',
+    }
+  },
+```
 
 ## Build Setup
 
