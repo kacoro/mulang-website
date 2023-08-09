@@ -219,6 +219,7 @@ export default {
   },
 
   head() {
+    console.log(this.seo)
     if (this.seo) {
       const { title, keywords, description } = this.seo;
       return {

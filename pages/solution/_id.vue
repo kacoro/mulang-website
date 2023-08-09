@@ -328,6 +328,7 @@ export default {
     let content = null
     let list = []
     let categoryId = 0;
+    let seo = null;
     const { data, status } = await getGraphqlClient(app.context).rawRequest(
       query,
       {
@@ -338,6 +339,7 @@ export default {
     if (status === 200) {
       content = data.list.content
       categoryId = content.categoryId
+      seo = data.list.seo
     }
     if(content.classicCase){
       const {data:data2,status:status2} = await getGraphqlClient(app.context).rawRequest(
@@ -354,7 +356,8 @@ export default {
       return {
           categoryId,
           content,
-          list
+          list,
+          seo: seo,
       };
   },
    mounted(){

@@ -188,6 +188,14 @@ const listsByIds = gql`
 `;
 const query = gql`
   query Lists($categoryId: Int, $identifier: String!) {
+    category(id:$categoryId){
+      name
+      seo{
+        title
+        keywords
+        description
+      }
+    },
     lists(categoryId: $categoryId, identifier: $identifier) {
       lists {
         id
@@ -211,17 +219,27 @@ const query = gql`
 export default {
   name: "solution",
    head(){
-     if(this.categoryId==50){
-       return {
-        title: "康索特官网|IOT产品",
-     };
-     }else if(this.categoryId=54){
-       return {
-        title: "康索特官网|云端产品",
-     };
-     }
+    //  if(this.categoryId==50){
+    //    return {
+    //     title: "康索特官网|IOT产品",
+    //  };
+    //  }else if(this.categoryId=54){
+    //    return {
+    //     title: "康索特官网|云端产品",
+    //  };
+    //  }
+    if (this.seo) {
+      const { title, keywords, description } = this.seo;
+      return {
+        title: title,
+        meta: [
+          { hid: "description", name: "description", content: description },
+          { hid: "keywords", name: "keywords", content: keywords },
+        ],
+      };
+    } 
     return {
-        title: "康索特官网|产品中心",
+      title: this.category.name ? `${this.category.name}` :"康索特官网|产品中心",
      };
   },
   data() {
@@ -277,6 +295,8 @@ export default {
       }
     }
     return {
+      category:data.category,
+      seo:data.category.seo,
       list: list,
       applications: applications,categoryId
     };
@@ -317,7 +337,9 @@ export default {
       this.list = list;
        this.categoryId = categoryId;
       this.applications = applications;
-    },
+      this.category = data.category;
+      this.seo = data.category.seo;
+    }
   },
 };
 </script>

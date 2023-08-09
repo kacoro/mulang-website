@@ -110,24 +110,7 @@
 </template>
 
 <style scoped>
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1;
-  justify-content: space-between;
-}
-.left-part {
-  align-items: center;
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 120px;
-  margin-right: 50px;
-  width: 1135px;
-  max-width: 1135px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
+
 .left-part .menu-item .menu-name {
   font-size: 16px;
   text-decoration: none;
@@ -135,7 +118,7 @@
 }
 @media only screen and (max-width: 1200px) {
   .left-part {
-    margin-left: 40px !important;
+    padding-left: 40px !important;
   }
   .left-part .menu-item .menu-name {
     font-size: 14px;
@@ -147,7 +130,7 @@
 
 @media only screen and (max-width: 992px) {
   .left-part {
-    margin-left: 40px !important;
+    padding-left: 40px !important;
   }
   .left-part .menu-item .menu-name {
     font-size: 14px;
@@ -168,17 +151,27 @@
   color: #f3cd1d;
 }
 
+
+
 .left-part {
   align-items: center;
   display: inline-block;
   vertical-align: top;
-  margin-left: 120px;
-  margin-right: 50px;
-  width: 1135px;
-  max-width: 1135px;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 120px;
+  padding-right: 50px;
+  
+}
+.left-part .menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 1135px;
+  flex: 1;
+ 
 }
 .left-part .menu-item {
   position: relative;
@@ -188,7 +181,7 @@
   cursor: pointer;
   color: #fff;
   padding: 0 10px;
-  margin: 0 5px;
+  margin: 0 0px;
   overflow: hidden;
 }
 .left-part .menu-item:hover {

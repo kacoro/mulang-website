@@ -6,7 +6,7 @@
           <img src="/images/logo.png" class="logo" />
         </nuxt-link>
         <Menu  />
-        
+        <NavRight/>
       </div>
     </div>
     

@@ -6,6 +6,7 @@
           <img src="/images/logo.png" class="logo" />
         </nuxt-link>
         <Menu />
+        <NavRight/>
       </div>
     </div>
 
@@ -14,8 +15,7 @@
     <foot />
   </div>
 </template>
-<style scoped>
-</style>
+
 <script>
 import Message from "~/components/Message.vue";
 import { gql } from "graphql-request";

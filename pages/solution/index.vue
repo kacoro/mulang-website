@@ -1,5 +1,7 @@
 <template>
+
   <div class="solution-wrap">
+    <my-seo > </my-seo>
     <div class="banner" :class="{banner2:active==57,banner3:active==58}">
       <div class="banner-bg">
         <template v-if="active == 56">
@@ -368,8 +370,18 @@
 <script>
 import { gql } from "graphql-request";
 import getGraphqlClient from "~/utils/getGraphqlClient.js";
+
 const query = gql`
+ 
   query Lists($categoryId: Int, $identifier: String!) {
+    category(id:$categoryId){
+      name
+      seo{
+        title
+        keywords
+        description
+      }
+    },
     lists(categoryId: $categoryId, identifier: $identifier) {
       lists {
         id
@@ -392,7 +404,21 @@ const query = gql`
 
 export default {
   name: "solution",
-
+  head() {
+    if (this.seo) {
+      const { title, keywords, description } = this.seo;
+      return {
+        title: title,
+        meta: [
+          { hid: "description", name: "description", content: description },
+          { hid: "keywords", name: "keywords", content: keywords },
+        ],
+      };
+    } else
+      return {
+        title: this.category.name ? `${this.category.name}` : "Loading",
+      };
+  },
   data() {
     return {
       active: 56,
@@ -410,6 +436,7 @@ export default {
   async asyncData({ app, params, query: q }) {
     console.log(params, q);
     let categoryId = q?.categoryId || 56;
+    let seo = null;
     categoryId =
       typeof categoryId == "string" ? parseInt(categoryId) : categoryId;
 
@@ -424,9 +451,13 @@ export default {
       }
     );
     if (status === 200) {
+      console.log(data)
+     
       return {
         list: data.lists.lists,
         active: categoryId,
+        category:data.category,
+        seo: data.category.seo ||null
       };
     }
   },
@@ -434,13 +465,15 @@ export default {
    
     async change(active) {
       this.active = active;
-      const { data } = await getGraphqlClient().rawRequest(query, {
+      const { data} = await getGraphqlClient().rawRequest(query, {
         categoryId: active,
         identifier: "solution",
         page: 1,
       });
       if (data.lists) {
         this.list = data.lists.lists;
+        this.category=data.category,
+        this.seo = data.category.seo ||null
       }
     },
   },
