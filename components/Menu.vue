@@ -79,7 +79,7 @@
                           </template>
                           <el-menu-item :index="child.link"  >
                                 <template slot="title">
-                                  <span>前往{{child.title}} <i class="el-icon-right"></i></span>
+                                  <span>Go To{{child.title}} <i class="el-icon-right"></i></span>
                                 </template>
                                  </el-menu-item>
                         </el-submenu>
@@ -114,7 +114,8 @@
 .left-part .menu-item .menu-name {
   font-size: 16px;
   text-decoration: none;
-  color: #fff;
+  color: #0A0066;
+  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 @media only screen and (max-width: 1200px) {
   .left-part {
@@ -141,14 +142,14 @@
 }
 
 .left-part .menu-item .menu-name:hover {
-  color: #f3cd1d;
+  color: #0A0066;
 }
 .left-part .menu-item .menu-name:active {
-  color: #fff;
+  color: #0A0066;
 }
 
 .left-part .menu-item .menu-name.nuxt-link-active {
-  color: #f3cd1d;
+  color: #0A0066;
 }
 
 
@@ -160,7 +161,7 @@
   display: flex;
   flex: 1;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: right;
   padding-left: 120px;
   padding-right: 50px;
   
@@ -169,7 +170,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1135px;
+  max-width:800px;
   flex: 1;
  
 }
@@ -179,10 +180,11 @@
   text-align: center;
   font-size: 14px;
   cursor: pointer;
-  color: #fff;
+  color: #0A0066;
   padding: 0 10px;
   margin: 0 0px;
   overflow: hidden;
+  text-transform: uppercase;
 }
 .left-part .menu-item:hover {
   overflow: unset;
@@ -197,8 +199,8 @@
   z-index: 1;
   padding: 18px 25px 24px;
   border-radius: 0 0 1px 1px;
-  color: #fff;
-  background: #19459a;
+  color: #0A0066;
+  background: #f0f0f0;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
   line-height: 24px;
   text-align: center;
@@ -225,7 +227,7 @@
   color: #f3cd1d;
 }
 .left-part .menu-item .menu-popover a {
-  color: #fff;
+  color: #0A0066;
 }
 .menu-popover-item {
   display: flex;

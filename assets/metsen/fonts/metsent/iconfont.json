@@ -1,0 +1,72 @@
+{
+  "id": "4281030",
+  "name": "metsen",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "metsen使用",
+  "glyphs": [
+    {
+      "icon_id": "34452968",
+      "name": "down-arrow",
+      "font_class": "down-arrow",
+      "unicode": "e839",
+      "unicode_decimal": 59449
+    },
+    {
+      "icon_id": "34453046",
+      "name": "right-arrow",
+      "font_class": "right-arrow",
+      "unicode": "e840",
+      "unicode_decimal": 59456
+    },
+    {
+      "icon_id": "34453069",
+      "name": "up-arrow",
+      "font_class": "up-arrow",
+      "unicode": "e844",
+      "unicode_decimal": 59460
+    },
+    {
+      "icon_id": "34453008",
+      "name": "left-arrow",
+      "font_class": "left-arrow",
+      "unicode": "e83d",
+      "unicode_decimal": 59453
+    },
+    {
+      "icon_id": "35398475",
+      "name": "in",
+      "font_class": "a-Frame1502",
+      "unicode": "e96f",
+      "unicode_decimal": 59759
+    },
+    {
+      "icon_id": "37628462",
+      "name": "arrow-up",
+      "font_class": "arrow-up",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "9755275",
+      "name": "wechat",
+      "font_class": "wechat",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "37628328",
+      "name": "arrow-button",
+      "font_class": "arrow",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "12852312",
+      "name": "FB",
+      "font_class": "FB",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    }
+  ]
+}

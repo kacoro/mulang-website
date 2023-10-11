@@ -4,7 +4,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: '康索特官网',
+    title: 'Metsen 美晟供应链',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -17,7 +17,7 @@ export default {
     host: '0.0.0.0' // default: localhost 0.0.0.0
   },
   css:[
-    '~/assets/css/main.scss',
+    '~/assets/metsen/css/main.scss',
   ],
   // Global CSS (https://go.nuxtjs.dev/config-css)
   // css: ['element-ui/lib/theme-chalk/index.css'],
@@ -25,7 +25,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   // plugins: ['@/plugins/element-ui'],
 
-  plugins: ['@/plugins/core','@/plugins/scrollTo', { src: '@/plugins/element-ui', ssr: true }],
+  plugins: ['@/plugins/core','@/plugins/scrollTo',{src:'@/plugins/iconFont',ssr:false} ,{ src: '@/plugins/element-ui', ssr: true }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,

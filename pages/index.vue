@@ -1,11 +1,108 @@
 <template>
   <div class="wrap">
-    <div class="temp-banner" v-show="show">
-      <img src="/images/index/banner-1.jpg" alt="" class="pic" width="100%" />
-    </div>
+
     <div class="banner">
-      <img src="/images/index/banner.jpg" alt="" class="pic" width="100%" />
+      <div class="banner-cover"></div>
+      <img class="banner-cover-bg" width="1920" height="804" alt="Plane in the sky" src="/metsen/images/cover.jpg"
+        data-object-fit="cover">
+      <div class="banner-containner">
+        <h1 class="h1">GUIDING YOU THROUGH THE CHINESE MARKET DIRECT TO THE DOORSTEP!</h1>
+        <p>While others wait for overseas freight forwarders to contact them, we act in advance to complete your global
+          supply chain with a full range of services, from picking up your freight at a warehouse to port or airport and
+          in destination last-mile door delivery.</p>
+        <NuxtLink :to="`about`" class="button big">Get a quote
+
+          <svg class="button-anime" width="332" height="64" viewBox="0 0 332 64" fill="white"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M300 0L332 32L300 64L268 32L300 0Z"></path>
+            <path d="M0 0H300V64H0V0Z"></path>
+          </svg>
+        </NuxtLink>
+      </div>
+
     </div>
+
+    <!-- GLOBAL OCEAN FREIGHT ( FCL, LCL, OOG ) -->
+    <div class="section is-style-xl">
+      <div class="side-by-side">
+        <div class="side-by-side__options image image-first">
+          <div class="inner left">
+            <h2 class="hidden-sm-and-up title inserted">GLOBAL OCEAN FREIGHT <br />( FCL, LCL, OOG )</h2>
+            <div class="side-by-side__image image-cover">
+              <img width="945" height="450" src="/metsen/images/p3.png" class="attachment-w_960_nc size-w_960_nc"
+                alt="man-with-boxes" decoding="async" loading="lazy" title="man-with-boxes"
+                sizes="(max-width: 945px) 100vw, 945px">
+            </div>
+            <div class="content">
+              <h2 class="hidden-xs-only title ">GLOBAL OCEAN FREIGHT <br />( FCL, LCL, OOG )</h2>
+              <p class="content-text">Ocean FCL (Full Container Load), LCL (Less than Container Load),
+                and OOG (Out-of-Gauge) cargo services provide businesses with flexible and reliable options for
+                transporting goods across the ocean and accessing global markets.
+              </p>
+              <NuxtLink :to="`about`" class="button big white">Get a quote
+                <svg class="button-anime" width="332" height="64" viewBox="0 0 332 64" fill="#0A0066"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M300 0L332 32L300 64L268 32L300 0Z"></path>
+                  <path d="M0 0H300V64H0V0Z"></path>
+                </svg>
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+        <div aria-hidden="true" class="block-spacer md"></div>
+        <div class="container ">
+          <el-row :gutter="35" class="image-box">
+            <el-col :lg="8" :md="8" :sm="12" :xs:="24" class="image-box-item">
+              <div class="grid-content bg-purple">
+                <div class="image-cover">
+                  <el-image class="image" src="/metsen/images/221.jpg" fit="cover" lazy></el-image>
+                </div>
+
+
+                <h3 class="wp-block-heading">FCL</h3>
+                <p>Ship large quantities of goods across the ocean in a single, secure container with our Full
+                  Container Load (FCL) service.</p>
+              </div>
+            </el-col>
+            <el-col :lg="8" :md="8" :sm="12" :xs:="24" class="image-box-item">
+              <div class="grid-content bg-purple">
+                <div class="image-cover">
+                  <el-image class="image" src="/metsen/images/2222.jpg" fit="cover" lazy></el-image>
+                </div>
+                <h3 class="wp-block-heading">LCL</h3>
+                <p>Consolidate your smaller volume freight into our containers with our Less than Container Load
+                  (LCL) service and save on shipping costs. This budget-friendly option is a quick solution for your
+                  cargo needs.</p>
+              </div>
+            </el-col>
+            <el-col :lg="8" :md="8" :sm="24" :xs="24" class="image-box-item">
+              <div class="grid-content bg-purple">
+                <div class="image-cover ">
+                  <el-image class="image image3" src="/metsen/images/2223.jpg" fit="cover" lazy></el-image>
+                </div>
+                <h3 class="wp-block-heading">OOG</h3>
+                <p>Found your cargo too big to load on a dry container? Ship it quickly and safely on an open-top or
+                  flat-rack container.</p>
+              </div>
+            </el-col>
+          </el-row>
+        </div>
+
+
+      </div>
+    </div>
+    <div aria-hidden="true" class="block-spacer md"></div>
+
+    
+    <div class="slider">
+
+     
+      <svg class="ms-icon" aria-hidden="true">
+        <use xlink:href="#icon-wechat"></use>
+      </svg>
+    </div>
+
+
     <div class="section-1">
       <div class="section-1-content">
         <div class="section-1-content-text">
@@ -14,7 +111,8 @@
           </div>
           <div>
             <h1>关于CST</h1>
-            <p style="text-align: left;">康索特成立于2006年10月，作为业内领先的AIoT产品和解决方案提供商，端云协同应用能力是康索特的核心优势，也是人工智能和物联网产生价值的关键。我们专注于通用园区和城市
+            <p style="text-align: left;">
+              康索特成立于2006年10月，作为业内领先的AIoT产品和解决方案提供商，端云协同应用能力是康索特的核心优势，也是人工智能和物联网产生价值的关键。我们专注于通用园区和城市
               治理领域，连接数据、算法及应用，为客户提供领先的AIoT软硬件产品和智能化应用解决方案。
             </p>
             <NuxtLink :to="`about`" class="button radius">了解更多 </NuxtLink>
@@ -78,7 +176,7 @@
         </div>
       </div>
     </div>
-    <home-solution-tabs ></home-solution-tabs>
+    <home-solution-tabs></home-solution-tabs>
     <div class="section-news">
       <h1 class="blue">新闻中心</h1>
       <div class="section-news-content">
@@ -87,19 +185,18 @@
         </div>
         <template v-if="list">
           <client-only>
-          <div v-if="list.length > 0" class="section-news-first">
-              <h4><NuxtLink :to="`news/${list[0].id}`">{{ list[0].title }}</NuxtLink></h4>
-            
-            <NuxtLink :to="`news/${list[0].id}`">
-              <div v-html="list[0].textSnippet"></div>
-            </NuxtLink>
-            <NuxtLink
-              :to="`news/${list[0].id}`"
-              class="button radius mid"
-            >
-              了解更多
-            </NuxtLink>
-          </div>
+            <div v-if="list.length > 0" class="section-news-first">
+              <h4>
+                <NuxtLink :to="`news/${list[0].id}`">{{ list[0].title }}</NuxtLink>
+              </h4>
+
+              <NuxtLink :to="`news/${list[0].id}`">
+                <div v-html="list[0].textSnippet"></div>
+              </NuxtLink>
+              <NuxtLink :to="`news/${list[0].id}`" class="button radius mid">
+                了解更多
+              </NuxtLink>
+            </div>
           </client-only>
           <ul class="section-news-list">
             <template v-for="(post, index) in list">
@@ -122,8 +219,8 @@
 </template>
 
 <script>
-import "assets/css/index.scss";
-import {gql} from "graphql-request";
+import "assets/metsen/css/index.scss";
+import { gql } from "graphql-request";
 import getGraphqlClient from "~/utils/getGraphqlClient.js";
 const query = gql`
   query Lists( $categoryId: Int, $identifier: String!,$limit:Int,$page:Int) {
@@ -165,18 +262,18 @@ export default {
   data() {
     return {
       timer: null,
-      show: true,
-      list:[]
+      // show: true,
+      list: []
     };
   },
-  mounted: function () {
-    this.$nextTick(() => {
-      this.timer = setTimeout(() => {
-        this.show = false;
-        //console.log("settimeout")
-      }, 10 * 1000);
-    });
-  },
+  // mounted: function () {
+  //   this.$nextTick(() => {
+  //     this.timer = setTimeout(() => {
+  //       this.show = false;
+  //       //console.log("settimeout")
+  //     }, 10 * 1000);
+  //   });
+  // },
   destroyed: function () {
     if (this.timer) {
       clearTimeout(this.timer);
@@ -191,14 +288,14 @@ export default {
         categoryId: 0,
         identifier: "news",
         page: 1,
-        limit:3
+        limit: 3
       }
     );
-   
-    if (status === 200&&data?.lists) {
-      const {lists} = data.lists
+
+    if (status === 200 && data?.lists) {
+      const { lists } = data.lists
       return {
-          list:lists,
+        list: lists,
       };
     }
   },

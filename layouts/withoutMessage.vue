@@ -2,11 +2,12 @@
   <div id="__wrap">
     <div class="page-header">
       <div class="header-content">
-        <nuxt-link to="/">
-          <img src="/images/logo.png" class="logo" />
+        <nuxt-link to="/" class="logo-wrap">
+          <img src="/metsen/images/logo.png" class="logo" />
         </nuxt-link>
         <Menu  />
-        <NavRight/>
+        <!-- <NavRight/> -->
+        
       </div>
     </div>
     

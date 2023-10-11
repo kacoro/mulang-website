@@ -1,0 +1,128 @@
+
+
+@import "@/assets/metsen/css/base.scss";
+
+
+
+
+
+/* 产品列表 */
+.product-list-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 60px 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+
+.product-list-item ul {
+  font-size: 24px;
+}
+
+.product-list-item ul li {
+  line-height: 40px;
+  position: relative;
+
+}
+
+.product-list-item h2 {
+  color: #19459a;
+  padding-bottom: 30px;
+}
+
+.product-list-item ul li::before {
+  content: "●";
+  color: #f3cd1d;
+  font-size: 12px;
+  position: absolute;
+  left: -2em;
+}
+
+.section-solution {
+  padding-bottom: 1.6rem;
+}
+
+.section-solution-header {
+  display: flex;
+  max-width: 1920px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+.section-solution-header .item {
+  display: block;
+  width: 100%;
+  max-width: 355px;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+
+}
+
+.section-solution-header p {
+  line-height: 27px;
+  padding: 20px 0;
+}
+
+.section-solution-header .item h2 {
+  color: #19459a;
+  padding: 20px;
+}
+
+@media screen and (max-width:768px) {
+
+  .section-solution-header .item h2 {
+    padding: 10px 0px;
+  }
+
+  .section-solution-header p {
+    padding: 10px 0px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+  }
+}
+
+@media screen and (max-width:415px) {
+
+  .section-solution-header .item h2 {
+    padding: 10px 0px;
+    font-size: 13px;
+
+    span {
+      font-size: 12px;
+    }
+  }
+
+}
+
+.section-solution-header-2 {
+  padding: 0 0;
+}
+
+.section-solution-header-2 .item {
+  padding: 0;
+  position: relative;
+}
+
+.section-solution-header .item .pic {
+  width: 100%;
+}
+
+
+
+
+@import "@/assets/metsen/css/side-by-side.scss";
