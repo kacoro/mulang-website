@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: "Inter";
+  font-family: "Inter Bold";
   src: url("../fonts/inter-bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -114,7 +114,7 @@ ul {
 h1,
 h2,
 h3,
-h4 {
+h4,h5,h6 {
   font-weight: bold;
   line-height: 1.2;
   font-family: "TacticSansExd", sans-serif;
@@ -153,6 +153,10 @@ h3 {
 }
 
 h4 {
+  font-size: 24px;
+}
+
+h6 {
   font-size: 24px;
 }
 
@@ -323,66 +327,63 @@ p {
 }
 
 .button {
-  cursor: pointer;
+  font-size: calc( 18px + 0 * ((100vw - 360px) / 1560) );
+  line-height: 1.778;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+  text-transform: none;
   text-decoration: none;
-  color: $--color-primary;
-  background-color: #f3cd1d;
-  border: 2px solid #f3cd1d;
-  font-size: 28px;
-  width: 250px;
-  height: 70px;
-  line-height: 70px;
-  display: inline-block;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s all;
+  padding: 14px;
+  max-width: 280px;
+  width: 100%;
   text-align: center;
-  transition: all .3s ease;
-
-  &:hover {
-    color: lighten($--color-primary, 5%);
-    background-color: lighten($--color-warning, 5%);
-    border: 2px solid lighten($--color-warning, 5%);
-    outline: lighten($--color-warning, 5%);
-    transform: translateY(-5%);
+  z-index: 1;
+  border-radius: 0;
+  // background: transparent;
+  
+  color: #000000;
+  border: 2px solid #0A0066;
+  box-sizing: border-box;
+  .button-anime{
+      display: block;
+      height: auto;
+      width: 113%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      
+      transform: translate(-100%, -50%);
+      transition: all ease 600ms;
+      z-index: -1;
+      fill: #0A0066;
   }
+  &:active, &:hover  {
+    color: #ffffff;
+    border-color: #0A0066;
+    filter: drop-shadow(0px 7px 10px rgba(0, 0, 0, 0.25));
+    transition: all ease 900ms;
+    .button-anime{
+    
+      transition: all ease 600ms;
+      transform: translate(0, -50%);
+    }
+  }
+
 }
 
 .button.radius {
   border-radius: 10px;
 }
 
-.button.big {
-  width: 248px;
-  height: 32px;
-  line-height: 32px;
-  padding: 14px;
-  font-size: 18px;
-  background: #0A0066;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  position: relative;
-  overflow: hidden;
 
-  .button-anime {
-    position: absolute;
-    left: -332px;
-    top: 50%;
-    margin-top: -32px;
-    transition: all 0.3s ease-in-out;
-    z-index: -1;
-  }
-
-  &:hover {
-    background: #0A0066;
-    color: #0A0066;
-    border: 2px solid #ffffff;
-    outline: lighten($--color-warning, 5%);
-    transform: translateY(0%);
-
-    .button-anime {
-      left: 0px;
-
-    }
-  }
-}
 
 .button.white {
   background: #ffffff;
@@ -393,19 +394,30 @@ p {
     background: #ffffff;
     color: #ffffff;
     border: 2px solid #0A0066;
-    outline: lighten($--color-warning, 5%);
+  }
+}
 
+.button.dark {
+  background: #0A0066;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  .button-anime{
+    fill: #ffffff;
+  }
+  
+  &:active, &:hover  {
+    color: #0A0066;
+    border-color: #ffffff;
+    filter: drop-shadow(0px 7px 10px rgba(0, 0, 0, 0.25));
+    transition: all ease 900ms;
+    .button-anime{
+      transition: all ease 600ms;
+      transform: translate(0, -50%);
+    }
   }
 }
 
 
-
-.button.mid {
-  width: 182px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 18px;
-}
 
 .button.default {
   color: #19459a;
@@ -825,3 +837,5 @@ p {
     display: block
   }
 }
+
+

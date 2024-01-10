@@ -115,7 +115,7 @@
   font-size: 16px;
   text-decoration: none;
   color: #0A0066;
-  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Inter Bold","SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 @media only screen and (max-width: 1200px) {
   .left-part {
@@ -185,6 +185,7 @@
   margin: 0 0px;
   overflow: hidden;
   text-transform: uppercase;
+  
 }
 .left-part .menu-item:hover {
   overflow: unset;

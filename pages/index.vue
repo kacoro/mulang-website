@@ -10,12 +10,10 @@
         <p>While others wait for overseas freight forwarders to contact them, we act in advance to complete your global
           supply chain with a full range of services, from picking up your freight at a warehouse to port or airport and
           in destination last-mile door delivery.</p>
-        <NuxtLink :to="`about`" class="button big">Get a quote
+        <NuxtLink :to="`about`" class="button dark">Get a quote
 
-          <svg class="button-anime" width="332" height="64" viewBox="0 0 332 64" fill="white"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M300 0L332 32L300 64L268 32L300 0Z"></path>
-            <path d="M0 0H300V64H0V0Z"></path>
+          <svg class="ms-icon button-anime" aria-hidden="true">
+            <use xlink:href="#icon-arrow"></use>
           </svg>
         </NuxtLink>
       </div>
@@ -39,11 +37,9 @@
                 and OOG (Out-of-Gauge) cargo services provide businesses with flexible and reliable options for
                 transporting goods across the ocean and accessing global markets.
               </p>
-              <NuxtLink :to="`about`" class="button big white">Get a quote
-                <svg class="button-anime" width="332" height="64" viewBox="0 0 332 64" fill="#0A0066"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M300 0L332 32L300 64L268 32L300 0Z"></path>
-                  <path d="M0 0H300V64H0V0Z"></path>
+              <NuxtLink :to="`about`" class="button">Get a quote
+                <svg class="ms-icon button-anime" aria-hidden="true">
+                  <use xlink:href="#icon-arrow"></use>
                 </svg>
               </NuxtLink>
             </div>
@@ -52,19 +48,17 @@
         <div aria-hidden="true" class="block-spacer md"></div>
         <div class="container ">
           <el-row :gutter="35" class="image-box">
-            <el-col :lg="8" :md="8" :sm="12" :xs:="24" class="image-box-item">
+            <el-col :lg="8" :md="8" :sm="12" :xs="24" class="image-box-item">
               <div class="grid-content bg-purple">
                 <div class="image-cover">
                   <el-image class="image" src="/metsen/images/221.jpg" fit="cover" lazy></el-image>
                 </div>
-
-
                 <h3 class="wp-block-heading">FCL</h3>
                 <p>Ship large quantities of goods across the ocean in a single, secure container with our Full
                   Container Load (FCL) service.</p>
               </div>
             </el-col>
-            <el-col :lg="8" :md="8" :sm="12" :xs:="24" class="image-box-item">
+            <el-col :lg="8" :md="8" :sm="12" :xs="24" class="image-box-item">
               <div class="grid-content bg-purple">
                 <div class="image-cover">
                   <el-image class="image" src="/metsen/images/2222.jpg" fit="cover" lazy></el-image>
@@ -93,13 +87,71 @@
     </div>
     <div aria-hidden="true" class="block-spacer md"></div>
 
-    
-    <div class="slider">
 
-     
-      <svg class="ms-icon" aria-hidden="true">
-        <use xlink:href="#icon-wechat"></use>
-      </svg>
+    <div class="slider ">
+
+      <el-row>
+        <el-col :lg="12" :md="12" :sm="24" :xs="24">
+          <div class="grid-content bg-">
+            <h2>Cases&nbsp;Solutions</h2>
+            <el-row :gutter="10">
+              <el-col :sm="12" :xs="24">
+                <div class="button" @click="index = 1">OOG Shipment<svg class="ms-icon button-anime" aria-hidden="true">
+                    <use xlink:href="#icon-arrow"></use>
+                  </svg>
+                </div>
+              </el-col>
+              <el-col :sm="12" :xs="24">
+                <div class="button" @click="index = 2">TRANSPORTATION<svg class="ms-icon button-anime" aria-hidden="true">
+                    <use xlink:href="#icon-arrow"></use>
+                  </svg>
+                </div>
+              </el-col>
+              <el-col :sm="12" :xs="24">
+                <div class="button" @click="index = 3">Last-Mile Delivery<svg class="ms-icon button-anime" aria-hidden="true">
+                    <use xlink:href="#icon-arrow"></use>
+                  </svg>
+                </div>
+              </el-col>
+              <el-col :sm="12" :xs="24">
+                <div class="button" @click="index = 4">Small Truck Load (Sprinters/Box Trucks/Straight Trucks)<svg class="ms-icon button-anime" aria-hidden="true">
+                    <use xlink:href="#icon-arrow"></use>
+                  </svg>
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </el-col>
+        <el-col :lg="12" :md="12" :sm="24" :xs="24">
+          <div class="grid-content slider-main">
+            <el-image class="image__placeholder" style="width:100%" src="/metsen/images/case1.png" fit="contain"
+              lazy></el-image>
+            <div class="slider-main-content ">
+              <transition name="el-fade-in-linear">
+                <div class="transition-box" v-show="index == 1">
+                  <el-image class="image " src="/metsen/images/case1.png" fit="contain"></el-image>
+                </div>
+              </transition>
+              <transition name="el-fade-in-linear">
+                <div class="transition-box" v-show="index == 2">
+                  <el-image class="image " src="/metsen/images/case2.png" fit="contain"></el-image>
+                </div>
+              </transition>
+              <transition name="el-fade-in-linear">
+                <div class="transition-box" v-show="index == 3">
+                  <el-image class="image " src="/metsen/images/case3.png" fit="contain"></el-image>
+                </div>
+              </transition>
+              <transition name="el-fade-in-linear">
+                <div class="transition-box" v-show="index == 4">
+                  <el-image class="image " src="/metsen/images/case4.png" fit="contain"></el-image>
+                </div>
+              </transition>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
+
     </div>
 
 
@@ -263,6 +315,7 @@ export default {
     return {
       timer: null,
       // show: true,
+      index: 0,
       list: []
     };
   },
