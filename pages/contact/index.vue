@@ -3,9 +3,9 @@
     <div class="banner">
       <div class="banner-bg">
         <div class="border-title border-title2">
-          <h2>商务合作</h2>
+          <h2>CONTACT US</h2>
         </div>
-        <p>业务合作类，如业务需求、落地场景、所需产品功能等描述</p>
+        <p>CONTACT US TODAY TO STREAMLINE YOUR LOGISTICS OPERATIONS</p>
       </div>
     </div>
     <div class="contact-detail__container">
@@ -15,62 +15,74 @@
           status-icon
           :rules="rules"
           ref="ruleForm"
-          label-width="85px"
+          label-width="20px"
+          size="medium"
           class="contact-ruleForm"
         >
+        <div class="contact-container">
           <div class="contact-ruleForm__left">
-            <el-form-item label="联系人" prop="username">
-              <el-input
+            <el-form-item label="" prop="username" >
+              <el-input class="my-input"
                 v-model="ruleForm.username"
-                :placeholder="rules.username[0].message"
+                :placeholder="rules.username[0].placeholder"
               ></el-input>
             </el-form-item>
-            <el-form-item label="联系电话" prop="tel">
+           
+            <el-form-item label="" prop="tel">
               <el-input
                 v-model="ruleForm.tel"
-                :placeholder="rules.tel[0].message"
+                :placeholder="rules.tel[0].placeholder"
               ></el-input>
             </el-form-item>
-            <el-form-item label="联系邮箱" prop="email">
-              <el-input
-                v-model="ruleForm.email"
-                :placeholder="rules.email[0].message"
-              ></el-input>
-            </el-form-item>
-            <el-form-item label="联系问题" prop="note" >
+           
+            <el-form-item label="" prop="note" >
               <el-input
                 type="textarea" :autosize="{minRows:4,maxRow:6}"
                 v-model="ruleForm.note"
-                :placeholder="rules.note[0].message"
+                :placeholder="rules.note[0].placeholder"
               ></el-input>
             </el-form-item>
           </div>
           <div class="contact-ruleForm__right">
-            <el-form-item label="公司名称" prop="company">
+            <el-form-item label="" prop="email">
+              <el-input
+                v-model="ruleForm.email"
+                :placeholder="rules.email[0].placeholder"
+              ></el-input>
+            </el-form-item>
+            <el-form-item label="" prop="company">
               <el-input
                 v-model="ruleForm.company"
-                :placeholder="rules.company[0].message"
+                :placeholder="rules.company[0].placeholder"
               ></el-input>
             </el-form-item>
-            <el-form-item label="所在地址" prop="address">
+            <!-- <el-form-item label="" prop="address">
               <el-input
                 v-model="ruleForm.address"
-                :placeholder="rules.address[0].message"
+                :placeholder="rules.address[0].placeholder"
               ></el-input>
-            </el-form-item>
+            </el-form-item> -->
             <div class="contact-ruleForm__right__content">
-              <el-form-item>
+              <!-- <el-form-item>
                 <p class="contact-ruleForm__right__content__tips" v-if="valid">
-                  已提交，工作人员审核问题通过后将您联系
+                  Success
                 </p>
-              </el-form-item>
-              <el-form-item>
-                <el-button type="primary" @click="submitForm('ruleForm')"
-                  >确认提交</el-button
-                >
-              </el-form-item>
+              </el-form-item> -->
+             
             </div>
+            
           </div>
+          <el-form-item>
+                <!-- <button type="submit" @click="submitForm('ruleForm')" class="button dark  mid">Send Message   <svg class="ms-icon button-anime" aria-hidden="true">
+            <use xlink:href="#icon-arrow"></use>
+          </svg></button> -->
+                <el-button type="submit" style="width:280px;" class="button dark  mid " @click="submitForm('ruleForm')"
+                  >Send Message<svg class="ms-icon button-anime" aria-hidden="true">
+            <use xlink:href="#icon-arrow"></use>
+          </svg></el-button>
+              </el-form-item>
+        </div>
+        
         </el-form>
       </no-ssr>
     </div>
@@ -78,6 +90,9 @@
 </template>
 
 <style scoped>
+.contact-ruleForm{
+  padding-right: 20px;box-sizing: border-box;
+}
 .banner {
   min-height: 320px;
   height: 5rem;
@@ -90,6 +105,7 @@
 .banner-content {
   margin-top: 0.7rem;
 }
+
 .banner-bg {
   max-width: 1420px;
   box-sizing: border-box;
@@ -114,6 +130,11 @@
 .container {
   margin: 1rem auto;
 }
+.el-input--medium .el-input__inner {
+    height: 53px;
+    line-height: 53px;
+}
+
 </style>
 <script>
 import "./index.scss";
@@ -139,9 +160,9 @@ export default {
     if (this.site?.seo) {
       const { title, keywords, description } = this.site.seo;
       return {
-        title: title+"|商务合作",
+        title: title+"|Contact",
         meta: [
-          { hid: "description", name: "description", content: "业务合作类，如业务需求、落地场景、所需产品功能等描述" },
+          { hid: "description", name: "description", content: "description" },
           { hid: "keywords", name: "keywords", content: keywords },
         ],
       };
@@ -176,26 +197,28 @@ export default {
       },
       rules: {
         username: [
-          { required: true, message: "请输入联系人姓名", trigger: "blur" },
+          { required: true, placeholder:"Full Name",message: "Full Name is a required field！", trigger: "blur" },
         ],
         tel: [
-          { required: true, message: "请输入联系人电话", trigger: "change" },
+          { required: true, placeholder:"Phone", message: "Phone is a required field！", trigger: "change" },
         ],
         email: [
-          { required: true, message: "请输入联系人邮箱", trigger: "change" },
+          { required: true, placeholder:"Email", message: "Email is a required field！", trigger: "change" },
+          { type: 'email', message: 'Please input correct email address ', trigger: ['blur', 'change'] }
         ],
         note: [
           {
             required: true,
-            message: "请描述您的应用场景和技术要求",
+            message: "Message",
             trigger: "change",
+            placeholder:"Message", message: "Message is a required field！",
           },
         ],
         company: [
-          { required: false, message: "请输入公司名称", trigger: "blur" },
+          { required: false, placeholder:"Company",message: "Company is a required field！", trigger: "blur" },
         ],
         address: [
-          { required: false, message: "请输入所在地址", trigger: "blur" },
+          { required: false, placeholder:"Address",message: "Address is a required field！", trigger: "blur" },
         ],
       },
     };

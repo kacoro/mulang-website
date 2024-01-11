@@ -125,6 +125,90 @@
 
 
 
+.section{
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  &.right{
+    flex-flow: row-reverse wrap;
+  }
+  &.center{
+    align-items: center;
+  }
+
+  @media (max-width: 767px){
+    flex-flow: column-reverse wrap;
+    &.right{
+      flex-flow: column-reverse wrap;
+    }
+    .image-cover,.section-content{
+      flex: 0 0 100%;
+      margin-bottom: 30px;
+    }
+  
+  }
+  h2{
+    margin-bottom: 50px;
+  }
+  @media (max-width: 1024px){
+    p{
+      font-size: 16px;
+    }
+    h2{
+      margin-bottom: 30px;
+    }
+  }
+  .section-content {
+    box-sizing: border-box;
+    flex: 0 0 50%;
+    width: 100%;
+    max-width: 690px;
+    padding-right: 1.5rem;
+    padding-left: 30px;
+  }
+  &.left{
+    .section-content {
+      padding-left: 1.5rem;
+      padding-right: 30px;
+    }
+  }
+  .image-cover{
+    flex: 0 0 50%;
+    max-height: 450px;
+   
+    // img {
+    //   width: 100%;
+    //   height: 100%;
+    //   object-fit: cover;
+    //   transition: all ease 600ms;
+    // }
+  }
+}
+
+
+.section-content-left {
+  width: 25%;
+  box-sizing: content-box;
+  padding-left: 25%;
+  padding-right: 35px;
+}
+
+.section-content-left h4 {
+  padding: 57px 0 30px 0;
+}
+
+.section-content-left .button {
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1900px) {
+  .section-content-left {
+    padding-left: 30px;
+    padding-right: 10px;
+  }
+
+}
 @import "@/assets/metsen/css/side-by-side.scss";
 @import "@/assets/metsen/css/slider.scss";
 

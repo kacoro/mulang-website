@@ -1,20 +1,14 @@
 <template>
     <div class="messages">
+      <div aria-hidden="true" class="block-spacer md"></div>
       <div class="messages-wrap">
-        <h1 style="font-size: 0.41rem">
-          如有业务合作，您可留下您的信息，我们取得您的信息后将会与您联系
-        </h1>
-        <div class="messages-content">
-          <div class="messages-content-left">
-            <p>深圳市康索特软件有限公司</p>
-            <p>&nbsp;</p>
-            <p style="font-size: 30px; font-weight: bold">{{ contact.tel }}</p>
-            <p>&nbsp;</p>
-            <p>commsoft@commsoft.com.cn</p>
-            <p>&nbsp;</p>
-            <p>{{ contact.address }}</p>
-            <p>{{ contact.adress2 }}</p>
-          </div>
+        
+        <h2 style="font-size: 0.41rem">
+          CONTACT US TODAY TO STREAMLINE YOUR LOGISTICS OPERATIONS
+        </h2>
+        <div aria-hidden="true" class="block-spacer md"></div>
+        <div class="messages-content" >
+        
           <form @submit.prevent="submitFrom" class="messages-form" autocomplete="off">
             <div class="messages-form-content">
               <div class="messages-form-input">
@@ -22,33 +16,37 @@
                   
                   name="username"
                   v-model="username"
-                  placeholder="您的姓名"
+                  placeholder="Full Name"
                 />
-                <input type="email" autocomplete="email" v-model="email" placeholder="您的邮箱" />
+                <input type="email" autocomplete="email" v-model="email" placeholder="Email" />
               </div>
               <div class="messages-form-input">
-                <input type="tel" v-model="tel" autocomplete="tel" placeholder="您的电话" />
+                <input type="tel" v-model="tel" autocomplete="tel" placeholder="Phone" />
                 <input
                   type="company"
                   autocomplete='organization'
                   v-model="company"
-                  placeholder="公司名称"
+                  placeholder="company"
                 />
               </div>
-              <div class="messages-form-input">
+              <div class="messages-form-input messages-form-textarea">
                 <textarea
                   name="note"
                   
                   v-model="note"
-                  placeholder="交流事宜"
+                  placeholder="Message"
                 ></textarea>
               </div>
             </div>
             <div class="text-align-right">
-              <button type="submit" class="button radius mid">立即提交</button>
+              <button type="submit" class="button dark  mid">Send Message   <svg class="ms-icon button-anime" aria-hidden="true">
+            <use xlink:href="#icon-arrow"></use>
+          </svg></button>
             </div>
           </form>
+          
         </div>
+        <div aria-hidden="true" class="block-spacer md"></div>
       </div>
     </div>
 </template>
@@ -57,7 +55,7 @@
   .messages-wrap{
     max-width: 1314px;
     margin: 0 auto;
-    color: #fff;
+    color: #f0f0f0;
   }
   .messages-wrap h1{
     font-size: 41px;
@@ -66,14 +64,13 @@
   }
   .messages{
     padding: 60px 0 45px;
-    background: #19459a;
+    background: #f0f0f0;
    
   }
 .messages-content{
   display: flex;
-   justify-content: space-between;
+  justify-content: center;
    flex-wrap: wrap;
-
 }
 .messages-content-left{
   flex: 1;
@@ -89,12 +86,14 @@
   display: flex;
   max-width: 850px;
   flex-wrap: wrap;
+  
+  justify-content: center;
 }
  .messages-form .button{
    margin-right: 15px;
 }
 input,textarea{
-  background: #e5e5e5;
+  background: transparent;
   box-sizing: border-box;
   padding: 0 20px;
   border: 1px solid transparent;
@@ -102,29 +101,35 @@ input,textarea{
   max-width: 100%!important;
 }
 input:focus,textarea:focus{
-  border: 1px solid #f3cd1d;
+  border: 2px  solid #0A0066;
   outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.0),0 0 1px rgba(243,205,29,1);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.0),0 0 1px rgba(243,205,29,1)
 }
 input{
-  
-  width: 267px;
+  width: 100%;
   height: 70px;
   margin-bottom: 15px;
-  margin-right: 15px;
+  border: 2px  solid #0A0066;
 }
 .messages-form-input{
   display: flex;
   flex-direction: column;
+  width: 50%;
+  padding-right: 15px;
+  box-sizing: border-box;
+  
 }
-
+.messages-form-textarea{
+  width: 100%;
+}
 textarea{
-  width: 267px;
+  width:100%;
   margin-right: 15px;
   margin-bottom: 15px;
   padding-top:15px;
   height: 154px;
+  border: 2px  solid #0A0066;
 }
 @media screen and (max-width:600px) {
   input{
@@ -176,21 +181,21 @@ export default {
     async submitFrom(e) {
       if (this.username == "") {
         this.$message({
-            message: '请填写您的姓名！',
+            message: 'Full Name is a required field！',
             type: 'warning',
         });
         return false;
       }
       if (this.tel == "") {
          this.$message({
-            message: '请填写您的电话！',
+            message: 'Phone is a required field!',
             type: 'warning',
         });
         return false;
       }
       if (this.email == "") {
         this.$message({
-            message: '请填写您的邮箱！',
+            message: 'Email is a required field!',
             type: 'warning',
         });
         return false;
@@ -219,14 +224,14 @@ export default {
           (this.address = ""),
           (this.company = "");
         this.$message({
-            message: '提交成功！',
+            message: 'success！',
             type: 'success',
             duration: 1000
         });
       
       } else {
         this.$message({
-            message: '提交失败！',
+            message: 'error！',
             type: 'error',
             duration: 1000
         });

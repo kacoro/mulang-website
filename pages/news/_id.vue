@@ -3,11 +3,11 @@
     <div class="news-detail-content">
       <div v-if="content" class="container">
         <el-breadcrumb class="breadcrumb" separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item :to="{ path: '/' }">Home</el-breadcrumb-item>
           <el-breadcrumb-item :to="{ path: '/news' }"
-            >新闻动态</el-breadcrumb-item
+            >News</el-breadcrumb-item
           >
-          <el-breadcrumb-item>公司动态</el-breadcrumb-item>
+          <!-- <el-breadcrumb-item>公司动态</el-breadcrumb-item> -->
         </el-breadcrumb>
         <div class="news-detail__header">
           <h3 class="blue">{{ content.title }}</h3>
@@ -22,7 +22,7 @@
         <div>
           <ul class="prev-next">
             <li v-if="prev">
-              <span class="text">上一篇：</span>
+              <span class="text">Prev：&nbsp;</span>
               <div>
                 <nuxt-link :to="`${prev.id}`">{{ prev.title }}</nuxt-link>
                 <p class="prev-next__time" v-if="next&&next.publishTime">
@@ -31,12 +31,16 @@
               </div>
             </li>
             <li class="prev-next__back">
-              <nuxt-link class="button primary mid" to="/news"
-                >返回新闻动态</nuxt-link
+              <nuxt-link class="button dark " to="/news"
+                >Back To News
+                <svg class="ms-icon button-anime" aria-hidden="true">
+                  <use xlink:href="#icon-arrow"></use>
+                </svg>
+                </nuxt-link
               >
             </li>
             <li v-if="next">
-              <span class="text">下一篇：</span>
+              <span class="text">Next:&nbsp;</span>
               <div>
                 <nuxt-link :to="`${next.id}`">{{ next.title }}</nuxt-link>
                 <p class="prev-next__time" v-if="next&&next.publishTime">
@@ -124,9 +128,9 @@
     a:hover {
       color: #19459a;
     }
-    .button:hover {
-      color: #fff;
-    }
+    // .button:hover {
+    //   color: #fff;
+    // }
   }
   .news-detail-content {
     padding: 1rem 0px;

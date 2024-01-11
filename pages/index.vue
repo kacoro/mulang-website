@@ -6,11 +6,11 @@
       <img class="banner-cover-bg" width="1920" height="804" alt="Plane in the sky" src="/metsen/images/cover.jpg"
         data-object-fit="cover">
       <div class="banner-containner">
-        <h1 class="h1">GUIDING YOU THROUGH THE CHINESE MARKET DIRECT TO THE DOORSTEP!</h1>
+        <h1 class="h1">Metsen GUIDING YOU THROUGH THE CHINESE MARKET DIRECT TO THE DOORSTEP!</h1>
         <p>While others wait for overseas freight forwarders to contact them, we act in advance to complete your global
           supply chain with a full range of services, from picking up your freight at a warehouse to port or airport and
           in destination last-mile door delivery.</p>
-        <NuxtLink :to="`about`" class="button dark">Get a quote
+        <NuxtLink :to="`contact`" class="button dark">Get a quote
 
           <svg class="ms-icon button-anime" aria-hidden="true">
             <use xlink:href="#icon-arrow"></use>
@@ -88,33 +88,43 @@
     <div aria-hidden="true" class="block-spacer md"></div>
 
 
-    <div class="slider ">
+    <div class="silder index-silder">
 
       <el-row>
         <el-col :lg="12" :md="12" :sm="24" :xs="24">
-          <div class="grid-content bg-">
-            <h2>Cases&nbsp;Solutions</h2>
-            <el-row :gutter="10">
+          <div class="grid-content ">
+
+            <h2>Cases Processing <br>Solutions</h2>
+
+
+            <el-row :gutter="10" class="index-slilde-left">
+
               <el-col :sm="12" :xs="24">
-                <div class="button" @click="index = 1">OOG Shipment<svg class="ms-icon button-anime" aria-hidden="true">
+                <div class="button big odd" :class="{ active: index == 1 }" @click="index = 1">OOG Shipment
+                  <svg class="ms-icon button-anime" aria-hidden="true">
                     <use xlink:href="#icon-arrow"></use>
                   </svg>
                 </div>
               </el-col>
               <el-col :sm="12" :xs="24">
-                <div class="button" @click="index = 2">TRANSPORTATION<svg class="ms-icon button-anime" aria-hidden="true">
+                <div class="button big " :class="{ active: index == 2 }" @click="index = 2">TRANSPORTATION<svg
+                    class="ms-icon button-anime" aria-hidden="true">
                     <use xlink:href="#icon-arrow"></use>
                   </svg>
                 </div>
               </el-col>
               <el-col :sm="12" :xs="24">
-                <div class="button" @click="index = 3">Last-Mile Delivery<svg class="ms-icon button-anime" aria-hidden="true">
+                <div class="button big odd" :class="{ active: index == 3 }" @click="index = 3">Last-Mile Delivery<svg
+                    class="ms-icon button-anime" aria-hidden="true">
                     <use xlink:href="#icon-arrow"></use>
                   </svg>
                 </div>
               </el-col>
               <el-col :sm="12" :xs="24">
-                <div class="button" @click="index = 4">Small Truck Load (Sprinters/Box Trucks/Straight Trucks)<svg class="ms-icon button-anime" aria-hidden="true">
+                <div class="button big" :class="{ active: index == 4 }" @click="index = 4">
+                  <span class="hidden-xs-only ">Small Truck Load (Sprinters/Box Trucks/Straight Trucks)</span>
+                  <span class="hidden-sm-and-up "> Small Truck Load</span>
+                  <svg class="ms-icon button-anime" aria-hidden="true">
                     <use xlink:href="#icon-arrow"></use>
                   </svg>
                 </div>
@@ -126,25 +136,55 @@
           <div class="grid-content slider-main">
             <el-image class="image__placeholder" style="width:100%" src="/metsen/images/case1.png" fit="contain"
               lazy></el-image>
+
             <div class="slider-main-content ">
-              <transition name="el-fade-in-linear">
+              <transition name="el-fade-in">
                 <div class="transition-box" v-show="index == 1">
-                  <el-image class="image " src="/metsen/images/case1.png" fit="contain"></el-image>
+                  <div class="slide-content">
+                    <h6 class="slide-title h6-title">OOG Shipment</h6>
+                    <div class="slide-text">Metsen provide Dismantling/ Relocation/ Set-up / Professional Packing of heavy
+                      objects and Precision equipment. Relocation of factory and office. International and Domestic
+                      transportation, Nationwide work is possible. .</div>
+                  </div>
+                  <el-image class="image " src="/metsen/images/case1.png" fit="cover"></el-image>
                 </div>
               </transition>
-              <transition name="el-fade-in-linear">
+              <transition name="el-fade-in">
                 <div class="transition-box" v-show="index == 2">
-                  <el-image class="image " src="/metsen/images/case2.png" fit="contain"></el-image>
+                  <div class="slide-content">
+                    <h6 class="slide-title h6-title">TRANSPORTATION</h6>
+                    <div class="slide-text">
+                      Metsen provide Full Truckload, is a type of transportation in which a truck carries only one
+                      dedicated shipment, saving the journey for that shipment alone. STL is the perfect alternative to
+                      LTL, which allows for fast inland transporting of compact cargo. The service utilizes smaller
+                      vehicles like sprinters, box trucks, or straight trucks. </div>
+                  </div>
+                  <el-image class="image " src="/metsen/images/case2.png" fit="cover"></el-image>
                 </div>
               </transition>
-              <transition name="el-fade-in-linear">
+              <transition name="el-fade-in">
                 <div class="transition-box" v-show="index == 3">
-                  <el-image class="image " src="/metsen/images/case3.png" fit="contain"></el-image>
+                  <div class="slide-content">
+                    <h6 class="slide-title h6-title">Last-Mile Delivery
+                    </h6>
+                    <div class="slide-text">
+                      Last-mile delivery is the last but not least link in your global supply chain. It is the final
+                      journey your shipment does, moving from the pickup location or warehouse to the customer’s doorstep.
+                    </div>
+                  </div>
+                  <el-image class="image " src="/metsen/images/case3.png" fit="cover"></el-image>
                 </div>
               </transition>
-              <transition name="el-fade-in-linear">
+              <transition name="el-fade-in">
                 <div class="transition-box" v-show="index == 4">
-                  <el-image class="image " src="/metsen/images/case4.png" fit="contain"></el-image>
+                  <div class="slide-content">
+                    <h6 class="slide-title h6-title">Small Truck Load (Sprinters/Box Trucks/Straight Trucks)</h6>
+                    <div class="slide-text">
+                      STL is the perfect alternative to LTL, which allows for fast inland transporting of compact cargo.
+                      The service utilizes smaller vehicles like sprinters, box trucks, or straight trucks.
+                    </div>
+                  </div>
+                  <el-image class="image " src="/metsen/images/case4.jpg" fit="cover"></el-image>
                 </div>
               </transition>
             </div>
@@ -153,119 +193,116 @@
       </el-row>
 
     </div>
-
-
-    <div class="section-1">
-      <div class="section-1-content">
-        <div class="section-1-content-text">
-          <div>
-            <img class="pic" src="/images/index/about.png" alt="" />
-          </div>
-          <div>
-            <h1>关于CST</h1>
-            <p style="text-align: left;">
-              康索特成立于2006年10月，作为业内领先的AIoT产品和解决方案提供商，端云协同应用能力是康索特的核心优势，也是人工智能和物联网产生价值的关键。我们专注于通用园区和城市
-              治理领域，连接数据、算法及应用，为客户提供领先的AIoT软硬件产品和智能化应用解决方案。
-            </p>
-            <NuxtLink :to="`about`" class="button radius">了解更多 </NuxtLink>
-          </div>
-        </div>
-
-        <div class="about-detail">
-          <div class="item item-1">
-            <h1>使命</h1>
-            <p>普惠AI应用，让美好生活触手可及</p>
-          </div>
-          <div class="item item-2" style="flex: 1; min-width: 33%">
-            <h1>愿景</h1>
-            <p>成为全球领先的AIoT产品和解决方案提供商</p>
-          </div>
-          <div class="item item-3">
-            <h1>价值观</h1>
-            <p>专业致胜 阳光平等 以客户为中心</p>
-          </div>
-        </div>
+    <div aria-hidden="true" class="block-spacer md"></div>
+    <div class="section right">
+      <el-image class="image-cover" src="/metsen/images/3.jpg" fit="cover" lazy></el-image>
+      <div class="section-content">
+        <h2 class="section-content-title">Global Air Freight</h2>
+        <p class="side-by-side__content-text">
+          When time matters, we stay up-to-date and have the
+          expertise to handle all your air shipments, providing the confidence and flexibility
+          to transport your cargo anywhere in the world. We manage all administrative and
+          documentation procedures, including customs clearance, license requirements,
+          security, and compliance with local regulations</p>
       </div>
     </div>
-    <div class="section-yunfan">
-      <div class="section-left">
-        <img src="/images/index/source-1.png" class="pic" />
+    <div class="section  left">
+      <el-image class="image-cover" src="/metsen/images/4.jpg" fit="cover" lazy></el-image>
+      <div class="section-content">
+        <h2 class="section-content-title">THIRD-PARTY LOGISTICS</h2>
+        <p class="side-by-side__content-text">
+          Fill the final gap in your supply chain and increase efficiency while minimizing risks with US InBound’s network
+          of logistics partners. Our best-in-class third-party logistics solutions handle virtually any cargo with
+          scheduled delivery, all without straining your budget or leaving you vulnerable to market volatility risks.</p>
       </div>
-
-      <div class="yunfan-content">
-        <h1 class="blue">云帆创新应用平台</h1>
-        <h2 class="blue">—— 善用技术</h2>
-        <p>
-          未来的城市微单元、社会治理、政企业务流程都需要智能化，康索特掌握了能够高效率、高性价比帮助客户实现智能化转型升级的能力。康索特基于“大匠”、“云启”两大核心技术平台，以及对行业场景需求的深刻理解，进一步提升了人工智能算法及物联传感技术在解决方案中的高效性及场景适应性。
-          通过云帆创新应用平台，实现业务场景数字化、智能化改造，帮助客户降本增效。通过挖掘大数据潜能，持续为客户创造价值。
+    </div>
+    <!--  -->
+    <div aria-hidden="true" class="block-spacer md"></div>
+    <div class="bg-gray">
+      <div aria-hidden="true" class="block-spacer md"></div>
+      <div class="container ">
+        <h2 class="side-by-side__title">Multimodal Transportation</h2>
+      </div>
+      <div class="section right center ">
+        <el-image class="image-cover" src="/metsen/images/222.jpg" fit="cover" lazy></el-image>
+        <div class="section-content">
+          <h3 class="section-content-title">Container Drayage</h3>
+          <p class="side-by-side__content-text">
+            Metsen provides comprehensive container trucking and delivery services for any specialized shipments. We can
+            pick up your cargo from any port or rail yard and transport it to your desired destination quickly and safely.
+          </p>
+        </div>
+      </div>
+      <div class="section left center ">
+        <el-image class="image-cover" src="/metsen/images/7772.jpg" fit="cover" lazy></el-image>
+        <div class="section-content">
+          <h3 class="section-content-title">Temperature Sensitive + Flatbeds</h3>
+          <p class="side-by-side__content-text">
+            Committed to providing first-class integrated container trucking and delivery services, our team of experts
+            will select the appropriate vehicle among our modern and specialized fleet to transport any type of freight,
+            including temperature-sensitive, time-sensitive, high-security, oversized, flatbed, and hazardous materials,
+            with utmost care and excellence.
+          </p>
+        </div>
+      </div>
+      <div aria-hidden="true" class="block-spacer md"></div>
+    </div>
+    <!--  -->
+    <div aria-hidden="true" class="block-spacer md"></div>
+    <div class="section right">
+      <el-image class="image-cover" src="/metsen/images/go.jpg" fit="cover" lazy></el-image>
+      <div class="section-content">
+        <h2 class="section-content-title">GOING THE EXTRA MILE</h2>
+        <p class="content-text">
+          Driven by just-in-time delivery philosophy, we carefully strategize the most optimal routes and transportation
+          modes to ensure a successful delivery from pickup to drop-off. We integrate our frequent shipping services with
+          our land-based operations to provide secure, dependable, and cost-efficient solutions for individuals and
+          businesses of all scopes and sizes.</p>
+      </div>
+    </div>
+    <!--  -->
+    <div class="section left">
+      <el-image class="image-cover" src="/metsen/images/5.webp" fit="cover" lazy></el-image>
+      <div class="section-content">
+        <h2 class="section-content-title">WAREHOUSING</h2>
+        <p class="content-text">
+          By combining a full range of logistics services with regular and bonded warehousing solutions, we can handle
+          virtually any supply chain, gaining your delivery speed and customer service to a new level. We provide
+          cost-effective storage, cross-docking, and palletizing services to maximize your supply chain’s efficiency and
+          reduce business expenses.</p>
+      </div>
+    </div>
+    <div class="container ">
+      <h2 class="side-by-side__title">CUSTOMS & COMPLIANCE</h2>
+    </div>
+    <div class="section right center ">
+      <el-image class="image-cover" src="/metsen/images/222.jpg" fit="cover" lazy></el-image>
+      <div class="section-content">
+        <h3 class="section-content-title">Export Filing Services</h3>
+        <p class="content-text">
+          Forget about costly fines and penalties. Our experts will help you prevent them through accurate and consistent
+          processing of your filings and auditing your exports, and filing export transactions.
         </p>
-        <NuxtLink :to="`yunfan`" class="button radius"> 了解更多 </NuxtLink>
       </div>
     </div>
-    <div class="section-solution">
-      <div class="section-solution-header">
-        <div class="item">
-          <img class="pic" src="/images/index/1.jpg" />
-          <h2>云启<span>（智能化）</span></h2>
-          <p>
-            超多品类和超高性能的算法连接能力，打造一套算法调度平台，实现业务流智能化升级
-          </p>
-          <NuxtLink :to="`yunqi`" class="button radius"> 了解更多 </NuxtLink>
-        </div>
-        <div class="item">
-          <img class="pic" src="/images/index/2.jpg" />
-          <h2>大匠<span>（数字化）</span></h2>
-          <p>
-            超大规模和超高效率的数据连接能力，构建一张智能感知网络，实现业务流数字化改造
-          </p>
-          <NuxtLink :to="`dajiang`" class="button radius"> 了解更多 </NuxtLink>
-        </div>
-        <div class="item">
-          <img class="pic" src="/images/index/3.jpg" />
-          <h2>云帆<span>（平台化）</span></h2>
-          <p>致力于为中小企业客户<br />提供一站式轻应用云接入方案</p>
-          <NuxtLink :to="`yunfan`" class="button radius"> 了解更多 </NuxtLink>
-        </div>
-      </div>
-    </div>
-    <home-solution-tabs></home-solution-tabs>
-    <div class="section-news">
-      <h1 class="blue">新闻中心</h1>
-      <div class="section-news-content">
-        <div class="pic">
-          <img src="/images/index/mediademo.png" alt="" />
-        </div>
-        <template v-if="list">
-          <client-only>
-            <div v-if="list.length > 0" class="section-news-first">
-              <h4>
-                <NuxtLink :to="`news/${list[0].id}`">{{ list[0].title }}</NuxtLink>
-              </h4>
 
-              <NuxtLink :to="`news/${list[0].id}`">
-                <div v-html="list[0].textSnippet"></div>
-              </NuxtLink>
-              <NuxtLink :to="`news/${list[0].id}`" class="button radius mid">
-                了解更多
-              </NuxtLink>
-            </div>
-          </client-only>
-          <ul class="section-news-list">
-            <template v-for="(post, index) in list">
-              <li v-if="index != 0" :key="post.id">
-                <NuxtLink :to="`news/${post.id}`">
-                  {{ formateDay(post.publishTime) }}
-                  <span class="blue">&nbsp;|&nbsp;</span>
-                  {{ post.title }}
-                </NuxtLink>
-              </li>
-            </template>
-          </ul>
-        </template>
+    <!-- <div class="image-cover">&nbsp;</div> -->
+    <div class="container">
+      <div class="section-content">
+        <h3 class="section-content-title">Import Compliance Consulting</h3>
+        <p class="content-text">
+          Rely on us to minimize the risk of duty exposure and to avoid unnecessary costs, potential fines, or penalties
+          associated with importing. We provide complete import handling under the DDP, DAP, and DDU terms and will
+          analyze your import compliance program to determine if any duty drawbacks can lead to duty recovery.
+        </p>
       </div>
     </div>
+
+    <div aria-hidden="true" class="block-spacer md"></div>
     <div class="container">
-      <div></div>
+      <h2 class="section-content-title">SHIPPING FROM CHINA TO SOUTH AMERICA, NORTH AMERICA, MIDDLE EAST, EUROPE</h2>
+      <el-image class="image-cover" src="/metsen/images/1222.png" fit="cover" lazy></el-image>
+
     </div>
   </div>
 </template>
@@ -315,7 +352,7 @@ export default {
     return {
       timer: null,
       // show: true,
-      index: 0,
+      index: 1,
       list: []
     };
   },

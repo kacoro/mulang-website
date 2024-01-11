@@ -1,7 +1,7 @@
 /* 改变主题色变量aaa */
 $--color-primary: #0A0066;
 $--color-warning: #f3cd1d;
-$--color-danger: #fe2324;
+$--color-danger: #ff4343;
 /* 改变 icon 字体路径变量，必需 */
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
@@ -11,7 +11,7 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 @import "~element-ui/packages/theme-chalk/src/message";
 @import "~element-ui/packages/theme-chalk/src/pagination";
 @import "~element-ui/packages/theme-chalk/src/button";
-
+@import "~element-ui/packages/theme-chalk/src/button";
 .el-input__inner,.el-textarea__inner{
     background-color: #eeeeee;
     border-color: #bfbfbf;

@@ -1,13 +1,18 @@
 @import "@/assets/css/element-variables.scss";
 .contact-detail{
     &__container{
-       background: #e8ecf5;
+       background: #f0f0f0;
        padding:80px 10px;
     }
 }
 .contact-ruleForm {
     max-width: 1200px;
     margin: 0 auto;
+    .contact-container{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   &__right {
     display: flex;
     flex-direction: column;
@@ -31,11 +36,28 @@
   }
 
   @media screen and(min-width:768px) {
-    display: flex;
+  
     &__left,
     &__right {
-      width: 50%;
+      flex: 0 0 50%;
     }
 
   }
+ 
+  .el-input--medium {
+    .el-input__inner,.el-textarea__inner {
+      border-color:  #0A0066;
+        border-width: 2px;
+       
+        background-color: transparent;
+    }
+    .el-input__inner {
+        height: 52px;
+        line-height: 52px;
+       
+    }
+  }
+  .el-form-item.is-error .el-input__inner, .el-form-item.is-error .el-input__inner:focus, .el-form-item.is-error .el-textarea__inner, .el-form-item.is-error .el-textarea__inner:focus {
+    border-color: #F56C6C;
+}
 }

@@ -2,14 +2,14 @@
   <div class="news-list">
     <div class="news-list__banner">
       <div class="news-list__banner__bg">
-        <h1>新闻中心</h1>
+        <h1>News</h1>
       </div>
     </div>
     <div class="container">
       <ul class="news-list__list">
         <template v-for="item in list">
           <li :key="item.id" >
-            <NuxtLink :to="`news/${item.id}`" class="news-list__list__link">
+            <div  class="news-list__list__link">
               <div class="news-list__list__img">
                 <img :src="item.other.thumb ? item.other.thumb : item.imgSnippet || `/images/news/default.jpg`" :alt="item.title" class="news-list__list__img__thumb" />
                 <img src="/images/news/default.png" :alt="item.title" class="news-list__list__img__default" />
@@ -17,16 +17,20 @@
               <p class="news-list__list__link__date">
                 {{ formateDay(item.other.publishTime) }}
               </p>
-              <p class="news-list__list__link__title">{{ item.title }}</p>
+              <NuxtLink :to="`news/${item.id}`"><p class="news-list__list__link__title">{{ item.title }}</p></NuxtLink>
               <p class="news-list__list__link__note">
                 {{ item.textSnippet }}...
               </p>
-              <p class="news-list__list__link__note">
-                <span  class="button radius mid">
-                  了解更多
-                </span>
+              <p>
+                <NuxtLink :to="`news/${item.id}`" class="button dark">More...
+
+<svg class="ms-icon button-anime" aria-hidden="true">
+  <use xlink:href="#icon-arrow"></use>
+</svg>
+</NuxtLink>
               </p>
-           </NuxtLink>
+              
+        </div>
           </li>
         </template>
       </ul>
@@ -78,13 +82,16 @@
       box-sizing: border-box;
       font-size: 24px;
       margin: 0.4rem 0;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
     }
     &__link {
       padding: 20px;
       border: 1px solid #fff;
       display: block;
       text-decoration: none;
-      transition: all 0.2s ease-in;
+      transition: all ease 600ms;
       &:hover {
         transform: translateY(-3%);
         // border: 1px solid #f3cd1d;
@@ -205,7 +212,7 @@ export default {
   },
   head() {
     return {
-      title: "康索特官网|新闻中心",
+      title: "Metsen|News",
     };
   },
   beforeRouteUpdate(to, from, next) {
