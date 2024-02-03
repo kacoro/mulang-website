@@ -10,7 +10,11 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        {rel:'stylesheet',href:'https://fonts.font.im/css?family=Montserrat:600|Orbitron:700,900|Open+Sans'}
+      ],
+    // script:[{src:"//at.alicdn.com/t/c/font_4281030_8zdqjou8itt.js"}]
   },
   server: {
     port: 5002, // default: 3000
@@ -25,7 +29,10 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   // plugins: ['@/plugins/element-ui'],
 
-  plugins: ['@/plugins/core','@/plugins/scrollTo',{src:'@/assets/metsen/fonts/metsent/iconfont',ssr:false} ,{ src: '@/plugins/element-ui', ssr: true }],
+  plugins: ['@/plugins/core','@/plugins/scrollTo',{src:'@/plugins/vue-lazyload',ssr:false},
+  
+  {src:'@/assets/metsen/fonts/metsent/iconfont',ssr:false} ,
+  { src: '@/plugins/element-ui', ssr: false }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -64,10 +71,10 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   proxy: {
     '/graphql':{
-      target: 'http://localhost:4002',
+      target: 'http://127.0.0.1:4002',
     },
     '/upload':{
-      target: 'http://localhost:4002',
+      target: 'http://127.0.0.1:4002',
     }
     // 'http://192.168.179.97:4000/graphql/': {
     //   target: 'http://192.168.179.97:4000',
@@ -83,6 +90,23 @@ export default {
       plugins: [
         [ "component", {"libraryName": "element-ui",  "styleLibraryName": "theme-chalk"}] 
       ] 
+    },
+    vendor: ["~/plugins/element-ui",'~/plugins/vue-lazyload'],
+    // analyze: true,
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+      minSize: 10000,
+      maxSize: 250000,
+      cacheGroups: {
+        default: {
+          name: 'chunk-commons',
+          chunks: 'initial',
+          minChunks: 3, // 模块被引用3次以上的才抽离
+          priority: -20
+        }
+      }
+      }
     },
     //  transpile:[/^element-ui/]
     //  transpile:['graphql-request','@nuxtjs/proxy'],

@@ -1,5 +1,5 @@
 import { GraphQLClient } from 'graphql-request'
-const graphQLClient = new GraphQLClient('http://192.168.179.97:4000/graphql', {
+const graphQLClient = new GraphQLClient('http://127.0.0.1:4002/graphql', {
     credentials: 'include',
     mode: 'cors',
 })
@@ -22,7 +22,7 @@ graphQLClient.install = function (Vue, options) {
     // 4. 添加实例方法
     Vue.prototype.$graphQLClient = function (methodOptions) {
       // 逻辑...
-      return new GraphQLClient('http://192.168.179.97:4000/graphql', {
+      return new GraphQLClient('http://127.0.0.1:4002/graphql', {
         credentials: 'include',
         mode: 'cors',
         })

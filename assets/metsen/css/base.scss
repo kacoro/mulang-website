@@ -1,42 +1,42 @@
 @import "@/assets/metsen/css/element-variables.scss";
 
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter-regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "Inter";
+//   src: url("../fonts/inter-regular.woff2") format("woff2");
+//   font-weight: 400;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
-@font-face {
-  font-family: "Inter Bold";
-  src: url("../fonts/inter-bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "Inter Bold";
+//   src: url("../fonts/inter-bold.woff2") format("woff2");
+//   font-weight: 700;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
-@font-face {
-  font-family: "TacticSansExd";
-  src: url("../fonts/tacticsansexd-med.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "TacticSansExd";
+//   src: url("../fonts/tacticsansexd-med.woff2") format("woff2");
+//   font-weight: 500;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
-@font-face {
-  font-family: "TacticSansExdB";
-  src: url("../fonts/tacticsansexd-bld.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+// @font-face {
+//   font-family: "TacticSansExdB";
+//   src: url("../fonts/tacticsansexd-bld.woff2") format("woff2");
+//   font-weight: 700;
+//   font-style: normal;
+//   font-display: swap;
+// }
 
 * {
   font-size: 16px;
   padding: 0;
   margin: 0;
-  font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC",
+  font-family:  "Open Sans","SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC",
     "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
@@ -53,14 +53,14 @@ body {
   padding: 0;
   margin: 0;
   color: #313131;
-  font-family: "Inter", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #000000;
   line-height: 1.778;
   font-weight: 400;
 }
 body {
   background: #ffffff;
-  font-family: "Inter", sans-serif;
+  font-family: "Open Sans", sans-serif;
   position: relative;
 }
 
@@ -117,20 +117,20 @@ h3,
 h4,h5,h6 {
   font-weight: bold;
   line-height: 1.2;
-  font-family: "TacticSansExd", sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 h1 {
-  font-size: 46px;
+  font-size: 65px;
 
 }
 
 h1 {
-  font-weight: bold;
+  font-weight: 900;
 }
 
 h2 {
-  font-size: 45px;
+  font-size: 50px;
   color: #0A0066;
 }
 
@@ -147,7 +147,7 @@ h3 {
   font-size: 32px;
   line-height: 1.2;
   font-weight: 700;
-  font-family: "TacticSansExd", sans-serif;
+  font-family: "Orbitron", sans-serif;
   margin-bottom: 20px;
   text-transform: capitalize
 }
@@ -235,6 +235,7 @@ p {
 
 .logo-wrap {
   display: inherit;
+  height: 52px;
 }
 
 .logo {
@@ -343,7 +344,7 @@ p {
   overflow: hidden;
   text-transform: none;
   text-decoration: none;
-  font-family: "Inter", sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -904,7 +905,7 @@ footer {
   font-size: calc( 18px + 0 * ((100vw - 360px) / 1560) );
   line-height: 1.2;
   font-weight: 500;
-  font-family: "TacticSansExd", sans-serif;
+  font-family: "Orbitron", sans-serif;
   color: #0A0066;
   margin-bottom: 20px;
 }
@@ -913,10 +914,11 @@ footer {
   display: flex;
   padding-bottom: 0;
   padding-top: 20px;
-  font-family: "TacticSansExd", sans-serif;
+  font-family: "Orbitron", sans-serif;
   li{
     display:flex;    justify-content: center;
 						align-items: center;
   }
 }
 
+@import "@/assets/plugins/lazyload/index.scss";

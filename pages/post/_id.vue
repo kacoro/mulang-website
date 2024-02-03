@@ -39,7 +39,7 @@ export default {
 			app,
 			params,
 		}) {
-      const graphQLClient = new GraphQLClient('http://192.168.56.1:4000/graphql', {
+      const graphQLClient = new GraphQLClient('http://127.0.0.1:4002/graphql', {
           credentials: 'include',
           mode: 'cors',
         })

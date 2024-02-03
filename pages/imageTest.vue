@@ -1,10 +1,12 @@
 <template>
   <div class="wrap">
+
     <div class="banner">
       <div class="banner-cover"></div>
-      <div class=" banner-cover-bg ">
-        <img class="lazy-img lazy-img-fadein" v-lazy="images.banner" fit="cover" />
-      </div>
+      <el-image class="image banner-cover-bg" src="/metsen/images/cover.jpg" fit="cover" lazy>
+         <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+      </el-image>
+      <!-- <img class="banner-cover-bg"  alt="Plane in the sky" src="/metsen/images/cover.jpg" -->
       <div class="banner-containner">
         <h1 class="h1">METSEN GUIDING YOU THROUGH THE CHINESE MARKET DIRECT TO THE DOORSTEP!</h1>
         <p>While others wait for overseas freight forwarders to contact them, we act in advance to complete your global
@@ -26,11 +28,14 @@
         <div class="side-by-side__options image image-first">
           <div class="inner left">
             <h2 class="hidden-sm-and-up title inserted">GLOBAL OCEAN FREIGHT <br />( FCL, LCL, OOG )</h2>
-
-            <div class="side-by-side__image image-cover">
-              <img class="lazy-img lazy-img-fadein" v-lazy="images.ocean" fit="cover" />
-            </div>
-
+            <el-image class="side-by-side__image image-cover" src="/metsen/images/p3.jpg" fit="cover" lazy>
+            <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+          </el-image>
+            <!-- <div class="side-by-side__image image-cover">
+              <img width="945" height="450" src="/metsen/images/p3.jpg" class="attachment-w_960_nc size-w_960_nc"
+                alt="man-with-boxes" decoding="async" loading="lazy" title="man-with-boxes"
+                sizes="(max-width: 945px) 100vw, 945px">
+            </div> -->
             <div class="content">
               <h2 class="hidden-xs-only title ">GLOBAL OCEAN FREIGHT <br />( FCL, LCL, OOG )</h2>
               <p class="content-text">Ocean FCL (Full Container Load), LCL (Less than Container Load),
@@ -51,12 +56,10 @@
             <el-col :lg="8" :md="8" :sm="12" :xs="24" class="image-box-item">
               <div class="grid-content bg-purple">
                 <div class="image-cover">
-                  <div class=" image">
-                    <!-- <img class="lazy-img lazy-img-fadein" v-lazy="`/metsen/images/221.jpg`"  fit="cover"/> -->
-                    <img class="lazy-img lazy-img-fadein" v-lazy="images.fcl" fit="cover" />
-                  </div>
+                  <el-image class="image" src="/metsen/images/221.jpg" fit="cover" lazy>
+                    <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+                  </el-image>
                 </div>
-
                 <h3 class="wp-block-heading">FCL</h3>
                 <p>Ship large quantities of goods across the ocean in a single, secure container with our Full
                   Container Load (FCL) service.</p>
@@ -65,12 +68,9 @@
             <el-col :lg="8" :md="8" :sm="12" :xs="24" class="image-box-item">
               <div class="grid-content bg-purple">
                 <div class="image-cover">
-
-                  <div class=" image">
-                    <img class="lazy-img lazy-img-fadein" v-lazy="images.lcl" fit="cover" />
-                    <!-- <img class="lazy-img lazy-img-fadein" v-lazy="`/metsen/images/loading.gif`"  fit="cover"/> -->
-
-                  </div>
+                  <el-image class="image" src="/metsen/images/2222.jpg" fit="cover" lazy>
+                    <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+                  </el-image>
                 </div>
                 <h3 class="wp-block-heading">LCL</h3>
                 <p>Consolidate your smaller volume freight into our containers with our Less than Container Load
@@ -81,11 +81,9 @@
             <el-col :lg="8" :md="8" :sm="24" :xs="24" class="image-box-item">
               <div class="grid-content bg-purple">
                 <div class="image-cover ">
-                  <div class=" image image3">
-                    <!-- <img class="lazy-img lazy-img-fadein" v-lazy="`/metsen/images/2223.jpg`"  fit="cover"/> -->
-                    <img class="lazy-img lazy-img-fadein" v-lazy="images.oog" fit="cover" />
-
-                  </div>
+                  <el-image class="image image3" src="/metsen/images/2223.jpg" fit="cover" lazy>
+                    <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+                  </el-image>
                 </div>
                 <h3 class="wp-block-heading">OOG</h3>
                 <p>Found your cargo too big to load on a dry container? Ship it quickly and safely on an open-top or
@@ -113,29 +111,28 @@
             <el-row :gutter="10" class="index-slilde-left">
 
               <el-col :sm="12" :xs="24">
-                <div class="button big odd" :class="{ active: index == 1 || index == 0 }" @click="changeIndex(1)">OOG
-                  Shipment
+                <div class="button big odd" :class="{ active: index == 1 }" @click="index = 1">OOG Shipment
                   <svg class="ms-icon button-anime" aria-hidden="true">
                     <use xlink:href="#icon-arrow"></use>
                   </svg>
                 </div>
               </el-col>
               <el-col :sm="12" :xs="24">
-                <div class="button big " :class="{ active: index == 2 }" @click="changeIndex(2)">TRANSPORTATION<svg
+                <div class="button big " :class="{ active: index == 2 }" @click="index = 2">TRANSPORTATION<svg
                     class="ms-icon button-anime" aria-hidden="true">
                     <use xlink:href="#icon-arrow"></use>
                   </svg>
                 </div>
               </el-col>
               <el-col :sm="12" :xs="24">
-                <div class="button big odd" :class="{ active: index == 3 }" @click="changeIndex(3)">Last-Mile Delivery<svg
+                <div class="button big odd" :class="{ active: index == 3 }" @click="index = 3">Last-Mile Delivery<svg
                     class="ms-icon button-anime" aria-hidden="true">
                     <use xlink:href="#icon-arrow"></use>
                   </svg>
                 </div>
               </el-col>
               <el-col :sm="12" :xs="24">
-                <div class="button big" :class="{ active: index == 4 }" @click="changeIndex(4)">
+                <div class="button big" :class="{ active: index == 4 }" @click="index = 4">
                   <span class="hidden-xs-only ">Small Truck Load (Sprinters/Box Trucks/Straight Trucks)</span>
                   <span class="hidden-sm-and-up "> Small Truck Load</span>
                   <svg class="ms-icon button-anime" aria-hidden="true">
@@ -148,8 +145,13 @@
         </el-col>
         <el-col :lg="12" :md="12" :sm="24" :xs="24">
           <div class="grid-content slider-main">
-            <img class="lazy-img lazy-img-fadein" v-lazy="images.cases[0]" fit="cover" />
-            <div class="slider-main-content" v-if="showCase">
+            <el-image class="image__placeholder" style="width:100%" src="/metsen/images/case1.jpg" fit="contain"
+              lazy>
+              <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+
+            </el-image>
+
+            <div class="slider-main-content ">
               <transition name="el-fade-in">
                 <div class="transition-box" v-show="index == 1">
                   <div class="slide-content">
@@ -158,10 +160,9 @@
                       objects and Precision equipment. Relocation of factory and office. International and Domestic
                       transportation, Nationwide work is possible. .</div>
                   </div>
-
-                  <div class=" image">
-                    <img class="lazy-img lazy-img-fadein" v-lazy="images.cases[0]" fit="cover" />
-                  </div>
+                  <el-image class="image " src="/metsen/images/case1.jpg" fit="cover">
+                    <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+                  </el-image>
                 </div>
               </transition>
               <transition name="el-fade-in">
@@ -174,10 +175,9 @@
                       LTL, which allows for fast inland transporting of compact cargo. The service utilizes smaller
                       vehicles like sprinters, box trucks, or straight trucks. </div>
                   </div>
-
-                  <div class="image">
-                    <img class="lazy-img lazy-img-fadein" v-lazy="images.cases[1]" fit="cover" />
-                  </div>
+                  <el-image class="image " src="/metsen/images/case2.jpg" fit="cover">
+                    <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+                  </el-image>
                 </div>
               </transition>
               <transition name="el-fade-in">
@@ -190,10 +190,9 @@
                       journey your shipment does, moving from the pickup location or warehouse to the customer’s doorstep.
                     </div>
                   </div>
-
-                  <div class="el-image image">
-                    <img class="lazy-img lazy-img-fadein" v-lazy="images.cases[2]" fit="cover" />
-                  </div>
+                  <el-image class="image " src="/metsen/images/case3.jpg" fit="cover">
+                    <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+                  </el-image>
                 </div>
               </transition>
               <transition name="el-fade-in">
@@ -205,11 +204,9 @@
                       The service utilizes smaller vehicles like sprinters, box trucks, or straight trucks.
                     </div>
                   </div>
-
-                  <div class="image">
-                    <!-- <img class="el-image__inner " v-lazy="`/metsen/images/case4.jpg`"  style="object-fit: cover;"/> -->
-                    <img class="lazy-img lazy-img-fadein" v-lazy="images.cases[3]" fit="cover" />
-                  </div>
+                  <el-image class="image " src="/metsen/images/case4.jpg" fit="cover">
+                    <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+                  </el-image>
                 </div>
               </transition>
             </div>
@@ -220,10 +217,9 @@
     </div>
     <div aria-hidden="true" class="block-spacer md"></div>
     <div class="section right">
-
-      <div class="image-cover">
-        <img class="lazy-img lazy-img-fadein" v-lazy="images.air" fit="cover" />
-      </div>
+      <el-image class="image-cover" src="/metsen/images/3.jpg" fit="cover" lazy>
+        <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+      </el-image>
       <div class="section-content">
         <h2 class="section-content-title">Global Air Freight</h2>
         <p class="side-by-side__content-text">
@@ -235,10 +231,9 @@
       </div>
     </div>
     <div class="section  left">
-
-      <div class="image-cover">
-        <img class="lazy-img  lazy-img-fadein" v-lazy="images.thirdParty" fit="cover" />
-      </div>
+      <el-image class="image-cover" src="/metsen/images/4.jpg" fit="cover" lazy>
+        <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+      </el-image>
       <div class="section-content">
         <h2 class="section-content-title">THIRD-PARTY LOGISTICS</h2>
         <p class="side-by-side__content-text">
@@ -255,11 +250,9 @@
         <h2 class="side-by-side__title">Multimodal Transportation</h2>
       </div>
       <div class="section right center ">
-
-
-        <div class="image-cover">
-          <img class="lazy-img  lazy-img-fadein" v-lazy="images.container" fit="cover" />
-        </div>
+        <el-image class="image-cover" src="/metsen/images/222.jpg" fit="cover" lazy>
+          <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+        </el-image>
         <div class="section-content">
           <h3 class="section-content-title">Container Drayage</h3>
           <p class="side-by-side__content-text">
@@ -269,10 +262,9 @@
         </div>
       </div>
       <div class="section left center ">
-
-        <div class="image-cover">
-          <img class="lazy-img lazy-img-fadein" v-lazy="images.temperature" fit="cover" />
-        </div>
+        <el-image class="image-cover" src="/metsen/images/7772.jpg" fit="cover" lazy>
+          <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+        </el-image>
         <div class="section-content">
           <h3 class="section-content-title">Temperature Sensitive + Flatbeds</h3>
           <p class="side-by-side__content-text">
@@ -288,10 +280,9 @@
     <!--  -->
     <div aria-hidden="true" class="block-spacer md"></div>
     <div class="section right">
-
-      <div class="image-cover">
-        <img class="lazy-img" v-lazy="images.extraMile" fit="cover" />
-      </div>
+      <el-image class="image-cover" src="/metsen/images/go.jpg" fit="cover" lazy>
+        <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+      </el-image>
       <div class="section-content">
         <h2 class="section-content-title">GOING THE EXTRA MILE</h2>
         <p class="content-text">
@@ -303,10 +294,9 @@
     </div>
     <!--  -->
     <div class="section left">
-
-      <div class="image-cover">
-        <img class="lazy-img lazy-img-fadein " v-lazy="images.warehouse" fit="cover" />
-      </div>
+      <el-image class="image-cover" src="/metsen/images/warehouse.jpg" fit="cover" lazy>
+        <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+      </el-image>
       <div class="section-content">
         <h2 class="section-content-title">WAREHOUSING</h2>
         <p class="content-text">
@@ -320,10 +310,9 @@
       <h2 class="side-by-side__title">CUSTOMS & COMPLIANCE</h2>
     </div>
     <div class="section right center ">
-
-      <div class="image-cover">
-        <img class="lazy-img lazy-img-fadein" v-lazy="images.custom" fit="cover" />
-      </div>
+      <el-image class="image-cover" src="/metsen/images/1.jpg" fit="cover" lazy>
+        <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+      </el-image>
       <div class="section-content">
         <h3 class="section-content-title">Export Filing Services</h3>
         <p class="content-text">
@@ -333,6 +322,7 @@
       </div>
     </div>
 
+    <!-- <div class="image-cover">&nbsp;</div> -->
     <div class="container">
       <div class="section-content">
         <h3 class="section-content-title">Import Compliance Consulting</h3>
@@ -347,11 +337,10 @@
     <div aria-hidden="true" class="block-spacer md"></div>
     <div class="container">
       <h2 class="section-content-title">SHIPPING FROM CHINA TO SOUTH AMERICA, NORTH AMERICA, MIDDLE EAST, EUROPE</h2>
-
-      <div class=" image-cover">
-        <img class="lazy-img lazy-img-fadein" v-lazy="images.map" fit="cover" />
-      </div>
-
+      <!-- <el-image class="image-cover" src="/metsen/images/1222.jpg" fit="cover" lazy>
+        <img slot="placeholder" width="100%" src="/metsen/images/cover_holder.png" alt="加载中">
+      </el-image> -->
+      <img v-lazy="imgObj.src"/>
     </div>
   </div>
 </template>
@@ -389,41 +378,7 @@ const query = gql`
 `;
 
 // import posts from '~/apollo/queries/posts'
-let imgUrl = "/metsen/images/";
-const defaultImg = "cover_holder.png"
-const placeholder = imgUrl + defaultImg
-const images = {
-  banner: imgUrl + "cover.jpg",
-  ocean: imgUrl + "p3.jpg",
-  fcl: imgUrl + "221.jpg",
-  lcl: imgUrl + "2222.jpg",
-  oog: imgUrl + "2223.jpg",
-  cases: [imgUrl + "case1.jpg", imgUrl + "case2.jpg", imgUrl + "case3.jpg", imgUrl + "case4.jpg"],
-  air: imgUrl + "3.jpg",
-  thirdParty: imgUrl + "4.jpg",
-  container: imgUrl + "222.jpg",
-  temperature: imgUrl + "7772.jpg",
-  extraMile: imgUrl + "go.jpg",
-  warehouse: imgUrl + "warehouse.jpg",
-  custom: imgUrl + "1.jpg",
-  map: imgUrl + "1222.png"
-}
-const placeholders = {
-  banner: placeholder,
-  ocean: placeholder,
-  fcl: placeholder,
-  lcl: placeholder,
-  oog: placeholder,
-  cases: [placeholder, placeholder, placeholder, placeholder],
-  air: placeholder,
-  thirdParty: placeholder,
-  container: placeholder,
-  temperature: placeholder,
-  extraMile: placeholder,
-  warehouse: placeholder,
-  custom: placeholder,
-  map: placeholder
-}
+
 export default {
   computed: {
     site() {
@@ -435,47 +390,14 @@ export default {
     return {
       timer: null,
       // show: true,
-      index: 0,
+      index: 1,
       list: [],
-      defaultImg: imgUrl + defaultImg,
       imgObj: {
         src: '/metsen/images/1222.jpg',
         // error: 'http://xx.com/error.png',
         // loading: 'http://xx.com/loading-spin.svg'
       },
-      showCase: false,
-      images:images,
-      // images: placeholders,
-      // images: {
-      //   banner: "",
-      //   ocean:"",
-      //   fcl: "",
-      //   lcl: "",
-      //   oog: "", 
-      //   cases: ["","","",""],
-      //   air:"",
-      //   thirdParty:"",
-      //   container:"",
-      //   temperature:"",
-      //   extraMile:"",
-      //   warehouse:"",
-      //   custom:"",
-      //   map:""
-      // }
     };
-  },
-  mounted: function () {
-    // console.log(images)
-    // this.images = images;
-    // this.$nextTick(() => {
-    //   this.timer = setTimeout(() => {
-    //     this.showCase = true;
-    //     console.log("settimeout")
-    //   }, 1 * 1000);
-    // });
-
-    //加载完成后才引入图片
-
   },
   // mounted: function () {
   //   this.$nextTick(() => {
@@ -492,29 +414,25 @@ export default {
     console.log("destroy");
   },
   async asyncData({ app, params, context }) {
-    // const { data, status } = await getGraphqlClient(app.context).rawRequest(
-    //   query,
-    //   {
-    //     // categoryId: 56,
-    //     categoryId: 0,
-    //     identifier: "news",
-    //     page: 1,
-    //     limit: 3
-    //   }
-    // );
+    const { data, status } = await getGraphqlClient(app.context).rawRequest(
+      query,
+      {
+        // categoryId: 56,
+        categoryId: 0,
+        identifier: "news",
+        page: 1,
+        limit: 3
+      }
+    );
 
-    // if (status === 200 && data?.lists) {
-    //   const { lists } = data.lists
-    //   return {
-    //     list: lists,
-    //   };
-    // }
+    if (status === 200 && data?.lists) {
+      const { lists } = data.lists
+      return {
+        list: lists,
+      };
+    }
   },
   methods: {
-    changeIndex(index) {
-      if (!this.showCase) { this.showCase = true }
-      this.index = index;
-    },
     formateDay(day) {
       return this.$dayjs(day).format("MM/DD");
     },

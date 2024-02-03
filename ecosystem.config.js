@@ -7,7 +7,7 @@ module.exports = {
         script: './node_modules/nuxt/bin/nuxt.js',
         "env": {
           "NODE_ENV": "production",
-          "GRAPHQL_URL":"http://127.0.0.1:5000/graphql"
+          "GRAPHQL_URL":"http://127.0.0.1:4002/graphql"
         },
         args: 'start'
       }

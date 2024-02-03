@@ -115,7 +115,8 @@
   font-size: 16px;
   text-decoration: none;
   color: #0A0066;
-  font-family: "Inter Bold","SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 600;
+  font-family: "Montserrat","SF Pro SC", "SF Pro Display", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 @media only screen and (max-width: 1200px) {
   .left-part {

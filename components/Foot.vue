@@ -19,9 +19,8 @@
             </div>
             <div class="footer__item">
               <span class="h6-title">Membership</span>
-              <a href="https://www.jctrans.net/shophome/index-d60027c0250f4cbac59cb5fddfd98982.html" target="_blank">
-                <img width="190" height="43" src="/metsen/images/jctrans.png" class="attachment-full size-full" alt=""
-                  decoding="async" loading="lazy" title="Member ID:120709">
+              <a class="jctrans" href="https://www.jctrans.net/shophome/index-d60027c0250f4cbac59cb5fddfd98982.html" target="_blank" >
+                  <img  title="Member ID:120709"  class=" lazy-img" v-lazy="jctrans" fit="contain" />
               </a>
             </div>
           </div>
@@ -56,9 +55,15 @@
    
   </div>
 </template>
+<style scoped>
+  .jctrans{
+    width:190px;height:43px;padding-top: 0;display: inline-block;
+  }
+</style>
 <script>
 import { gql } from "graphql-request";
 import getGraphqlClient from "~/utils/getGraphqlClient.js";
+
 const query = gql`
  query{
   menuTree(identifier:"bottom"){
@@ -90,6 +95,11 @@ const query = gql`
 `;
 export default {
   name: "foot",
+  data() {
+    return {
+      jctrans:""
+    };
+  },
   computed: {
     contact() {
       return this.$store.state.contact;
@@ -100,6 +110,9 @@ export default {
     bottomMenu() {
       return this.$store.state.bottomMenu
     }
+  },
+  mounted:function(){
+    this.jctrans = `/metsen/images/jctrans.png`;
   },
   async fetch() {
     const { data, status } = await getGraphqlClient(this.$nuxt.context).rawRequest(

@@ -37,7 +37,7 @@ By the way,  We are Strategically Located in Shenzhen,China,and we have competi
     <div aria-hidden="true" class="block-spacer md"></div>
     <div class="container">
       <h2 class="section-content-title">SHIPPING FROM CHINA TO SOUTH AMERICA, NORTH AMERICA, MIDDLE EAST, EUROPE</h2>
-      <el-image class="image-cover" src="/metsen/images/1222.png" fit="cover" lazy></el-image>
+      <el-image class="image-cover" src="/metsen/images/1222.jpg" fit="cover" lazy></el-image>
 
     </div>
   </div>

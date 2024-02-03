@@ -3,7 +3,8 @@
     <div class="page-header">
       <div class="header-content">
         <nuxt-link to="/" class="logo-wrap">
-          <img src="metsen/images/logo.png" class="logo" />
+          <!-- <img class="logo lazy-img" v-lazy="`metsen/images/logo.png`" fit="cover" /> -->
+          <img class="logo lazy-img" v-lazy="`/metsen/images/logo.png`" fit="contain" />
         </nuxt-link>
         <Menu />
         <!-- <NavRight/> -->
@@ -81,10 +82,10 @@ export default {
       this.$store.commit("setSite", data.site);
     }
   },
+  // mounted
   mounted: function () {
     // 此处的16跟上面的16对应，同样是倍数
     const baseSize = 100;
-
     // 设置根节点的font-size大小函数
     function setRem() {
       // 375为设计稿页面宽度，如为750，把375改为750
